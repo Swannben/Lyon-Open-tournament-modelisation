@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg height="3356" version="1.1" width="1795" xmlns="http://www.w3.org/2000/svg">
+<svg height="3354" version="1.1" width="1795" xmlns="http://www.w3.org/2000/svg">
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="190" x2="190" y1="63" y2="68"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="190" x2="190" y1="73" y2="78"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="190" x2="190" y1="83" y2="88"/>
@@ -329,8 +329,8 @@
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="190" x2="190" y1="3313" y2="3318"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="190" x2="190" y1="3323" y2="3328"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="190" x2="190" y1="3333" y2="3338"/>
-<rect fill="#ffffff" height="3278" stroke="#ffffff" stroke-width="1" width="20" x="180" y="63"/>
-<rect fill="none" height="3278" stroke="#000000" stroke-width="1" width="20" x="180" y="63"/>
+<rect fill="#ffffff" height="3275" stroke="#ffffff" stroke-width="1" width="20" x="180" y="63"/>
+<rect fill="none" height="3275" stroke="#000000" stroke-width="1" width="20" x="180" y="63"/>
 <rect fill="#ffffff" height="50" stroke="#ffffff" stroke-width="1" width="160" x="110" y="14"/>
 <rect fill="none" height="50" stroke="#000000" stroke-width="1" width="160" x="110" y="14"/>
 <text font-family="Dialog" font-size="12" x="179" y="28">
@@ -675,8 +675,8 @@
 <rect fill="none" height="44" stroke="#000000" stroke-width="1" width="20" x="441" y="1634"/>
 <rect fill="#ffffff" height="44" stroke="#ffffff" stroke-width="1" width="20" x="441" y="1858"/>
 <rect fill="none" height="44" stroke="#000000" stroke-width="1" width="20" x="441" y="1858"/>
-<rect fill="#ffffff" height="44" stroke="#ffffff" stroke-width="1" width="20" x="441" y="2082"/>
-<rect fill="none" height="44" stroke="#000000" stroke-width="1" width="20" x="441" y="2082"/>
+<rect fill="#ffffff" height="44" stroke="#ffffff" stroke-width="1" width="20" x="441" y="2050"/>
+<rect fill="none" height="44" stroke="#000000" stroke-width="1" width="20" x="441" y="2050"/>
 <rect fill="#ffffff" height="30" stroke="#ffffff" stroke-width="1" width="20" x="441" y="2818"/>
 <rect fill="none" height="30" stroke="#000000" stroke-width="1" width="20" x="441" y="2818"/>
 <rect fill="#ffffff" height="44" stroke="#ffffff" stroke-width="1" width="20" x="441" y="3106"/>
@@ -1486,7 +1486,7 @@ Renseigner "chambre" ou "suite"</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="814" y2="814"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="821" y2="814"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="807" y2="814"/>
-<text font-family="Dialog" font-size="12" x="215" y="803">
+<text font-family="Dialog" font-size="12" x="220" y="803">
 Renseigner le nombre de lits doubles</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="200" x2="205" y1="846" y2="846"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="210" x2="215" y1="846" y2="846"/>
@@ -1719,7 +1719,7 @@ Sélectioner l'hôtel</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="1633" y2="1634"/>
 <polygon fill="#ffffff" points="451,1634 463,1627 463,1641" stroke="#ffffff" stroke-width="1"/>
 <polygon fill="none" points="451,1634 463,1627 463,1641" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="516" y="1655">
+<text font-family="Dialog" font-size="12" x="520" y="1655">
 Afficher les types de chambre disponibles</text>
 <ellipse cx="553" cy="1624" fill="#000000" rx="0.5" ry="0.5" stroke="#000000" stroke-width="1"/>
 <ellipse cx="554" cy="1625" fill="#ffffff" rx="-0.5" ry="-0.5" stroke="#ffffff" stroke-width="1"/>
@@ -2210,8 +2210,8 @@ donnés par les chambres (plus que les services).</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="558" x2="553" y1="1336" y2="1336"/>
 <rect fill="none" height="384" stroke="#000000" stroke-width="1" width="704" x="270" y="1038"/>
 <rect fill="none" height="288" stroke="#000000" stroke-width="1" width="640" x="302" y="1134"/>
-<rect fill="none" height="19" stroke="#000000" stroke-width="1" width="132" x="238" y="206"/>
-<text font-family="Dialog" font-size="12" x="240" y="221">
+<rect fill="none" height="17" stroke="#000000" stroke-width="1" width="130" x="238" y="206"/>
+<text font-family="Dialog" font-size="12" x="239" y="220">
 loop: pour chaque hôtel</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="200" x2="205" y1="878" y2="878"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="210" x2="215" y1="878" y2="878"/>
@@ -2239,19 +2239,19 @@ loop: pour chaque hôtel</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="878" y2="878"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="885" y2="878"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="871" y2="878"/>
-<text font-family="Dialog" font-size="12" x="208" y="867">
+<text font-family="Dialog" font-size="12" x="213" y="867">
 Demander d'autres caractétistiques de chambre</text>
 <ellipse cx="315" cy="876" fill="#000000" rx="0.5" ry="0.5" stroke="#000000" stroke-width="1"/>
 <ellipse cx="316" cy="877" fill="#ffffff" rx="-0.5" ry="-0.5" stroke="#ffffff" stroke-width="1"/>
-<rect fill="none" height="19" stroke="#000000" stroke-width="1" width="196" x="270" y="302"/>
-<text font-family="Dialog" font-size="12" x="272" y="317">
+<rect fill="none" height="17" stroke="#000000" stroke-width="1" width="194" x="270" y="302"/>
+<text font-family="Dialog" font-size="12" x="271" y="316">
 loop: pour chaque type de chambre</text>
 <rect fill="none" height="288" stroke="#000000" stroke-width="1" width="736" x="238" y="206"/>
 <rect fill="none" height="192" stroke="#000000" stroke-width="1" width="672" x="270" y="302"/>
 <polyline fill="none" points="451,238 687,238" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="687,238 675,245 675,231" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="687,238 675,245 675,231" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="455" y="230">
+<text font-family="Dialog" font-size="12" x="461" y="230">
 Récupérer la liste des types de chambre disponibles de l'hôtel</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="687" x2="682" y1="270" y2="270"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="677" x2="672" y1="270" y2="270"/>
@@ -2282,7 +2282,7 @@ Récupérer la liste des types de chambre disponibles de l'hôtel</text>
 <polyline fill="none" points="451,334 879,334" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="879,334 867,341 867,327" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="879,334 867,341 867,327" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="497" y="325">
+<text font-family="Dialog" font-size="12" x="501" y="325">
 Récupérer le nombre de chambres libres du type</text>
 <ellipse cx="665" cy="332" fill="#000000" rx="0.5" ry="0.5" stroke="#000000" stroke-width="1"/>
 <ellipse cx="666" cy="333" fill="#ffffff" rx="-0.5" ry="-0.5" stroke="#ffffff" stroke-width="1"/>
@@ -2333,7 +2333,7 @@ Récupérer le nombre de chambres libres du type</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="373" y2="366"/>
 <polygon fill="#ffffff" points="1358,302 1688,302 1698,312 1698,360 1358,360 1358,302" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1358,302 1688,302 1698,312 1698,360 1358,360 1358,302" stroke="#000000" stroke-width="1"/>
-<polygon fill="#b2b2b2" points="1688,302 1698,312 1688,312 1688,302" stroke="#b2b2b2" stroke-width="1"/>
+<polygon fill="#ffffff" points="1688,302 1698,312 1688,312 1688,302" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1688,302 1698,312 1688,312 1688,302" stroke="#000000" stroke-width="1"/>
 <text font-family="Dialog" font-size="12" x="1361" y="318">
 Les demandes en cours réduisent le nombre de chambres</text>
@@ -2414,7 +2414,7 @@ pour éviter d'avoir des soucis.</text>
 <polyline fill="none" points="451,430 687,430" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="687,430 675,437 675,423" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="687,430 675,437 675,423" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="474" y="420">
+<text font-family="Dialog" font-size="12" x="480" y="420">
 Récupérer la liste des services proposés pour chaque hôtel</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="687" x2="682" y1="462" y2="462"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="677" x2="672" y1="462" y2="462"/>
@@ -2444,7 +2444,7 @@ Récupérer la liste des services proposés pour chaque hôtel</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="469" y2="462"/>
 <polygon fill="#ffffff" points="1358,1614 1664,1614 1674,1624 1674,1672 1358,1672 1358,1614" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1358,1614 1664,1614 1674,1624 1674,1672 1358,1672 1358,1614" stroke="#000000" stroke-width="1"/>
-<polygon fill="#b2b2b2" points="1664,1614 1674,1624 1664,1624 1664,1614" stroke="#b2b2b2" stroke-width="1"/>
+<polygon fill="#ffffff" points="1664,1614 1674,1624 1664,1624 1664,1614" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1664,1614 1674,1624 1664,1624 1664,1614" stroke="#000000" stroke-width="1"/>
 <text font-family="Dialog" font-size="12" x="1361" y="1630">
 On affiche les caractéristiques demandés en évidence.</text>
@@ -2555,17 +2555,17 @@ On affiche les caractéristiques demandés en évidence.</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="1742" y2="1742"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="1749" y2="1742"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="1735" y2="1742"/>
-<text font-family="Dialog" font-size="12" x="234" y="1734">
+<text font-family="Dialog" font-size="12" x="236" y="1734">
 Sélectionner le type de chambre</text>
-<rect fill="none" height="35" stroke="#000000" stroke-width="1" width="140" x="14" y="526"/>
-<text font-family="Dialog" font-size="12" x="16" y="541">
+<rect fill="none" height="33" stroke="#000000" stroke-width="1" width="137" x="14" y="526"/>
+<text font-family="Dialog" font-size="12" x="15" y="540">
 loop: tant que le VIP veut </text>
-<text font-family="Dialog" font-size="12" x="20" y="557">
+<text font-family="Dialog" font-size="12" x="19" y="556">
 réserver des chambres</text>
 <rect fill="none" height="1440" stroke="#000000" stroke-width="1" width="1120" x="14" y="526"/>
 <polygon fill="#ffffff" points="1358,846 1594,846 1604,856 1604,904 1358,904 1358,846" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1358,846 1594,846 1604,856 1604,904 1358,904 1358,846" stroke="#000000" stroke-width="1"/>
-<polygon fill="#b2b2b2" points="1594,846 1604,856 1594,856 1594,846" stroke="#b2b2b2" stroke-width="1"/>
+<polygon fill="#ffffff" points="1594,846 1604,856 1594,856 1594,846" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1594,846 1604,856 1594,856 1594,846" stroke="#000000" stroke-width="1"/>
 <text font-family="Dialog" font-size="12" x="1361" y="862">
 Exemples : la présence d'une baignoire</text>
@@ -2676,7 +2676,7 @@ Exemples : la présence d'une baignoire</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="318" x2="315" y1="876" y2="876"/>
 <polygon fill="#ffffff" points="1358,910 1547,910 1557,920 1557,968 1358,968 1358,910" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1358,910 1547,910 1557,920 1557,968 1358,968 1358,910" stroke="#000000" stroke-width="1"/>
-<polygon fill="#b2b2b2" points="1547,910 1557,920 1547,920 1547,910" stroke="#b2b2b2" stroke-width="1"/>
+<polygon fill="#ffffff" points="1547,910 1557,920 1547,920 1547,910" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1547,910 1557,920 1547,920 1547,910" stroke="#000000" stroke-width="1"/>
 <text font-family="Dialog" font-size="12" x="1361" y="926">
 Exemples : WI-FI gratuit, piscine...</text>
@@ -2787,7 +2787,7 @@ Exemples : WI-FI gratuit, piscine...</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="318" x2="315" y1="909" y2="908"/>
 <polygon fill="#ffffff" points="1358,526 1643,526 1653,536 1653,584 1358,584 1358,526" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1358,526 1643,526 1653,536 1653,584 1358,584 1358,526" stroke="#000000" stroke-width="1"/>
-<polygon fill="#b2b2b2" points="1643,526 1653,536 1643,536 1643,526" stroke="#b2b2b2" stroke-width="1"/>
+<polygon fill="#ffffff" points="1643,526 1653,536 1643,536 1643,526" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1643,526 1653,536 1643,536 1643,526" stroke="#000000" stroke-width="1"/>
 <text font-family="Dialog" font-size="12" x="1361" y="542">
 ...et toutes les infos qui vont avec (voir la maquette).</text>
@@ -2898,7 +2898,7 @@ Exemples : WI-FI gratuit, piscine...</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="686" y2="686"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="693" y2="686"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="679" y2="686"/>
-<text font-family="Dialog" font-size="12" x="261" y="677">
+<text font-family="Dialog" font-size="12" x="263" y="677">
 Renseigner la date d'arrivée</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="200" x2="205" y1="718" y2="718"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="210" x2="215" y1="718" y2="718"/>
@@ -2926,35 +2926,35 @@ Renseigner la date d'arrivée</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="718" y2="718"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="725" y2="718"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="711" y2="718"/>
-<text font-family="Dialog" font-size="12" x="269" y="713">
+<text font-family="Dialog" font-size="12" x="271" y="713">
 Renseigner la date de départ</text>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="200" x2="205" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="210" x2="215" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="220" x2="225" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="230" x2="235" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="240" x2="245" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="250" x2="255" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="260" x2="265" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="270" x2="275" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="280" x2="285" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="290" x2="295" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="300" x2="305" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="310" x2="315" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="320" x2="325" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="330" x2="335" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="340" x2="345" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="350" x2="355" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="360" x2="365" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="370" x2="375" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="380" x2="385" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="390" x2="395" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="400" x2="405" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="410" x2="415" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="420" x2="425" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="2030" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="2037" y2="2030"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="2023" y2="2030"/>
-<text font-family="Dialog" font-size="12" x="240" y="2018">
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="200" x2="205" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="210" x2="215" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="220" x2="225" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="230" x2="235" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="240" x2="245" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="250" x2="255" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="260" x2="265" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="270" x2="275" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="280" x2="285" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="290" x2="295" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="300" x2="305" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="310" x2="315" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="320" x2="325" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="330" x2="335" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="340" x2="345" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="350" x2="355" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="360" x2="365" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="370" x2="375" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="380" x2="385" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="390" x2="395" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="400" x2="405" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="410" x2="415" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="420" x2="425" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="1998" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="2005" y2="1998"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="1991" y2="1998"/>
+<text font-family="Dialog" font-size="12" x="242" y="1986">
 Demander de réserver</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1081" x2="1081" y1="63" y2="68"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1081" x2="1081" y1="73" y2="78"/>
@@ -3286,8 +3286,8 @@ Demander de réserver</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1081" x2="1081" y1="3333" y2="3338"/>
 <rect fill="#ffffff" height="32" stroke="#ffffff" stroke-width="1" width="20" x="1071" y="1774"/>
 <rect fill="none" height="32" stroke="#000000" stroke-width="1" width="20" x="1071" y="1774"/>
-<rect fill="#ffffff" height="32" stroke="#ffffff" stroke-width="1" width="20" x="1071" y="2222"/>
-<rect fill="none" height="32" stroke="#000000" stroke-width="1" width="20" x="1071" y="2222"/>
+<rect fill="#ffffff" height="32" stroke="#ffffff" stroke-width="1" width="20" x="1071" y="2254"/>
+<rect fill="none" height="32" stroke="#000000" stroke-width="1" width="20" x="1071" y="2254"/>
 <rect fill="#ffffff" height="32" stroke="#ffffff" stroke-width="1" width="20" x="1071" y="2734"/>
 <rect fill="none" height="32" stroke="#000000" stroke-width="1" width="20" x="1071" y="2734"/>
 <rect fill="#ffffff" height="32" stroke="#ffffff" stroke-width="1" width="20" x="1071" y="3022"/>
@@ -3296,44 +3296,44 @@ Demander de réserver</text>
 <rect fill="none" height="50" stroke="#000000" stroke-width="1" width="150" x="1006" y="14"/>
 <text font-family="Dialog" font-size="12" x="1052" y="28">
 /Demande</text>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="451" x2="469" y1="2062" y2="2062"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="469" x2="486" y1="2062" y2="2063"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="486" x2="500" y1="2063" y2="2064"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="500" x2="511" y1="2064" y2="2066"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="519" y1="2066" y2="2068"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="519" x2="524" y1="2068" y2="2070"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="524" x2="525" y1="2070" y2="2071"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="525" x2="524" y1="2071" y2="2073"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="524" x2="519" y1="2073" y2="2075"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="519" x2="511" y1="2075" y2="2077"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="492" y1="2077" y2="2078"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="492" x2="476" y1="2078" y2="2080"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="476" x2="462" y1="2080" y2="2081"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="2081" y2="2082"/>
-<polygon fill="#ffffff" points="451,2082 463,2075 463,2089" stroke="#ffffff" stroke-width="1"/>
-<polygon fill="none" points="451,2082 463,2075 463,2089" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="494" y="2108">
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="451" x2="469" y1="2030" y2="2030"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="469" x2="486" y1="2030" y2="2031"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="486" x2="500" y1="2031" y2="2032"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="500" x2="511" y1="2032" y2="2034"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="519" y1="2034" y2="2036"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="519" x2="524" y1="2036" y2="2038"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="524" x2="525" y1="2038" y2="2039"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="525" x2="524" y1="2039" y2="2041"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="524" x2="519" y1="2041" y2="2043"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="519" x2="511" y1="2043" y2="2045"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="492" y1="2045" y2="2046"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="492" x2="476" y1="2046" y2="2048"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="476" x2="462" y1="2048" y2="2049"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="2049" y2="2050"/>
+<polygon fill="#ffffff" points="451,2050 463,2043 463,2057" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="451,2050 463,2043 463,2057" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="497" y="2076">
 Afficher un récapitulatif des demandes</text>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="451" x2="469" y1="2126" y2="2126"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="469" x2="486" y1="2126" y2="2127"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="486" x2="500" y1="2127" y2="2128"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="500" x2="511" y1="2128" y2="2130"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="519" y1="2130" y2="2132"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="519" x2="524" y1="2132" y2="2134"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="524" x2="525" y1="2134" y2="2135"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="525" x2="524" y1="2135" y2="2137"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="524" x2="519" y1="2137" y2="2139"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="519" x2="511" y1="2139" y2="2141"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="492" y1="2141" y2="2142"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="492" x2="476" y1="2142" y2="2144"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="476" x2="462" y1="2144" y2="2145"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="2145" y2="2146"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2139" y2="2146"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2153" y2="2146"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="451" x2="469" y1="2094" y2="2094"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="469" x2="486" y1="2094" y2="2095"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="486" x2="500" y1="2095" y2="2096"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="500" x2="511" y1="2096" y2="2098"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="519" y1="2098" y2="2100"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="519" x2="524" y1="2100" y2="2102"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="524" x2="525" y1="2102" y2="2103"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="525" x2="524" y1="2103" y2="2105"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="524" x2="519" y1="2105" y2="2107"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="519" x2="511" y1="2107" y2="2109"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="492" y1="2109" y2="2110"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="492" x2="476" y1="2110" y2="2112"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="476" x2="462" y1="2112" y2="2113"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="2113" y2="2114"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2107" y2="2114"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2121" y2="2114"/>
 <polyline fill="none" points="451,1774 1071,1774" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="1071,1774 1059,1781 1059,1767" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="1071,1774 1059,1781 1059,1767" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="661" y="1766">
+<text font-family="Dialog" font-size="12" x="664" y="1766">
 Création d'une demande en local</text>
 <ellipse cx="761" cy="1772" fill="#000000" rx="0.5" ry="0.5" stroke="#000000" stroke-width="1"/>
 <ellipse cx="762" cy="1773" fill="#ffffff" rx="-0.5" ry="-0.5" stroke="#ffffff" stroke-width="1"/>
@@ -3417,7 +3417,7 @@ Création d'une demande en local</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="1857" y2="1858"/>
 <polygon fill="#ffffff" points="451,1858 463,1851 463,1865" stroke="#ffffff" stroke-width="1"/>
 <polygon fill="none" points="451,1858 463,1851 463,1865" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="510" y="1877">
+<text font-family="Dialog" font-size="12" x="516" y="1877">
 Mettre à jour l'affichage de l'indicateur du nombre de chambre sélectionnées</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="451" x2="469" y1="1902" y2="1902"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="469" x2="486" y1="1902" y2="1903"/>
@@ -3435,33 +3435,33 @@ Mettre à jour l'affichage de l'indicateur du nombre de chambre sélectionnées<
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="1921" y2="1922"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="1915" y2="1922"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="1929" y2="1922"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="200" x2="205" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="210" x2="215" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="220" x2="225" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="230" x2="235" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="240" x2="245" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="250" x2="255" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="260" x2="265" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="270" x2="275" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="280" x2="285" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="290" x2="295" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="300" x2="305" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="310" x2="315" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="320" x2="325" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="330" x2="335" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="340" x2="345" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="350" x2="355" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="360" x2="365" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="370" x2="375" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="380" x2="385" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="390" x2="395" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="400" x2="405" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="410" x2="415" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="420" x2="425" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="2190" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="2197" y2="2190"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="2183" y2="2190"/>
-<text font-family="Dialog" font-size="12" x="277" y="2184">
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="200" x2="205" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="210" x2="215" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="220" x2="225" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="230" x2="235" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="240" x2="245" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="250" x2="255" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="260" x2="265" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="270" x2="275" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="280" x2="285" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="290" x2="295" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="300" x2="305" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="310" x2="315" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="320" x2="325" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="330" x2="335" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="340" x2="345" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="350" x2="355" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="360" x2="365" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="370" x2="375" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="380" x2="385" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="390" x2="395" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="400" x2="405" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="410" x2="415" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="420" x2="425" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="2222" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="2229" y2="2222"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="2215" y2="2222"/>
+<text font-family="Dialog" font-size="12" x="278" y="2216">
 Confirmer</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1273" x2="1273" y1="63" y2="68"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1273" x2="1273" y1="73" y2="78"/>
@@ -3791,8 +3791,8 @@ Confirmer</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1273" x2="1273" y1="3313" y2="3318"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1273" x2="1273" y1="3323" y2="3328"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1273" x2="1273" y1="3333" y2="3338"/>
-<rect fill="#ffffff" height="32" stroke="#ffffff" stroke-width="1" width="20" x="1263" y="2286"/>
-<rect fill="none" height="32" stroke="#000000" stroke-width="1" width="20" x="1263" y="2286"/>
+<rect fill="#ffffff" height="32" stroke="#ffffff" stroke-width="1" width="20" x="1263" y="2318"/>
+<rect fill="none" height="32" stroke="#000000" stroke-width="1" width="20" x="1263" y="2318"/>
 <rect fill="#ffffff" height="32" stroke="#ffffff" stroke-width="1" width="20" x="1263" y="2574"/>
 <rect fill="none" height="32" stroke="#000000" stroke-width="1" width="20" x="1263" y="2574"/>
 <rect fill="#ffffff" height="32" stroke="#ffffff" stroke-width="1" width="20" x="1263" y="2670"/>
@@ -3803,168 +3803,168 @@ Confirmer</text>
 <rect fill="none" height="50" stroke="#000000" stroke-width="1" width="150" x="1198" y="14"/>
 <text font-family="Dialog" font-size="12" x="1238" y="28">
 /Réservation</text>
-<polyline fill="none" points="451,2222 1071,2222" stroke="#000000" stroke-width="1"/>
-<polygon fill="#000000" points="1071,2222 1059,2229 1059,2215" stroke="#000000" stroke-width="1"/>
-<polygon fill="none" points="1071,2222 1059,2229 1059,2215" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="604" y="2212">
+<polyline fill="none" points="451,2254 1071,2254" stroke="#000000" stroke-width="1"/>
+<polygon fill="#000000" points="1071,2254 1059,2261 1059,2247" stroke="#000000" stroke-width="1"/>
+<polygon fill="none" points="1071,2254 1059,2261 1059,2247" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="606" y="2244">
 Verrouiller l'accès en écriture et en prendre l'exclusivité</text>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1071" x2="1066" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1061" x2="1056" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1051" x2="1046" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1041" x2="1036" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1031" x2="1026" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1021" x2="1016" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1011" x2="1006" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1001" x2="996" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="991" x2="986" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="981" x2="976" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="971" x2="966" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="961" x2="956" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="951" x2="946" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="941" x2="936" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="931" x2="926" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="921" x2="916" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="911" x2="906" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="901" x2="896" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="891" x2="886" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="881" x2="876" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="871" x2="866" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="861" x2="856" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="851" x2="846" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="841" x2="836" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="831" x2="826" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="821" x2="816" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="811" x2="806" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="801" x2="796" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="791" x2="786" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="781" x2="776" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="771" x2="766" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="761" x2="756" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="751" x2="746" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="741" x2="736" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="731" x2="726" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="721" x2="716" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="711" x2="706" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="701" x2="696" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="691" x2="686" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="681" x2="676" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="671" x2="666" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="661" x2="656" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="651" x2="646" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="641" x2="636" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="631" x2="626" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="621" x2="616" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="611" x2="606" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="601" x2="596" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="591" x2="586" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="581" x2="576" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="571" x2="566" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="561" x2="556" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="551" x2="546" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="541" x2="536" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="531" x2="526" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="521" x2="516" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="506" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="501" x2="496" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="491" x2="486" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="481" x2="476" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="471" x2="466" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="461" x2="456" y1="2254" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2247" y2="2254"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2261" y2="2254"/>
-<polyline fill="none" points="451,2286 1263,2286" stroke="#000000" stroke-width="1"/>
-<polygon fill="#000000" points="1263,2286 1251,2293 1251,2279" stroke="#000000" stroke-width="1"/>
-<polygon fill="none" points="1263,2286 1251,2293 1251,2279" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="685" y="2276">
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1071" x2="1066" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1061" x2="1056" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1051" x2="1046" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1041" x2="1036" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1031" x2="1026" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1021" x2="1016" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1011" x2="1006" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1001" x2="996" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="991" x2="986" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="981" x2="976" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="971" x2="966" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="961" x2="956" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="951" x2="946" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="941" x2="936" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="931" x2="926" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="921" x2="916" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="911" x2="906" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="901" x2="896" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="891" x2="886" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="881" x2="876" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="871" x2="866" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="861" x2="856" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="851" x2="846" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="841" x2="836" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="831" x2="826" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="821" x2="816" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="811" x2="806" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="801" x2="796" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="791" x2="786" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="781" x2="776" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="771" x2="766" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="761" x2="756" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="751" x2="746" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="741" x2="736" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="731" x2="726" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="721" x2="716" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="711" x2="706" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="701" x2="696" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="691" x2="686" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="681" x2="676" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="671" x2="666" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="661" x2="656" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="651" x2="646" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="641" x2="636" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="631" x2="626" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="621" x2="616" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="611" x2="606" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="601" x2="596" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="591" x2="586" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="581" x2="576" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="571" x2="566" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="561" x2="556" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="551" x2="546" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="541" x2="536" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="531" x2="526" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="521" x2="516" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="511" x2="506" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="501" x2="496" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="491" x2="486" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="481" x2="476" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="471" x2="466" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="461" x2="456" y1="2286" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2279" y2="2286"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2293" y2="2286"/>
+<polyline fill="none" points="451,2318 1263,2318" stroke="#000000" stroke-width="1"/>
+<polygon fill="#000000" points="1263,2318 1251,2325 1251,2311" stroke="#000000" stroke-width="1"/>
+<polygon fill="none" points="1263,2318 1251,2325 1251,2311" stroke="#000000" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="687" y="2308">
 Verrouiller l'accès en écriture et en prendre l'exclusivité</text>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1263" x2="1258" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1253" x2="1248" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1243" x2="1238" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1233" x2="1228" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1223" x2="1218" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1213" x2="1208" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1203" x2="1198" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1193" x2="1188" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1183" x2="1178" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1173" x2="1168" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1163" x2="1158" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1153" x2="1148" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1143" x2="1138" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1133" x2="1128" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1123" x2="1118" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1113" x2="1108" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1103" x2="1098" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1093" x2="1088" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1083" x2="1078" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1073" x2="1068" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1063" x2="1058" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1053" x2="1048" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1043" x2="1038" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1033" x2="1028" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1023" x2="1018" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1013" x2="1008" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="1003" x2="998" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="993" x2="988" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="983" x2="978" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="973" x2="968" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="963" x2="958" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="953" x2="948" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="943" x2="938" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="933" x2="928" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="923" x2="918" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="913" x2="908" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="903" x2="898" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="893" x2="888" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="883" x2="878" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="873" x2="868" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="863" x2="858" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="853" x2="848" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="843" x2="838" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="833" x2="828" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="823" x2="818" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="813" x2="808" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="803" x2="798" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="793" x2="788" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="783" x2="778" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="773" x2="768" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="763" x2="758" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="753" x2="748" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="743" x2="738" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="733" x2="728" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="723" x2="718" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="713" x2="708" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="703" x2="698" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="693" x2="688" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="683" x2="678" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="673" x2="668" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="663" x2="658" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="653" x2="648" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="643" x2="638" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="633" x2="628" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="623" x2="618" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="613" x2="608" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="603" x2="598" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="593" x2="588" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="583" x2="578" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="573" x2="568" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="563" x2="558" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="553" x2="548" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="543" x2="538" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="533" x2="528" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="523" x2="518" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="513" x2="508" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="503" x2="498" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="493" x2="488" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="483" x2="478" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="473" x2="468" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="458" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="453" x2="451" y1="2318" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2311" y2="2318"/>
-<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2325" y2="2318"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1263" x2="1258" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1253" x2="1248" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1243" x2="1238" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1233" x2="1228" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1223" x2="1218" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1213" x2="1208" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1203" x2="1198" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1193" x2="1188" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1183" x2="1178" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1173" x2="1168" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1163" x2="1158" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1153" x2="1148" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1143" x2="1138" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1133" x2="1128" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1123" x2="1118" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1113" x2="1108" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1103" x2="1098" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1093" x2="1088" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1083" x2="1078" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1073" x2="1068" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1063" x2="1058" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1053" x2="1048" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1043" x2="1038" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1033" x2="1028" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1023" x2="1018" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1013" x2="1008" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="1003" x2="998" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="993" x2="988" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="983" x2="978" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="973" x2="968" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="963" x2="958" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="953" x2="948" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="943" x2="938" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="933" x2="928" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="923" x2="918" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="913" x2="908" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="903" x2="898" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="893" x2="888" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="883" x2="878" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="873" x2="868" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="863" x2="858" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="853" x2="848" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="843" x2="838" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="833" x2="828" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="823" x2="818" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="813" x2="808" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="803" x2="798" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="793" x2="788" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="783" x2="778" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="773" x2="768" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="763" x2="758" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="753" x2="748" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="743" x2="738" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="733" x2="728" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="723" x2="718" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="713" x2="708" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="703" x2="698" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="693" x2="688" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="683" x2="678" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="673" x2="668" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="663" x2="658" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="653" x2="648" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="643" x2="638" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="633" x2="628" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="623" x2="618" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="613" x2="608" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="603" x2="598" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="593" x2="588" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="583" x2="578" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="573" x2="568" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="563" x2="558" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="553" x2="548" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="543" x2="538" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="533" x2="528" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="523" x2="518" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="513" x2="508" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="503" x2="498" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="493" x2="488" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="483" x2="478" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="473" x2="468" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="458" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="453" x2="451" y1="2350" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2343" y2="2350"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2357" y2="2350"/>
 <polyline fill="none" points="451,2446 879,2446" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="879,2446 867,2453 867,2439" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="879,2446 867,2453 867,2439" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="545" y="2439">
+<text font-family="Dialog" font-size="12" x="550" y="2439">
 Récupérer le nombre de chambres libres</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="879" x2="874" y1="2478" y2="2478"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="869" x2="864" y1="2478" y2="2478"/>
@@ -4014,7 +4014,7 @@ Récupérer le nombre de chambres libres</text>
 <polyline fill="none" points="451,2574 1263,2574" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="1263,2574 1251,2581 1251,2567" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="1263,2574 1251,2581 1251,2567" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="700" y="2568">
+<text font-family="Dialog" font-size="12" x="704" y="2568">
 Créer la réservation dans la base de données</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1263" x2="1258" y1="2606" y2="2606"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1253" x2="1248" y1="2606" y2="2606"/>
@@ -4100,15 +4100,15 @@ Créer la réservation dans la base de données</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="453" x2="451" y1="2606" y2="2606"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2599" y2="2606"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2613" y2="2606"/>
-<rect fill="none" height="35" stroke="#000000" stroke-width="1" width="144" x="270" y="2382"/>
-<text font-family="Dialog" font-size="12" x="280" y="2397">
+<rect fill="none" height="33" stroke="#000000" stroke-width="1" width="134" x="270" y="2382"/>
+<text font-family="Dialog" font-size="12" x="275" y="2396">
 loop: pour chaque type</text>
-<text font-family="Dialog" font-size="12" x="276" y="2413">
+<text font-family="Dialog" font-size="12" x="271" y="2412">
 de chambre sélectionné</text>
 <rect fill="none" height="128" stroke="#000000" stroke-width="1" width="672" x="270" y="2382"/>
 <polygon fill="#ffffff" points="1358,1774 1592,1774 1602,1784 1602,1832 1358,1832 1358,1774" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1358,1774 1592,1774 1602,1784 1602,1832 1358,1832 1358,1774" stroke="#000000" stroke-width="1"/>
-<polygon fill="#b2b2b2" points="1592,1774 1602,1784 1592,1784 1592,1774" stroke="#b2b2b2" stroke-width="1"/>
+<polygon fill="#ffffff" points="1592,1774 1602,1784 1592,1784 1592,1774" stroke="#ffffff" stroke-width="1"/>
 <polyline fill="none" points="1592,1774 1602,1784 1592,1784 1592,1774" stroke="#000000" stroke-width="1"/>
 <text font-family="Dialog" font-size="12" x="1361" y="1790">
 Pour ne pas demander plus que possible</text>
@@ -4177,7 +4177,7 @@ en local.</text>
 <polyline fill="none" points="451,2958 1263,2958" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="1263,2958 1251,2965 1251,2951" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="1263,2958 1251,2965 1251,2951" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="709" y="2947">
+<text font-family="Dialog" font-size="12" x="711" y="2947">
 Déverrouiller l'accès en écriture</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1263" x2="1258" y1="2990" y2="2990"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1253" x2="1248" y1="2990" y2="2990"/>
@@ -4266,7 +4266,7 @@ Déverrouiller l'accès en écriture</text>
 <polyline fill="none" points="451,3022 1071,3022" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="1071,3022 1059,3029 1059,3015" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="1071,3022 1059,3029 1059,3015" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="715" y="3017">
+<text font-family="Dialog" font-size="12" x="717" y="3017">
 Déverrouiller l'accès en écriture</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1071" x2="1066" y1="3054" y2="3054"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1061" x2="1056" y1="3054" y2="3054"/>
@@ -4332,10 +4332,10 @@ Déverrouiller l'accès en écriture</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="461" x2="456" y1="3054" y2="3054"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="3047" y2="3054"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="3061" y2="3054"/>
-<rect fill="none" height="35" stroke="#000000" stroke-width="1" width="170" x="238" y="2542"/>
-<text font-family="Dialog" font-size="12" x="252" y="2557">
+<rect fill="none" height="33" stroke="#000000" stroke-width="1" width="162" x="238" y="2542"/>
+<text font-family="Dialog" font-size="12" x="248" y="2556">
 opt: il reste des chambres</text>
-<text font-family="Dialog" font-size="12" x="243" y="2573">
+<text font-family="Dialog" font-size="12" x="239" y="2572">
 pour chaque type sélectionné</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="451" x2="469" y1="3086" y2="3086"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="469" x2="486" y1="3086" y2="3087"/>
@@ -4353,7 +4353,7 @@ pour chaque type sélectionné</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="3105" y2="3106"/>
 <polygon fill="#ffffff" points="451,3106 463,3099 463,3113" stroke="#ffffff" stroke-width="1"/>
 <polygon fill="none" points="451,3106 463,3099 463,3113" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="505" y="3125">
+<text font-family="Dialog" font-size="12" x="514" y="3125">
 Afficher un message d'erreur en indiquant quels types de chambre ne sont plus disponibles</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="451" x2="469" y1="3150" y2="3150"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="469" x2="486" y1="3150" y2="3151"/>
@@ -4372,14 +4372,14 @@ Afficher un message d'erreur en indiquant quels types de chambre ne sont plus di
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="3163" y2="3170"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="3177" y2="3170"/>
 <rect fill="none" height="384" stroke="#000000" stroke-width="1" width="1088" x="238" y="2542"/>
-<rect fill="none" height="19" stroke="#000000" stroke-width="1" width="57" x="238" y="2926"/>
-<text font-family="Dialog" font-size="12" x="240" y="2941">
+<rect fill="none" height="17" stroke="#000000" stroke-width="1" width="55" x="238" y="2926"/>
+<text font-family="Dialog" font-size="12" x="239" y="2940">
 opt: sinon</text>
 <rect fill="none" height="288" stroke="#000000" stroke-width="1" width="1088" x="238" y="2926"/>
 <polyline fill="none" points="451,2670 1263,2670" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="1263,2670 1251,2677 1251,2663" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="1263,2670 1251,2677 1251,2663" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="811" y="2665">
+<text font-family="Dialog" font-size="12" x="813" y="2665">
 Déverrouiller l'accès en écriture</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1263" x2="1258" y1="2702" y2="2702"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1253" x2="1248" y1="2702" y2="2702"/>
@@ -4468,7 +4468,7 @@ Déverrouiller l'accès en écriture</text>
 <polyline fill="none" points="451,2734 1071,2734" stroke="#000000" stroke-width="1"/>
 <polygon fill="#000000" points="1071,2734 1059,2741 1059,2727" stroke="#000000" stroke-width="1"/>
 <polygon fill="none" points="1071,2734 1059,2741 1059,2727" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="715" y="2729">
+<text font-family="Dialog" font-size="12" x="717" y="2729">
 Déverrouiller l'accès en écriture</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1071" x2="1066" y1="2766" y2="2766"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="1061" x2="1056" y1="2766" y2="2766"/>
@@ -4550,7 +4550,7 @@ Déverrouiller l'accès en écriture</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="2817" y2="2818"/>
 <polygon fill="#ffffff" points="451,2818 463,2811 463,2825" stroke="#ffffff" stroke-width="1"/>
 <polygon fill="none" points="451,2818 463,2811 463,2825" stroke="#000000" stroke-width="1"/>
-<text font-family="Dialog" font-size="12" x="507" y="2840">
+<text font-family="Dialog" font-size="12" x="510" y="2840">
 Afficher un message de succès</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="451" x2="469" y1="2848" y2="2848"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="469" x2="486" y1="2848" y2="2849"/>
@@ -4568,4 +4568,32 @@ Afficher un message de succès</text>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="462" x2="451" y1="2867" y2="2868"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2861" y2="2868"/>
 <line fill="#000000" stroke="#000000" stroke-width="1" x1="463" x2="451" y1="2875" y2="2868"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="200" x2="205" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="210" x2="215" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="220" x2="225" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="230" x2="235" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="240" x2="245" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="250" x2="255" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="260" x2="265" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="270" x2="275" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="280" x2="285" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="290" x2="295" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="300" x2="305" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="310" x2="315" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="320" x2="325" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="330" x2="335" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="340" x2="345" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="350" x2="355" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="360" x2="365" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="370" x2="375" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="380" x2="385" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="390" x2="395" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="400" x2="405" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="410" x2="415" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="420" x2="425" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="430" x2="431" y1="2158" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="2165" y2="2158"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="419" x2="431" y1="2151" y2="2158"/>
+<text font-family="Dialog" font-size="12" x="205" y="2150">
+Spécifier les VIP concernés par les chambres</text>
 </svg>
