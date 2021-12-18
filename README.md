@@ -5,7 +5,15 @@
 
 
 Diagrammes à faire :
- - ✓ Activité de Gerer un planning automatiquement
+ - ✓ Activité de Générer un planning automatiquement
  - ✓ Activité de modifier un match
- - ✓ Séquence de Reservation entrainement
+ - ✓ Séquence de réserver un entrainement
  - ✓ Séquence de déplacer un match
+
+
+## Package Hébergement :
+
+
+Diagrammes à faire :
+ - ✓ Séquence de demander un hébergement
+
