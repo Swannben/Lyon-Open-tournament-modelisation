@@ -1,11 +1,30 @@
 # CPOA
 
 
-## Package Planification :
+## TODO
+
+### Nettoyage du code Java
+
+- ~~Arbitre~~
+- ~~Court~~
+- ~~Creneau~~
+- ~~Entrainement~~
+- ~~Equipe~~
+- ~~EquipeRamassage~~
+- ~~Joueur~~
+- ~~Jour~~
+- ~~Match~~
+- ~~MatchDouble~~
+- ~~MatchSimple~~
+- ~~Nationalite~~
 
 
-Diagrammes à faire :
- - Activité de Gerer un planning automatiquement
- - ✓ Activité de modifier un match
- - ✓ Séquence de Reservation entrainement
- - Séquence de déplacer un match
+### Nettoyage du code SQL
+
+#### Package planning_des_matchs
+
+
+#### Package hebergement
+
+
+
