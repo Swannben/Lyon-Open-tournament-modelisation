@@ -1,0 +1,3 @@
+[submodule "src/hebergement/heroku-app"]
+	path = src/hebergement/heroku-app
+	url = https://git.heroku.com/cpoa-canada.git
