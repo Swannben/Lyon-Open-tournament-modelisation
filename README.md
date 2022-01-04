@@ -21,8 +21,6 @@
 
 ### Nettoyage du code SQL
 
-#### Package planning_des_matchs
-
-
-#### Package hebergement
+- Package planning_des_matchs
+- Package hebergement
 
