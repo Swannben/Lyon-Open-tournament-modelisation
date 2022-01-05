@@ -29,8 +29,8 @@ create table chambre
    idhotel              int not null,
    idtypechambre        int not null,
    numchambre           int,
-   debutplagedispo      datetime,
-   finplagedispo        datetime,
+   debutplagedispo      date,
+   finplagedispo        date,
    primary key (idchambre)
 );
 
@@ -78,8 +78,8 @@ create table reservation
    idchambre            int not null,
    idvip                int not null,
    idreservation        int not null,
-   datearrivee          datetime,
-   datedepart           datetime,
+   datearrivee          date,
+   datedepart           date,
    primary key (idchambre, idvip, idreservation)
 );
 
