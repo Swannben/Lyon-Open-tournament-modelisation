@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* Nom de SGBD :  MySQL 5.0                                     */
-/* Date de création :  19/12/2021 04:44:49                      */
+/* Date de crï¿½ation :  19/12/2021 04:44:49                      */
 /*==============================================================*/
 
 
@@ -14,7 +14,7 @@ drop table if exists hotelproposeservice;
 
 drop table if exists reservation;
 
-drop table if exists service;
+drop table if exists "service";
 
 drop table if exists typechambre;
 
@@ -25,7 +25,7 @@ drop table if exists vip;
 /*==============================================================*/
 create table chambre
 (
-   idchambre            int not null,
+   idchambre            serial not null,
    idhotel              int not null,
    idtypechambre        int not null,
    numchambre           int,
@@ -39,7 +39,7 @@ create table chambre
 /*==============================================================*/
 create table demande
 (
-   iddemande            int not null,
+   iddemande            serial not null,
    idhotel              int not null,
    idtypechambre        int not null,
    demandeur            int not null,
@@ -52,7 +52,7 @@ create table demande
 /*==============================================================*/
 create table hotel
 (
-   idhotel              int not null,
+   idhotel              serial not null,
    nom                  varchar(254),
    adresse              varchar(254),
    nbetoiles            int,
@@ -86,9 +86,9 @@ create table reservation
 /*==============================================================*/
 /* Table : service                                              */
 /*==============================================================*/
-create table service
+create table "service"
 (
-   idservice            int not null,
+   idservice            serial not null,
    libelle              varchar(254),
    primary key (idservice)
 );
@@ -99,7 +99,7 @@ create table service
 create table typechambre
 (
    idhotel              int not null,
-   idtypechambre        int not null,
+   idtypechambre        serial not null,
    intitule             varchar(254),
    suite                bool,
    nblitss              int,
@@ -115,7 +115,7 @@ create table typechambre
 /*==============================================================*/
 create table vip
 (
-   idvip                int not null,
+   idvip                serial not null,
    accompagne           int,
    iddemande            int,
    nom                  varchar(254),

@@ -1,20 +1,13 @@
 /*==============================================================*/
 /* Nom de SGBD :  MySQL 5.0                                     */
-/* Date de création :  19/12/2021 04:32:20                      */
+/* Date de crï¿½ation :  19/12/2021 04:32:20                      */
 /*==============================================================*/
-
-
-drop table if exists arbitre;
-
-drop table if exists court;
 
 drop table if exists creneau;
 
 drop table if exists entrainement;
 
-drop table if exists equipe;
-
-drop table if exists equiperamassage;
+drop table if exists court;
 
 drop table if exists jouedouble;
 
@@ -22,22 +15,41 @@ drop table if exists jouesimple;
 
 drop table if exists joueur;
 
+drop table if exists equipe;
+
 drop table if exists ligne;
 
-drop table if exists `match`;
+drop table if exists ramassage;
 
 drop table if exists matchdouble;
 
 drop table if exists matchsimple;
 
-drop table if exists ramassage;
+drop table if exists "match";
+
+drop table if exists equiperamassage;
+
+drop table if exists arbitre;
+
+drop table if exists nationalite;
+
+/*==============================================================*/
+/* Table : nationalite                                              */
+/*==============================================================*/
+create table nationalite
+(
+   idnationalite        serial not null,
+   libelle              varchar(254),
+   primary key (idnationalite)
+);
 
 /*==============================================================*/
 /* Table : arbitre                                              */
 /*==============================================================*/
 create table arbitre
 (
-   idarbitre            int not null,
+   idarbitre            serial not null,
+   idnationalite        int,
    certification        varchar(254),
    nbdematchfaits       int,
    nbdematchfaitd       int,
@@ -51,7 +63,7 @@ create table arbitre
 /*==============================================================*/
 create table court
 (
-   idcourt              int not null,
+   idcourt              serial not null,
    nomcourt             varchar(254),
    estprincipal         bool,
    primary key (idcourt)
@@ -88,7 +100,7 @@ create table entrainement
 /*==============================================================*/
 create table equipe
 (
-   idequipe             int not null,
+   idequipe             serial not null,
    primary key (idequipe)
 );
 
@@ -97,7 +109,7 @@ create table equipe
 /*==============================================================*/
 create table equiperamassage
 (
-   idequiperam          int not null,
+   idequiperam          serial not null,
    nomequipe            varchar(254),
    primary key (idequiperam)
 );
@@ -127,11 +139,11 @@ create table jouesimple
 /*==============================================================*/
 create table joueur
 (
-   idjoueur             int not null,
+   idjoueur             serial not null,
    idequipe             int,
+   idnationalite        int,
    nom                  varchar(254),
    prenom               varchar(254),
-   nationalite          varchar(254),
    primary key (idjoueur)
 );
 
@@ -146,11 +158,11 @@ create table ligne
 );
 
 /*==============================================================*/
-/* Table : `match`                                              */
+/* Table : "match"                                              */
 /*==============================================================*/
-create table `match`
+create table "match"
 (
-   idmatch              int not null,
+   idmatch              serial not null,
    estqualif            bool,
    primary key (idmatch)
 );
@@ -180,16 +192,20 @@ create table matchsimple
 /*==============================================================*/
 create table ramassage
 (
-   idequiperam          int not null,
-   idmatch              int not null,
+   idequiperam          serial not null,
+   idmatch              serial not null,
    primary key (idequiperam, idmatch)
 );
+
+
+alter table arbitre add constraint fk_arbitre_nationalite foreign key (idnationalite)
+      references nationalite (idnationalite) on delete restrict on update restrict;
 
 alter table creneau add constraint fk_creneau_court foreign key (idcourt)
       references court (idcourt) on delete restrict on update restrict;
 
 alter table creneau add constraint fk_creneau_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete restrict on update restrict;
 
 alter table entrainement add constraint fk_entrainement_court foreign key (idcourt)
       references court (idcourt) on delete restrict on update restrict;
@@ -212,20 +228,23 @@ alter table jouesimple add constraint fk_jouesimple_matchsimple foreign key (idm
 alter table joueur add constraint fk_joueur_equipe foreign key (idequipe)
       references equipe (idequipe) on delete restrict on update restrict;
 
+alter table joueur add constraint fk_joueur_nationalite foreign key (idnationalite)
+      references nationalite (idnationalite) on delete restrict on update restrict;
+
 alter table ligne add constraint fk_ligne_arbitre foreign key (idarbitre)
       references arbitre (idarbitre) on delete restrict on update restrict;
 
 alter table ligne add constraint fk_ligne_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete restrict on update restrict;
 
 alter table matchdouble add constraint fk_matchdouble_arbitre foreign key (idarbitre)
       references arbitre (idarbitre) on delete restrict on update restrict;
 
 alter table matchdouble add constraint fk_matchdouble_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete restrict on update restrict;
 
 alter table matchsimple add constraint fk_matchsimple_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete restrict on update restrict;
 
 alter table matchsimple add constraint fk_chaise foreign key (idarbitre)
       references arbitre (idarbitre) on delete restrict on update restrict;
@@ -234,5 +253,5 @@ alter table ramassage add constraint fk_ramassage_equiperamassage foreign key (i
       references equiperamassage (idequiperam) on delete restrict on update restrict;
 
 alter table ramassage add constraint fk_ramassage_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete restrict on update restrict;
 
