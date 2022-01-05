@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* Nom de SGBD :  MySQL 5.0                                     */
-/* Date de création :  19/12/2021 04:32:20                      */
+/* Date de cration :  19/12/2021 04:32:20                      */
 /*==============================================================*/
 
 
@@ -24,7 +24,7 @@ drop table if exists joueur;
 
 drop table if exists ligne;
 
-drop table if exists `match`;
+drop table if exists match;
 
 drop table if exists matchdouble;
 
@@ -39,8 +39,8 @@ create table arbitre
 (
    idarbitre            int not null,
    certification        varchar(254),
-   nbdematchfaits       int,
-   nbdematchfaitd       int,
+   nbdematchfaitss       int,
+   nbdematchfaitsd       int,
    nom                  varchar(254),
    prenom               varchar(254),
    primary key (idarbitre)
@@ -146,9 +146,9 @@ create table ligne
 );
 
 /*==============================================================*/
-/* Table : `match`                                              */
+/* Table : match                                              */
 /*==============================================================*/
-create table `match`
+create table match
 (
    idmatch              int not null,
    estqualif            bool,
@@ -189,7 +189,7 @@ alter table creneau add constraint fk_creneau_court foreign key (idcourt)
       references court (idcourt) on delete restrict on update restrict;
 
 alter table creneau add constraint fk_creneau_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references match (idmatch) on delete restrict on update restrict;
 
 alter table entrainement add constraint fk_entrainement_court foreign key (idcourt)
       references court (idcourt) on delete restrict on update restrict;
@@ -216,16 +216,16 @@ alter table ligne add constraint fk_ligne_arbitre foreign key (idarbitre)
       references arbitre (idarbitre) on delete restrict on update restrict;
 
 alter table ligne add constraint fk_ligne_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references match (idmatch) on delete restrict on update restrict;
 
 alter table matchdouble add constraint fk_matchdouble_arbitre foreign key (idarbitre)
       references arbitre (idarbitre) on delete restrict on update restrict;
 
 alter table matchdouble add constraint fk_matchdouble_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references match (idmatch) on delete restrict on update restrict;
 
 alter table matchsimple add constraint fk_matchsimple_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references match (idmatch) on delete restrict on update restrict;
 
 alter table matchsimple add constraint fk_chaise foreign key (idarbitre)
       references arbitre (idarbitre) on delete restrict on update restrict;
@@ -234,5 +234,5 @@ alter table ramassage add constraint fk_ramassage_equiperamassage foreign key (i
       references equiperamassage (idequiperam) on delete restrict on update restrict;
 
 alter table ramassage add constraint fk_ramassage_match foreign key (idmatch)
-      references `match` (idmatch) on delete restrict on update restrict;
+      references match (idmatch) on delete restrict on update restrict;
 
