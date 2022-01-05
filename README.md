@@ -32,6 +32,8 @@ Tous les fichiers nécessaires se trouvent dans le dépôt dans le répertoire [
 
 Dans le dépôt il y a un submodule `heroku` qui correspond à l'application Web mise à jour en temps réel. Vous pouvez visualiser plus en détail l'application depuis votre [compte Heroku](https://herokuapp.com).
 
+L'application Web est accessible depuis l'url [https://cpoa-canada.herokuapp.com/](https://cpoa-canada.herokuapp.com/).
+
 #### Préparation de l'environnement
 
 Pour apporté des changements à l'application, il faut suivre plusieurs étapes.
