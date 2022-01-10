@@ -9,11 +9,11 @@ public class Utilisateur {
 
 
     public int getId () { 
-        return type; 
+        return id; 
     }
     
     public void setId(int type) { 
-        this.type = type;
+        this.id = id;
     }
     
     public String getNom () { 
