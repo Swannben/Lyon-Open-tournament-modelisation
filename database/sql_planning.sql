@@ -50,6 +50,7 @@ create table arbitre
 (
    idarbitre            serial not null,
    idnationalite        int,
+   idutilisateur        int,
    certification        varchar(254),
    nbdematchfaits       int,
    nbdematchfaitd       int,
@@ -144,6 +145,7 @@ create table joueur
    idnationalite        int,
    nom                  varchar(254),
    prenom               varchar(254),
+   idutilisateur        int,
    primary key (idjoueur)
 );
 
@@ -201,6 +203,9 @@ create table ramassage
 alter table arbitre add constraint fk_arbitre_nationalite foreign key (idnationalite)
       references nationalite (idnationalite) on delete restrict on update restrict;
 
+alter table arbitre add constraint fk_arbitre_utilisateur foreign key (idutilisateur)
+      references utilisateur (idutilisateur) on delete restrict on update restrict;
+
 alter table creneau add constraint fk_creneau_court foreign key (idcourt)
       references court (idcourt) on delete restrict on update restrict;
 
@@ -231,6 +236,9 @@ alter table joueur add constraint fk_joueur_equipe foreign key (idequipe)
 alter table joueur add constraint fk_joueur_nationalite foreign key (idnationalite)
       references nationalite (idnationalite) on delete restrict on update restrict;
 
+alter table joueur add constraint fk_joueur_utilisateur foreign key (idutilisateur)
+      references utilisateur (idutilisateur) on delete restrict on update restrict;
+      
 alter table ligne add constraint fk_ligne_arbitre foreign key (idarbitre)
       references arbitre (idarbitre) on delete restrict on update restrict;
 

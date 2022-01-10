@@ -48,6 +48,9 @@ $ heroku login
 
 3. A chaque modification il suffit de *commit* les changements du submodule Heroku et de *push* sur la branche `heroku/master`.
 
+/!\ Afin de ne pas avoir à *push* à chaque test, il est possible d'utiliser un wamp en local pour tester les fonctionnalités 
+avant d'appliquer les changements sur le dépôt distant.
+
 
 ### La base de données
 
