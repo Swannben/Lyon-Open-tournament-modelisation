@@ -1,36 +1,36 @@
 /*==============================================================*/
 /* Nom de SGBD :  MySQL 5.0                                     */
-/* Date de création :  19/12/2021 04:44:49                      */
+/* Date de crÃ©ation :  19/12/2021 04:44:49                      */
 /*==============================================================*/
 
-
-drop table if exists chambre;
-
 drop table if exists demande;
-
-drop table if exists hotel;
 
 drop table if exists hotelproposeservice;
 
 drop table if exists reservation;
 
-drop table if exists service;
+drop table if exists chambre;
+
+drop table if exists "service";
 
 drop table if exists typechambre;
 
+drop table if exists hotel;
+
 drop table if exists vip;
+
 
 /*==============================================================*/
 /* Table : chambre                                              */
 /*==============================================================*/
 create table chambre
 (
-   idchambre            int not null,
+   idchambre            serial not null,
    idhotel              int not null,
    idtypechambre        int not null,
    numchambre           int,
-   debutplagedispo      datetime,
-   finplagedispo        datetime,
+   debutplagedispo      date,
+   finplagedispo        date,
    primary key (idchambre)
 );
 
@@ -39,10 +39,11 @@ create table chambre
 /*==============================================================*/
 create table demande
 (
-   iddemande            int not null,
+   iddemande            serial not null,
    idhotel              int not null,
    idtypechambre        int not null,
    demandeur            int not null,
+   accompagnats         varchar(254),
    etat                 int,
    primary key (iddemande)
 );
@@ -52,11 +53,12 @@ create table demande
 /*==============================================================*/
 create table hotel
 (
-   idhotel              int not null,
+   idhotel              serial not null,
    nom                  varchar(254),
    adresse              varchar(254),
    nbetoiles            int,
-   url                  varchar(254),
+   "url"                varchar(254),
+   idutilisateur        int,
    primary key (idhotel)
 );
 
@@ -78,17 +80,17 @@ create table reservation
    idchambre            int not null,
    idvip                int not null,
    idreservation        int not null,
-   datearrivee          datetime,
-   datedepart           datetime,
+   datearrivee          date,
+   datedepart           date,
    primary key (idchambre, idvip, idreservation)
 );
 
 /*==============================================================*/
 /* Table : service                                              */
 /*==============================================================*/
-create table service
+create table "service"
 (
-   idservice            int not null,
+   idservice            serial not null,
    libelle              varchar(254),
    primary key (idservice)
 );
@@ -99,7 +101,7 @@ create table service
 create table typechambre
 (
    idhotel              int not null,
-   idtypechambre        int not null,
+   idtypechambre        serial not null,
    intitule             varchar(254),
    suite                bool,
    nblitss              int,
@@ -115,9 +117,9 @@ create table typechambre
 /*==============================================================*/
 create table vip
 (
-   idvip                int not null,
+   idvip                serial not null,
    accompagne           int,
-   iddemande            int,
+   idutilisateur        int,
    nom                  varchar(254),
    prenom               varchar(254),
    numerotel            int,
@@ -125,33 +127,35 @@ create table vip
    primary key (idvip)
 );
 
-alter table chambre add constraint fk_association_7 foreign key (idhotel, idtypechambre)
+alter table chambre add constraint fk_chambre_typechambre foreign key (idhotel, idtypechambre)
       references typechambre (idhotel, idtypechambre) on delete restrict on update restrict;
 
-alter table demande add constraint fk_association_8 foreign key (idhotel, idtypechambre)
+alter table demande add constraint fk_demande_typechambre foreign key (idhotel, idtypechambre)
       references typechambre (idhotel, idtypechambre) on delete restrict on update restrict;
 
-alter table demande add constraint fk_association_9 foreign key (demandeur)
+alter table demande add constraint fk_demande_vip foreign key (demandeur)
       references vip (idvip) on delete restrict on update restrict;
 
-alter table hotelproposeservice add constraint fk_association_1 foreign key (idhotel)
+alter table hotel add constraint fk_hotel_utilisateur foreign key (idutilisateur)
+      references utilisateur (idutilisateur) on delete restrict on update restrict;
+
+alter table hotelproposeservice add constraint fk_hotelproposeservice_hotel foreign key (idhotel)
       references hotel (idhotel) on delete restrict on update restrict;
 
-alter table hotelproposeservice add constraint fk_association_1 foreign key (idservice)
+alter table hotelproposeservice add constraint fk_hotelproposeservice_service foreign key (idservice)
       references service (idservice) on delete restrict on update restrict;
 
-alter table reservation add constraint fk_chambre_associe foreign key (idchambre)
+alter table reservation add constraint fk_reservation_chambre foreign key (idchambre)
       references chambre (idchambre) on delete restrict on update restrict;
 
-alter table reservation add constraint fk_l_heberge foreign key (idvip)
+alter table reservation add constraint fk_reservation_vip foreign key (idvip)
       references vip (idvip) on delete restrict on update restrict;
 
-alter table typechambre add constraint fk_association_2 foreign key (idhotel)
+alter table typechambre add constraint fk_typechambre_hotel foreign key (idhotel)
       references hotel (idhotel) on delete restrict on update restrict;
 
-alter table vip add constraint fk_association_10 foreign key (accompagne)
+alter table vip add constraint fk_vip_vip foreign key (accompagne)
       references vip (idvip) on delete restrict on update restrict;
 
-alter table vip add constraint fk_reference_10 foreign key (iddemande)
-      references demande (iddemande) on delete restrict on update restrict;
-
+alter table vip add constraint fk_vip_utilisateur foreign key (idutilisateur)
+      references utilisateur (idutilisateur) on delete restrict on update restrict;

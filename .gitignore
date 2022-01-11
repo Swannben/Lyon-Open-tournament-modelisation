@@ -1,2 +1,3 @@
 *.zargo~
 /planning/nbproject/private/
+/src/planning/build/

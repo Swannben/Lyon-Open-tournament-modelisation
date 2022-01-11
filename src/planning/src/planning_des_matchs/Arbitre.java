@@ -7,8 +7,12 @@
 package planning_des_matchs;
 
 import java.util.*;
+import database.Tableable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class Arbitre {
+
+public class Arbitre implements Tableable {
     private int idArbitre;
     private String certification;
     private int nbMatchsFaitsS;     // TODO: Inutile si on garde les collections,
@@ -255,6 +259,36 @@ public class Arbitre {
                 oldMatch.removeArbitreLigne(this);
             }
         }
+    }
+    
+    @Override
+    public List getTable() {
+        List<Arbitre> list = new LinkedList<>();
+        /*
+        try {
+            ResultSet result = statement.executeQuery("select * from " + Arbitre.getTableName());
+
+            while (result.next()) {
+                instanceint i = result.getInt("userid");
+            String str = rs.getString("username");
+
+            //Assuming you have a user object
+            User user = new User(i, str);
+
+            ll.add(user);
+          }
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        */
+        
+        return list;
+    }
+    
+    @Override
+    public String getTableName() {
+        return "arbitre";
     }
 
 }
