@@ -12,7 +12,7 @@ public class Creneau {
     private int heure;
     public Jour jour;
 
-    public java.util.Collection<Match> matchs;
+    public java.util.List<Match> matchs;
     
     
     Creneau(int heure, Jour jour){
@@ -28,7 +28,7 @@ public class Creneau {
     
     
     /** @pdGenerated default getter */
-    public java.util.Collection<Match> getMatchs() {
+    public java.util.List<Match> getMatchs() {
         if (matchs == null)
             matchs = new java.util.HashSet<Match>();
         return matchs;
@@ -43,7 +43,7 @@ public class Creneau {
    
     /** @pdGenerated default setter
       * @param newMatch */
-    public void setMatchs(java.util.Collection<Match> newMatch) {
+    public void setMatchs(java.util.List<Match> newMatch) {
         removeAllMatchs();
         for (java.util.Iterator iter = newMatch.iterator(); iter.hasNext();)
             addMatch((Match)iter.next());

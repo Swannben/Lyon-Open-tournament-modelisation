@@ -9,7 +9,7 @@ package planning_des_matchs;
 import java.util.*;
 
 public class MatchSimple extends Match {
-    public java.util.Collection<Joueur> joueurs;
+    public java.util.List<Joueur> joueurs;
     public Arbitre arbitreChaise;
     private boolean estQualif;
     
@@ -26,16 +26,18 @@ public class MatchSimple extends Match {
     }
 
    
-    public MatchSimple(int id, Creneau creneau, Court court, boolean estQualif, Arbitre arbitreChaise) {
+    public MatchSimple(int id, Creneau creneau, Court court, boolean estQualif, Arbitre arbitreChaise, Joueur joueur1,Joueur joueur2) {
         super(id,creneau,court);
         this.estQualif=estQualif;
         this.arbitreChaise=arbitreChaise;
-        joueurs = new ArrayList(2);
+        joueurs = new ArrayList();
+        joueurs.add(joueur1);
+        joueurs.add(joueur2);
     }
     
     
     /** @pdGenerated default getter */
-    public java.util.Collection<Joueur> getJoueurs() {
+    public java.util.List<Joueur> getJoueurs() {
         if (joueurs == null)
             joueurs = new java.util.HashSet<Joueur>();
         return joueurs;
@@ -50,7 +52,7 @@ public class MatchSimple extends Match {
    
     /** @pdGenerated default setter
       * @param newJoueur */
-    public void setJoueurs(java.util.Collection<Joueur> newJoueurs) {
+    public void setJoueurs(java.util.List<Joueur> newJoueurs) {
         removeAllJoueurs();
         for (java.util.Iterator iter = newJoueurs.iterator(); iter.hasNext();)
             addJoueur((Joueur)iter.next());
@@ -113,6 +115,16 @@ public class MatchSimple extends Match {
                 this.arbitreChaise.addMatchSimpleChaise(this);
             }
         }
+    }
+
+    @Override
+    public void assignerArbitre() {
+        arbitres=Arbitre.getArbitres();
+        
+        Arbitre selectionne;
+        selectionne = arbitres.get(new Random().nextInt(arbitres.size()));
+        
+        if (selectionne=
     }
 
 }

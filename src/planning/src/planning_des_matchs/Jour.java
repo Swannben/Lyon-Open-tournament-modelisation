@@ -11,8 +11,8 @@ import java.util.*;
 public class Jour {
     private java.util.Date date;
 
-    public java.util.Collection<Creneau> creneaux;
-    public java.util.Collection<Entrainement> entrainements;
+    public java.util.List<Creneau> creneaux;
+    public java.util.List<Entrainement> entrainements;
 
     public java.util.Date getDate() {
         return date;
@@ -29,7 +29,7 @@ public class Jour {
    
    
     /** @pdGenerated default getter */
-    public java.util.Collection<Creneau> getCreneaux() {
+    public java.util.List<Creneau> getCreneaux() {
         if (creneaux == null)
             creneaux = new java.util.HashSet<Creneau>();
         return creneaux;
@@ -44,7 +44,7 @@ public class Jour {
    
     /** @pdGenerated default setter
       * @param newCreneaux */
-    public void setCreneaux(java.util.Collection<Creneau> newCreneaux) {
+    public void setCreneaux(java.util.List<Creneau> newCreneaux) {
         removeAllCreneaux();
         for (java.util.Iterator iter = newCreneaux.iterator(); iter.hasNext();)
             addCreneau((Creneau)iter.next());
@@ -89,7 +89,7 @@ public class Jour {
     }
    
     /** @pdGenerated default getter */
-    public java.util.Collection<Entrainement> getEntrainements() {
+    public java.util.List<Entrainement> getEntrainements() {
         if (entrainements == null)
             entrainements = new java.util.HashSet<Entrainement>();
         return entrainements;
@@ -104,7 +104,7 @@ public class Jour {
 
     /** @pdGenerated default setter
       * @param newEntrainement */
-    public void setEntrainements(java.util.Collection<Entrainement> newEntrainement) {
+    public void setEntrainements(java.util.List<Entrainement> newEntrainement) {
         removeAllEntrainements();
         for (java.util.Iterator iter = newEntrainement.iterator(); iter.hasNext();)
             addEntrainement((Entrainement)iter.next());

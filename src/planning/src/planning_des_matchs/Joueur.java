@@ -15,7 +15,7 @@ public class Joueur {
     private Nationalite nationalite;
 
     public Equipe equipe;
-    public java.util.Collection<MatchSimple> matchsSimples;
+    public java.util.List<MatchSimple> matchsSimples;
 
     public Joueur( int id, String nom, String prenom, Nationalite nationalite) {
         this.id=id;
@@ -80,7 +80,7 @@ public class Joueur {
     }
     
     /** @pdGenerated default getter */
-    public java.util.Collection<MatchSimple> getMatchsSimples() {
+    public java.util.List<MatchSimple> getMatchsSimples() {
         if (matchsSimples == null)
             matchsSimples = new java.util.HashSet<MatchSimple>();
         return matchsSimples;
@@ -95,7 +95,7 @@ public class Joueur {
    
     /** @pdGenerated default setter
       * @param newMatchSimple */
-    public void setMatchsSimples(java.util.Collection<MatchSimple> newMatchSimple) {
+    public void setMatchsSimples(java.util.List<MatchSimple> newMatchSimple) {
         removeAllMatchsSimples();
         for (java.util.Iterator iter = newMatchSimple.iterator(); iter.hasNext();)
             addMatchSimple((MatchSimple)iter.next());

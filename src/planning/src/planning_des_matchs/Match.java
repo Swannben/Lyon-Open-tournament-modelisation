@@ -14,8 +14,9 @@ public abstract class Match {
 
     private Creneau creneau;
     private Court court;
-    private java.util.Collection<Arbitre> arbitresLigne;
-    private java.util.Collection<EquipeRamassage> equipesRamassage;
+    private java.util.List<Arbitre> arbitresLigne;
+    private java.util.List<EquipeRamassage> equipesRamassage;
+    List<Arbitre> arbitres;
    
     public int getID() {
         return id;
@@ -70,7 +71,7 @@ public abstract class Match {
     }
    
     /** @pdGenerated default getter */
-    public java.util.Collection<Arbitre> getArbitresLigne() {
+    public java.util.List<Arbitre> getArbitresLigne() {
         if (arbitresLigne == null)
             arbitresLigne = new java.util.HashSet<Arbitre>();
         return arbitresLigne;
@@ -85,7 +86,7 @@ public abstract class Match {
    
     /** @pdGenerated default setter
       * @param newLigne */
-    public void setArbitresLigne(java.util.Collection<Arbitre> newLigne) {
+    public void setArbitresLigne(java.util.List<Arbitre> newLigne) {
         removeAllArbitresLigne();
         for (java.util.Iterator iter = newLigne.iterator(); iter.hasNext();)
             addArbitreLigne((Arbitre)iter.next());
@@ -129,8 +130,10 @@ public abstract class Match {
         }
     }
     
+    
+    abstract public void assignerArbitre();
     /** @pdGenerated default getter */
-    public java.util.Collection<EquipeRamassage> getEquipesRamassage() {
+    public java.util.List<EquipeRamassage> getEquipesRamassage() {
         if (equipesRamassage == null)
             equipesRamassage = new java.util.HashSet<EquipeRamassage>();
         return equipesRamassage;
@@ -145,7 +148,7 @@ public abstract class Match {
    
     /** @pdGenerated default setter
       * @param newEquipeRamassage */
-    public void setEquipesRamassage(java.util.Collection<EquipeRamassage> newEquipeRamassage) {
+    public void setEquipesRamassage(java.util.List<EquipeRamassage> newEquipeRamassage) {
         removeAllEquipesRamassage();
         for (java.util.Iterator iter = newEquipeRamassage.iterator(); iter.hasNext();)
             addEquipeRamassage((EquipeRamassage)iter.next());

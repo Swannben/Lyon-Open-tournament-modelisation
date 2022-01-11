@@ -12,23 +12,29 @@ public class Arbitre {
     private int idArbitre;
     private String certification;
     private int nbMatchsFaitsS;     // TODO: Inutile si on garde les collections,
-    private int nbMatchsFaitsD;     // on peut faire Collection.length()
+    private int nbMatchsFaitsD;     // on peut faire List.length()
     private String nom;
     private String prenom;
-    private String nationalite;
+    private Nationalite nationalite;
 
-    private java.util.Collection<MatchSimple> matchsSimplesChaise;
-    private java.util.Collection<MatchDouble> matchsDoublesChaise;
-    private java.util.Collection<Match> matchsLigne;
+    private java.util.List<MatchSimple> matchsSimplesChaise;
+    private java.util.List<MatchDouble> matchsDoublesChaise;
+    private java.util.List<Match> matchsLigne;
+    private static List<Arbitre> Arbitres;
     
     
-    public Arbitre(int idArbitre, String certification, String nom, String prenom,String nationalite) {
+    public Arbitre(int idArbitre, String certification, String nom, String prenom,Nationalite nationalite) {
         this.idArbitre=idArbitre;
         //TODO vérifier que la certification est reconnue
         this.certification=certification;
         this.nom=nom;
         this.prenom=prenom;
         this.nationalite=nationalite;
+        Arbitres.add(this);
+    }
+    
+    static List<Arbitre> getArbitres(){
+        return Arbitres;
     }
     
     
@@ -78,7 +84,7 @@ public class Arbitre {
     // Pour la modification du moins. 
     
     /** @pdGenerated default getter */
-    public java.util.Collection<MatchDouble> getMatchsDoublesChaise() {
+    public java.util.List<MatchDouble> getMatchsDoublesChaise() {
         if (matchsDoublesChaise == null)
             matchsDoublesChaise = new java.util.HashSet<MatchDouble>();
         return matchsDoublesChaise;
@@ -93,7 +99,7 @@ public class Arbitre {
 
     /** @pdGenerated default setter
       * @param newMatchDouble */
-    public void setMatchsDoublesChaises(java.util.Collection<MatchDouble> newMatchsDoublesChaise) {
+    public void setMatchsDoublesChaises(java.util.List<MatchDouble> newMatchsDoublesChaise) {
         removeAllMatchsDoublesChaise();
         for (java.util.Iterator iter = newMatchsDoublesChaise.iterator(); iter.hasNext();)
             addMatchDoubleChaise((MatchDouble)iter.next());
@@ -137,7 +143,7 @@ public class Arbitre {
     }
         
     /** @pdGenerated default getter */
-    public java.util.Collection<MatchSimple> getMatchsSimplesChaise() {
+    public java.util.List<MatchSimple> getMatchsSimplesChaise() {
         if (matchsSimplesChaise == null)
             matchsSimplesChaise = new java.util.HashSet<MatchSimple>();
         return matchsSimplesChaise;
@@ -152,7 +158,7 @@ public class Arbitre {
 
     /** @pdGenerated default setter
       * @param newMatchSimple */
-    public void setMatchsSimplesChaises(java.util.Collection<MatchSimple> newMatchsSimplesChaise) {
+    public void setMatchsSimplesChaises(java.util.List<MatchSimple> newMatchsSimplesChaise) {
         removeAllMatchsSimplesChaise();
         for (java.util.Iterator iter = newMatchsSimplesChaise.iterator(); iter.hasNext();)
             addMatchSimpleChaise((MatchSimple)iter.next());
@@ -196,7 +202,7 @@ public class Arbitre {
     }
     
     /** @pdGenerated default getter */
-    public java.util.Collection<Match> getMatchsLigne() {
+    public java.util.List<Match> getMatchsLigne() {
         if (matchsLigne == null)
             matchsLigne = new java.util.HashSet<Match>();
         return matchsLigne;
@@ -211,7 +217,7 @@ public class Arbitre {
    
     /** @pdGenerated default setter
       * @param newMatch */
-    public void setMatchsLigne(java.util.Collection<Match> newMatchsLigne) {
+    public void setMatchsLigne(java.util.List<Match> newMatchsLigne) {
         removeAllMatch();
         for (java.util.Iterator iter = newMatchsLigne.iterator(); iter.hasNext();)
             addMatchLigne((Match)iter.next());
