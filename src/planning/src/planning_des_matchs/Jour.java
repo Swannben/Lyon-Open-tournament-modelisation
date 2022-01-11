@@ -23,8 +23,8 @@ public class Jour {
         date = newDate;
     }
    
-    public Jour() {
-        // TODO: implement
+    public Jour(Date date) {
+        this.date =date;
     }
    
    

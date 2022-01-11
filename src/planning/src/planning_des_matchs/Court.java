@@ -15,6 +15,13 @@ public class Court {
 
     public java.util.Collection<Match> matchs;
     public java.util.Collection<Entrainement> entrainements;
+    
+    public Court(int id, String nom, boolean estPrincipal) {
+        this.id=id;
+        this.nom=nom;
+        this.estPrincipal=estPrincipal;
+    }
+   
 
     public int getID() {
        return id;
@@ -38,10 +45,7 @@ public class Court {
         this.estPrincipal = estPrincipal;
     }
    
-    public Court() {
-        // TODO: implement
-    }
-   
+
    
     /** @pdGenerated default getter */
     public java.util.Collection<Match> getMatchs() {

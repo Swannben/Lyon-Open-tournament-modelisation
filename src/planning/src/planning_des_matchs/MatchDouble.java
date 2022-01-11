@@ -11,9 +11,14 @@ import java.util.*;
 public class MatchDouble extends Match {
     public java.util.Collection<Equipe> equipes;
     public Arbitre arbitreChaise;
+    int id;
+    Creneau creneau;
+    Court court;
+    private java.util.Collection<Arbitre> arbitresLigne;
+    private java.util.Collection<EquipeRamassage> equipesRamassage;
 
-    public MatchDouble() {
-        // TODO: implement
+    public MatchDouble(int id, Creneau creneau, Court court) {
+        super(id,creneau,court);
         equipes = new ArrayList(2);
     }
     

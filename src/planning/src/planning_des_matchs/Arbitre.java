@@ -15,14 +15,20 @@ public class Arbitre {
     private int nbMatchsFaitsD;     // on peut faire Collection.length()
     private String nom;
     private String prenom;
+    private String nationalite;
 
     private java.util.Collection<MatchSimple> matchsSimplesChaise;
     private java.util.Collection<MatchDouble> matchsDoublesChaise;
     private java.util.Collection<Match> matchsLigne;
     
     
-    public Arbitre() {
-        // TODO: implement
+    public Arbitre(int idArbitre, String certification, String nom, String prenom,String nationalite) {
+        this.idArbitre=idArbitre;
+        //TODO vérifier que la certification est reconnue
+        this.certification=certification;
+        this.nom=nom;
+        this.prenom=prenom;
+        this.nationalite=nationalite;
     }
     
     
@@ -44,18 +50,9 @@ public class Arbitre {
         return nbMatchsFaitsS;
     }
 
-    /** @param newNbdematchfaitS */
-    public void setNbMatchsFaitS(int newNbMatchsFaitsS) {
-        nbMatchsFaitsS = newNbMatchsFaitsS;
-    }
 
     public int getNbMatchsFaitsD() {
         return nbMatchsFaitsD;
-    }
-
-    /** @param newNbdematchfaitD */
-    public void setNbMatchsFaitsD(int newNbMatchsFaitsD) {
-        nbMatchsFaitsD = newNbMatchsFaitsD;
     }
 
     public String getNom() {

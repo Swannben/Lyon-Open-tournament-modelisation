@@ -11,10 +11,25 @@ import java.util.*;
 public class MatchSimple extends Match {
     public java.util.Collection<Joueur> joueurs;
     public Arbitre arbitreChaise;
+    private boolean estQualif;
+    
+    
+    
+    
+    public boolean estQualif() {
+        return estQualif;
+    }
+
+    /** @param newEstQualif */
+    public void setEstQualif(boolean newEstQualif) {
+        estQualif = newEstQualif;
+    }
 
    
-    public MatchSimple() {
-        // TODO: implement
+    public MatchSimple(int id, Creneau creneau, Court court, boolean estQualif, Arbitre arbitreChaise) {
+        super(id,creneau,court);
+        this.estQualif=estQualif;
+        this.arbitreChaise=arbitreChaise;
         joueurs = new ArrayList(2);
     }
     

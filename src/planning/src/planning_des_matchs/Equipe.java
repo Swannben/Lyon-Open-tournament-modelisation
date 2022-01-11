@@ -18,8 +18,8 @@ public class Equipe {
         return id;
     }
 
-    public Equipe() {
-        // TODO: implement
+    public Equipe(int id) {
+        this.id=id;
         joueurs = new ArrayList(2);
     }
 

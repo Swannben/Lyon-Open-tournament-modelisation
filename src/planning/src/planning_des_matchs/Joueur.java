@@ -17,6 +17,13 @@ public class Joueur {
     public Equipe equipe;
     public java.util.Collection<MatchSimple> matchsSimples;
 
+    public Joueur( int id, String nom, String prenom, Nationalite nationalite) {
+        this.id=id;
+        this.nationalite=nationalite;
+        this.nom=nom;
+        this.prenom=prenom;
+    }
+    
     public int getID() {
        return id;
     }
@@ -48,9 +55,7 @@ public class Joueur {
         nationalite = newNationalite;
     }
 
-    public Joueur() {
-        // TODO: implement
-    }
+
    
    
     /** @pdGenerated default parent getter */

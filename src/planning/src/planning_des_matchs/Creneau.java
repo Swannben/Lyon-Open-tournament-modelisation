@@ -13,11 +13,19 @@ public class Creneau {
     public Jour jour;
 
     public java.util.Collection<Match> matchs;
+    
+    
+    Creneau(int heure, Jour jour){
+        this.heure=heure;
+        this.jour=jour;
+    }
    
    
     public int getHeure() {
         return heure;
     }
+    
+    
     
     /** @pdGenerated default getter */
     public java.util.Collection<Match> getMatchs() {

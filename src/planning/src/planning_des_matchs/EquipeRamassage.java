@@ -27,8 +27,9 @@ public class EquipeRamassage {
         nomEquipe = newNomEquipe;
     }
 
-    public EquipeRamassage() {
-        // TODO: implement
+    public EquipeRamassage(int id, String nomEquipe) {
+        this.id=id;
+        this.nomEquipe=nomEquipe;
     }
    
    

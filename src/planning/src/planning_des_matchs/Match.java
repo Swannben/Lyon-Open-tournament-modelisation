@@ -10,7 +10,7 @@ import java.util.*;
 
 public abstract class Match {
     private int id;
-    private boolean estQualif;
+    
 
     private Creneau creneau;
     private Court court;
@@ -21,17 +21,12 @@ public abstract class Match {
         return id;
     }
 
-    public boolean estQualif() {
-        return estQualif;
-    }
 
-    /** @param newEstQualif */
-    public void setEstQualif(boolean newEstQualif) {
-        estQualif = newEstQualif;
-    }
    
-    public Match() {
-        // TODO: implement
+    public Match(int id, Creneau creneau, Court court) {
+        this.id = id;
+        this.creneau = creneau;
+        this.court= court;
         arbitresLigne = new ArrayList(6);
         equipesRamassage = new ArrayList(2);
     }
