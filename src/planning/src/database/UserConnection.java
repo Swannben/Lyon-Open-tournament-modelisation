@@ -17,9 +17,13 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-public class DatabaseTest {
+public class UserConnection {
     
-    public static void main(String args[]) {
+    public static void open(String email, String password) {
+        if (instance != null) {
+            instance.close();
+        }
+        
         DatabaseConnection connection = DatabaseConnection.create("skdvfgqmajapzi", "93e159d04627aa1c6ce3ebb26f97aaa0797ac98804a1de5d428663fdd3f1cfec");
 
         // https://stackoverflow.com/questions/3324717/sending-http-post-request-in-java
@@ -36,8 +40,8 @@ public class DatabaseTest {
             
             // POST arguments
             Map<String,String> arguments = new HashMap<>();
-            arguments.put("email", "arbitre@tennis.fr");
-            arguments.put("password", "arbitre");
+            arguments.put("email", email);
+            arguments.put("password", password);
             StringJoiner sj = new StringJoiner("&");
             for(Map.Entry<String,String> entry : arguments.entrySet())
                 sj.add(URLEncoder.encode(entry.getKey(), "UTF-8") + "=" 
@@ -60,14 +64,44 @@ public class DatabaseTest {
             System.out.println(line);
             Utilisateur user = objectMapper.readValue(line, Utilisateur.class);
             if (user.getId() != -1) {
-                System.out.println(user.getId() + ", " + user.getNom() + ", " + user.getType());
+                // Authentication success
+                instance = new UserConnection(user);
+            }
+            else {
+                // Authentication failure
+                connection.close();
             }
         }
         catch (Exception e) {
             System.err.println(e.getMessage());
         }
-        
-        connection.close();
     }
     
+    public void close() {
+        // Close connection
+        DatabaseConnection connection = DatabaseConnection.get();
+        if (connection != null) {
+            connection.close();
+        }
+        
+        instance = null;
+    }
+    
+    public static UserConnection get() {
+        return instance;
+    }
+    
+    
+    private UserConnection(Utilisateur user) {
+        authenticatedUser = user;
+    }
+    
+    public Utilisateur getAuthenticatedUser() {
+        return authenticatedUser;
+    }
+    
+    
+    private static UserConnection instance = null;
+    
+    private Utilisateur authenticatedUser;
 }

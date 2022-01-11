@@ -5,6 +5,9 @@
  */
 package vue;
 
+import database.UserConnection;
+import database.Utilisateur;
+
 /**
  *
  * @author cleme
@@ -16,7 +19,55 @@ public class Fenetre extends javax.swing.JFrame {
      */
     public Fenetre() {
         initComponents();
+        hideUserSpecificPanels();
     }
+    
+    private void hideUserSpecificPanels() {
+        if (tabs.indexOfComponent(planningPanel) != -1)
+            tabs.remove(planningPanel);
+    }
+    
+    private void displayLoggedIn(Utilisateur user) {
+        submitLogButton.setText("Déconnexion");
+        emailField.setEnabled(false);
+        passwordField.setEnabled(false);
+        homeMessage.setText("Vous êtes connecté en tant que : " + user.getNom());
+    }
+    
+    private void displayLoggedOut() {
+        submitLogButton.setText("Connexion");
+        emailField.setEnabled(true);
+        passwordField.setEnabled(true);
+        emailField.setText("");
+        passwordField.setText("");
+        homeMessage.setText("Veuillez vous connecter");
+    }
+    
+    private void updatePanels() {
+        UserConnection connection = UserConnection.get();
+        hideUserSpecificPanels();
+        if (connection != null) {
+            Utilisateur user = connection.getAuthenticatedUser();
+            displayLoggedIn(user);
+            switch (user.getType()) {
+                case 1:     // Gerant de l'hebergement
+                    break;
+                case 2:     // VIP
+                    break;
+                case 3:     // Responsable de l'hebergement du tournoi
+                    break;
+                case 4:     // Joueur
+                    tabs.addTab("Planning", planningPanel);
+                    break;
+                case 5:     // Arbitre
+                    break;
+            }
+        } 
+        else {
+            displayLoggedOut();
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,21 +78,125 @@ public class Fenetre extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tabs = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        homeMessage = new javax.swing.JLabel();
+        emailField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        passwordField = new javax.swing.JTextField();
+        submitLogButton = new javax.swing.JButton();
+        planningPanel = new vue.Planning();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Tennis App");
+
+        homeMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        homeMessage.setText("Veuillez vous connecter");
+
+        jLabel3.setText("Email");
+
+        jLabel4.setText("Mot de passe");
+
+        submitLogButton.setText("Connexion");
+        submitLogButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitLogButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 25, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(emailField)
+                    .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
+                .addGap(108, 108, 108))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(homeMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(submitLogButton)
+                .addGap(163, 163, 163))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(28, 28, 28)
+                .addComponent(homeMessage)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(submitLogButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        tabs.addTab("Accueil", jPanel1);
+
+        javax.swing.GroupLayout planningPanelLayout = new javax.swing.GroupLayout(planningPanel);
+        planningPanel.setLayout(planningPanelLayout);
+        planningPanelLayout.setHorizontalGroup(
+            planningPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 415, Short.MAX_VALUE)
+        );
+        planningPanelLayout.setVerticalGroup(
+            planningPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 272, Short.MAX_VALUE)
+        );
+
+        tabs.addTab("Planning", planningPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(tabs)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(tabs)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void submitLogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitLogButtonActionPerformed
+        UserConnection connection = UserConnection.get();
+        if (connection != null) {
+            // Log out
+            connection.close();
+        }
+        else {
+            // Log in
+            UserConnection.open(emailField.getText(), passwordField.getText());
+        }            
+        updatePanels();
+    }//GEN-LAST:event_submitLogButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,7 +232,17 @@ public class Fenetre extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField emailField;
+    private javax.swing.JLabel homeMessage;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField passwordField;
+    private vue.Planning planningPanel;
+    private javax.swing.JButton submitLogButton;
+    private javax.swing.JTabbedPane tabs;
     // End of variables declaration//GEN-END:variables
 }
