@@ -11,21 +11,21 @@ import java.util.*;
 public class Equipe {
     private int id;
 
-    public java.util.Collection<Joueur> joueurs;
-    public java.util.Collection<MatchDouble> matchsDoubles;
+    public java.util.List<Joueur> joueurs;
+    public java.util.List<MatchDouble> matchsDoubles;
 
     public int getID() {
         return id;
     }
 
-    public Equipe() {
-        // TODO: implement
+    public Equipe(int id) {
+        this.id=id;
         joueurs = new ArrayList(2);
     }
 
 
     /** @pdGenerated default getter */
-    public java.util.Collection<Joueur> getJoueurs() {
+    public java.util.List<Joueur> getJoueurs() {
         if (joueurs == null)
             joueurs = new java.util.HashSet<Joueur>();
         return joueurs;
@@ -40,7 +40,7 @@ public class Equipe {
    
     /** @pdGenerated default setter
       * @param newJoueur */
-    public void setJoueurs(java.util.Collection<Joueur> newJoueur) {
+    public void setJoueurs(java.util.List<Joueur> newJoueur) {
         removeAllJoueurs();
         for (java.util.Iterator iter = newJoueur.iterator(); iter.hasNext();)
             addJoueur((Joueur)iter.next());
@@ -85,7 +85,7 @@ public class Equipe {
     }
     
     /** @pdGenerated default getter */
-    public java.util.Collection<MatchDouble> getMatchsDoubles() {
+    public java.util.List<MatchDouble> getMatchsDoubles() {
         if (matchsDoubles == null)
             matchsDoubles = new java.util.HashSet<MatchDouble>();
         return matchsDoubles;
@@ -100,7 +100,7 @@ public class Equipe {
    
     /** @pdGenerated default setter
       * @param newMatchDouble */
-    public void setMatchsDoubles(java.util.Collection<MatchDouble> newMatchDouble) {
+    public void setMatchsDoubles(java.util.List<MatchDouble> newMatchDouble) {
         removeAllMatchsDoubles();
         for (java.util.Iterator iter = newMatchDouble.iterator(); iter.hasNext();)
             addMatchDouble((MatchDouble)iter.next());

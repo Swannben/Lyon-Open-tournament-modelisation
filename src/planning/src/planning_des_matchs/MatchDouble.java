@@ -9,17 +9,22 @@ package planning_des_matchs;
 import java.util.*;
 
 public class MatchDouble extends Match {
-    public java.util.Collection<Equipe> equipes;
+    public java.util.List<Equipe> equipes;
     public Arbitre arbitreChaise;
+    int id;
+    Creneau creneau;
+    Court court;
+    private java.util.List<Arbitre> arbitresLigne;
+    private java.util.List<EquipeRamassage> equipesRamassage;
 
-    public MatchDouble() {
-        // TODO: implement
+    public MatchDouble(int id, Creneau creneau, Court court) {
+        super(id,creneau,court);
         equipes = new ArrayList(2);
     }
     
     
     /** @pdGenerated default getter */
-    public java.util.Collection<Equipe> getEquipes() {
+    public java.util.List<Equipe> getEquipes() {
         if (equipes == null)
             equipes = new java.util.HashSet<Equipe>();
         return equipes;
@@ -34,7 +39,7 @@ public class MatchDouble extends Match {
    
     /** @pdGenerated default setter
       * @param newEquipe */
-    public void setEquipes(java.util.Collection<Equipe> newEquipes) {
+    public void setEquipes(java.util.List<Equipe> newEquipes) {
         removeAllEquipes();
         for (java.util.Iterator iter = newEquipes.iterator(); iter.hasNext();)
             addEquipe((Equipe)iter.next());
@@ -97,6 +102,11 @@ public class MatchDouble extends Match {
                 this.arbitreChaise.addMatchDoubleChaise(this);
             }
         }
+    }
+
+    @Override
+    public void assignerArbitre() {
+        
     }
 
 }

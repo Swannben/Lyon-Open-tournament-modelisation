@@ -12,7 +12,7 @@ public class EquipeRamassage {
     private int id;
     private String nomEquipe;
 
-    public java.util.Collection<Match> matchs;
+    public java.util.List<Match> matchs;
 
     public int getID() {
         return id;
@@ -27,13 +27,14 @@ public class EquipeRamassage {
         nomEquipe = newNomEquipe;
     }
 
-    public EquipeRamassage() {
-        // TODO: implement
+    public EquipeRamassage(int id, String nomEquipe) {
+        this.id=id;
+        this.nomEquipe=nomEquipe;
     }
    
    
     /** @pdGenerated default getter */
-    public java.util.Collection<Match> getMatchs() {
+    public java.util.List<Match> getMatchs() {
         if (matchs == null)
             matchs = new java.util.HashSet<Match>();
         return matchs;
@@ -48,7 +49,7 @@ public class EquipeRamassage {
    
     /** @pdGenerated default setter
       * @param newMatch */
-    public void setMatchs(java.util.Collection<Match> newMatch) {
+    public void setMatchs(java.util.List<Match> newMatch) {
         removeAllMatchs();
         for (java.util.Iterator iter = newMatch.iterator(); iter.hasNext();)
             addMatch((Match)iter.next());

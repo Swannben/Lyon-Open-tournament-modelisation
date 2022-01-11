@@ -11,8 +11,9 @@ public class Nationalite {
     private String libelle;
     // TODO: On doit mettre une collection joueurs ?
     
-    Nationalite() {
-        // TODO
+    Nationalite(int id, String libelle) {
+        this.id=id;
+        this.libelle=libelle;
     }
     
     public int getID() {
