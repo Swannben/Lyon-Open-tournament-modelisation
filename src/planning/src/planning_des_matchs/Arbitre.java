@@ -6,13 +6,15 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
 import java.util.*;
 import database.Tableable;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.SQLException;
 
 
-public class Arbitre implements Tableable {
+public class Arbitre {
     private int idArbitre;
     private String certification;
     private int nbMatchsFaitsS;     // TODO: Inutile si on garde les collections,
@@ -264,34 +266,61 @@ public class Arbitre implements Tableable {
         }
     }
     
-    @Override
-    public List getTable() {
+    
+    
+    
+    public static List getTableFromDatabase() {
+        // Delete table
+        if (table != null) {
+            Arbitre arbitre;
+            for (java.util.Iterator iter = table.iterator(); iter.hasNext();) {
+                arbitre = (Arbitre)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New table
         List<Arbitre> list = new LinkedList<>();
-        /*
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
         try {
-            ResultSet result = statement.executeQuery("select * from " + Arbitre.getTableName());
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from arbitre");
 
             while (result.next()) {
-                instanceint i = result.getInt("userid");
-            String str = rs.getString("username");
+                Arbitre arbitre = new Arbitre(
+                        result.getInt("idarbitre"), 
+                        result.getString("certification"), 
+                        result.getString("nom"), 
+                        result.getString("prenom"),
+                        Nationalite.getRow(result.getInt("idnationalite"))
+                );
 
-            //Assuming you have a user object
-            User user = new User(i, str);
-
-            ll.add(user);
-          }
+                list.add(arbitre);
+            }
         }
         catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-        */
         
+        table = list;
         return list;
     }
     
-    @Override
-    public String getTableName() {
-        return "arbitre";
+    public static List getTable() {
+        return table;
     }
-
+    
+    public static Arbitre getRow(int id) {
+        for (Arbitre row : table) {
+            if (row.idArbitre == id) {
+                return row;
+            }
+        }
+        return null;
+    }
+    
+    
+    private static List<Arbitre> table = new LinkedList<>();
 }
