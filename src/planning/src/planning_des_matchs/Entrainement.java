@@ -15,6 +15,14 @@ public class Entrainement {
 
     public Jour jour;
     public Court court;
+    
+    public Entrainement(int id, int heure, int duree, Jour jour, Court court){
+        this.id=id;
+        this.heure=heure;
+        this.duree=duree;
+        this.jour=jour;
+        this.court=court;
+    }
 
     public int getID() {
        return id;
