@@ -13,8 +13,15 @@ public class Court {
     private String nom;
     private boolean estPrincipal;
 
-    public java.util.Collection<Match> matchs;
-    public java.util.Collection<Entrainement> entrainements;
+    public java.util.List<Match> matchs;
+    public java.util.List<Entrainement> entrainements;
+    
+    public Court(int id, String nom, boolean estPrincipal) {
+        this.id=id;
+        this.nom=nom;
+        this.estPrincipal=estPrincipal;
+    }
+   
 
     public int getID() {
        return id;
@@ -38,13 +45,10 @@ public class Court {
         this.estPrincipal = estPrincipal;
     }
    
-    public Court() {
-        // TODO: implement
-    }
-   
+
    
     /** @pdGenerated default getter */
-    public java.util.Collection<Match> getMatchs() {
+    public java.util.List<Match> getMatchs() {
         if (matchs == null)
             matchs = new java.util.HashSet<Match>();
         return matchs;
@@ -59,7 +63,7 @@ public class Court {
 
     /** @pdGenerated default setter
       * @param newMatch */
-    public void setMatchs(java.util.Collection<Match> newMatch) {
+    public void setMatchs(java.util.List<Match> newMatch) {
         removeAllMatchs();
         for (java.util.Iterator iter = newMatch.iterator(); iter.hasNext();)
             addMatch((Match)iter.next());
@@ -104,7 +108,7 @@ public class Court {
     }
     
     /** @pdGenerated default getter */
-    public java.util.Collection<Entrainement> getEntrainements() {
+    public java.util.List<Entrainement> getEntrainements() {
         if (entrainements == null)
             entrainements = new java.util.HashSet<Entrainement>();
         return entrainements;
@@ -119,7 +123,7 @@ public class Court {
 
     /** @pdGenerated default setter
       * @param newEntrainement */
-    public void setEntrainements(java.util.Collection<Entrainement> newEntrainement) {
+    public void setEntrainements(java.util.List<Entrainement> newEntrainement) {
         removeAllEntrainements();
         for (java.util.Iterator iter = newEntrainement.iterator(); iter.hasNext();)
             addEntrainement((Entrainement)iter.next());
