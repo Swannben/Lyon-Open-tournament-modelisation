@@ -36,6 +36,14 @@ public class Arbitre implements Tableable {
         this.nationalite=nationalite;
         Arbitres.add(this);
     }
+
+    public Nationalite getNationalite() {
+        return nationalite;
+    }
+
+    public void setNationalite(Nationalite nationalite) {
+        this.nationalite = nationalite;
+    }
     
     static List<Arbitre> getArbitres(){
         return Arbitres;

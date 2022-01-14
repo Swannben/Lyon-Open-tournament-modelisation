@@ -10,7 +10,6 @@ import java.util.*;
 
 public class MatchSimple extends Match {
     public java.util.List<Joueur> joueurs;
-    public Arbitre arbitreChaise;
     private boolean estQualif;
     
     
@@ -27,9 +26,8 @@ public class MatchSimple extends Match {
 
    
     public MatchSimple(int id, Creneau creneau, Court court, boolean estQualif, Arbitre arbitreChaise, Joueur joueur1,Joueur joueur2) {
-        super(id,creneau,court);
+        super(id,creneau,court,arbitreChaise);
         this.estQualif=estQualif;
-        this.arbitreChaise=arbitreChaise;
         joueurs = new ArrayList();
         joueurs.add(joueur1);
         joueurs.add(joueur2);
@@ -118,13 +116,30 @@ public class MatchSimple extends Match {
     }
 
     @Override
-    public void assignerArbitre() {
+    public void assignerArbitres() {
         arbitres=Arbitre.getArbitres();
+        int i, c = 1;
+        //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
+        arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
         
-        Arbitre selectionne;
-        selectionne = arbitres.get(new Random().nextInt(arbitres.size()));
+        while (c>0){
+            c=0;
+            if (arbitreChaise.getNbMatchsFaitsS()>=2 || arbitreChaise.getCertification()!="ITT1"){
+                c++;
+                for (i=0;i<joueurs.size();i++){
+                    if (arbitreChaise.getNationalite().equals(joueurs.get(i).getNationalite())){
+                        c++;
+                    }
+                }
+            }
+        }
         
-        if (selectionne=
+        for (i=0;i<6;i++){
+            arbitresLigne.add(arbitres.get(new Random().nextInt(arbitres.size())));
+
+        }
+        
+        
     }
 
 }

@@ -17,9 +17,10 @@ public class MatchDouble extends Match {
     private java.util.List<Arbitre> arbitresLigne;
     private java.util.List<EquipeRamassage> equipesRamassage;
 
-    public MatchDouble(int id, Creneau creneau, Court court) {
-        super(id,creneau,court);
-        equipes = new ArrayList(2);
+    public MatchDouble(int id, Creneau creneau, Court court,Arbitre arbitreChaise,java.util.List<Arbitre> arbitresLigne, 
+            java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
+        super(id,creneau,court,arbitreChaise,arbitresLigne,equipesRamassage);
+        this.equipes = equipes;
     }
     
     
@@ -105,8 +106,31 @@ public class MatchDouble extends Match {
     }
 
     @Override
-    public void assignerArbitre() {
+    public void assignerArbitres() {
+        arbitres=Arbitre.getArbitres();
+        int i, c = 1;
+        //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
+        arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
         
+        while (c>0){
+            c=0;
+            if (arbitreChaise.getNbMatchsFaitsD()>=2 || arbitreChaise.getCertification()!="ITT1"){
+                c++;
+                for (i=0;i<joueurs.size();i++){
+                    if (arbitreChaise.getNationalite().equals(joueurs.get(i).getNationalite())){
+                        c++;
+                    }
+                }
+            }
+        }
+        
+        for (i=0;i<6;i++){
+            arbitresLigne.add(arbitres.get(new Random().nextInt(arbitres.size())));
+
+        }
+        
+        
+    }
     }
 
 }
