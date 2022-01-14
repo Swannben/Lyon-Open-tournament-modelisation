@@ -27,14 +27,14 @@ public class MatchDouble extends Match {
     /** @pdGenerated default getter */
     public java.util.List<Equipe> getEquipes() {
         if (equipes == null)
-            equipes = new java.util.HashSet<Equipe>();
+            equipes = new java.util.List<Equipe>();
         return equipes;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorEquipes() {
         if (equipes == null)
-            equipes = new java.util.HashSet<Equipe>();
+            equipes = new java.util.List<Equipe>();
         return equipes.iterator();
     }
    
@@ -52,7 +52,7 @@ public class MatchDouble extends Match {
         if (newEquipe == null)
            return;
         if (this.equipes == null)
-           this.equipes = new java.util.HashSet<Equipe>();
+           this.equipes = new java.util.List<Equipe>();
         if (!this.equipes.contains(newEquipe)) {
            this.equipes.add(newEquipe);
            newEquipe.addMatchDouble(this);      

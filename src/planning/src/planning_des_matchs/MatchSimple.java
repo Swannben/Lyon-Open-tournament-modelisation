@@ -25,26 +25,25 @@ public class MatchSimple extends Match {
     }
 
    
-    public MatchSimple(int id, Creneau creneau, Court court, boolean estQualif, Arbitre arbitreChaise, Joueur joueur1,Joueur joueur2) {
-        super(id,creneau,court,arbitreChaise);
+    public MatchSimple(int id, Creneau creneau, Court court, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
+            java.util.List<EquipeRamassage> equipesRamassage) {
+        super(id,creneau,court,arbitreChaise, arbitresLigne, equipesRamassage);
         this.estQualif=estQualif;
-        joueurs = new ArrayList();
-        joueurs.add(joueur1);
-        joueurs.add(joueur2);
+        this.joueurs = joueurs;
     }
     
     
     /** @pdGenerated default getter */
     public java.util.List<Joueur> getJoueurs() {
         if (joueurs == null)
-            joueurs = new java.util.HashSet<Joueur>();
+            joueurs = new java.util.List<Joueur>();
         return joueurs;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorJoueurs() {
         if (joueurs == null)
-            joueurs = new java.util.HashSet<Joueur>();
+            joueurs = new java.util.List<Joueur>();
         return joueurs.iterator();
     }
    
@@ -62,7 +61,7 @@ public class MatchSimple extends Match {
         if (newJoueur == null)
            return;
         if (this.joueurs == null)
-           this.joueurs = new java.util.HashSet<Joueur>();
+           this.joueurs = new java.util.List<Joueur>();
         if (!this.joueurs.contains(newJoueur)) {
            this.joueurs.add(newJoueur);
            newJoueur.addMatchSimple(this);      

@@ -98,14 +98,14 @@ public class Arbitre implements Tableable {
     /** @pdGenerated default getter */
     public java.util.List<MatchDouble> getMatchsDoublesChaise() {
         if (matchsDoublesChaise == null)
-            matchsDoublesChaise = new java.util.HashSet<MatchDouble>();
+            matchsDoublesChaise = new java.util.List<MatchDouble>();
         return matchsDoublesChaise;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchsDoublesChaise() {
         if (matchsDoublesChaise == null)
-            matchsDoublesChaise = new java.util.HashSet<MatchDouble>();
+            matchsDoublesChaise = new java.util.List<MatchDouble>();
         return matchsDoublesChaise.iterator();
     }
 
@@ -123,7 +123,7 @@ public class Arbitre implements Tableable {
         if (newMatchDouble == null)
             return;
         if (this.matchsDoublesChaise == null)
-            this.matchsDoublesChaise = new java.util.HashSet<MatchDouble>();
+            this.matchsDoublesChaise = new java.util.List<MatchDouble>();
         if (!this.matchsDoublesChaise.contains(newMatchDouble)) {
             this.matchsDoublesChaise.add(newMatchDouble);
             newMatchDouble.setArbitreChaise(this);      
@@ -157,14 +157,14 @@ public class Arbitre implements Tableable {
     /** @pdGenerated default getter */
     public java.util.List<MatchSimple> getMatchsSimplesChaise() {
         if (matchsSimplesChaise == null)
-            matchsSimplesChaise = new java.util.HashSet<MatchSimple>();
+            matchsSimplesChaise = new java.util.List<MatchSimple>();
         return matchsSimplesChaise;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchsSimplesChaise() {
         if (matchsSimplesChaise == null)
-            matchsSimplesChaise = new java.util.HashSet<MatchSimple>();
+            matchsSimplesChaise = new java.util.List<MatchSimple>();
         return matchsSimplesChaise.iterator();
     }
 
@@ -182,7 +182,7 @@ public class Arbitre implements Tableable {
         if (newMatchSimple == null)
             return;
         if (this.matchsSimplesChaise == null)
-            this.matchsSimplesChaise = new java.util.HashSet<MatchSimple>();
+            this.matchsSimplesChaise = new java.util.List<MatchSimple>();
         if (!this.matchsSimplesChaise.contains(newMatchSimple)) {
             this.matchsSimplesChaise.add(newMatchSimple);
             newMatchSimple.setArbitreChaise(this);      
@@ -216,14 +216,14 @@ public class Arbitre implements Tableable {
     /** @pdGenerated default getter */
     public java.util.List<Match> getMatchsLigne() {
         if (matchsLigne == null)
-            matchsLigne = new java.util.HashSet<Match>();
+            matchsLigne = new java.util.List<Match>();
         return matchsLigne;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchsLigne() {
         if (matchsLigne == null)
-            matchsLigne = new java.util.HashSet<Match>();
+            matchsLigne = new java.util.List<Match>();
         return matchsLigne.iterator();
     }
    
@@ -241,7 +241,7 @@ public class Arbitre implements Tableable {
         if (newMatch == null)
             return;
         if (this.matchsLigne == null)
-            this.matchsLigne = new java.util.HashSet<Match>();
+            this.matchsLigne = new java.util.List<Match>();
         if (!this.matchsLigne.contains(newMatch)) {
             this.matchsLigne.add(newMatch);
             newMatch.addArbitreLigne(this);      

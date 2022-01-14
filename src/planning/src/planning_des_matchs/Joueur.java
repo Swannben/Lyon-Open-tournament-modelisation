@@ -82,14 +82,14 @@ public class Joueur {
     /** @pdGenerated default getter */
     public java.util.List<MatchSimple> getMatchsSimples() {
         if (matchsSimples == null)
-            matchsSimples = new java.util.HashSet<MatchSimple>();
+            matchsSimples = new java.util.List<MatchSimple>();
         return matchsSimples;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchsSimples() {
         if (matchsSimples == null)
-            matchsSimples = new java.util.HashSet<MatchSimple>();
+            matchsSimples = new java.util.List<MatchSimple>();
         return matchsSimples.iterator();
     }
    
@@ -107,7 +107,7 @@ public class Joueur {
         if (newMatchSimple == null)
             return;
         if (this.matchsSimples == null)
-            this.matchsSimples = new java.util.HashSet<MatchSimple>();
+            this.matchsSimples = new java.util.List<MatchSimple>();
         if (!this.matchsSimples.contains(newMatchSimple)) {
             this.matchsSimples.add(newMatchSimple);
             newMatchSimple.addJoueur(this);      

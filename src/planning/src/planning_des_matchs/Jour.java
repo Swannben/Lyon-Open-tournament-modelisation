@@ -31,14 +31,14 @@ public class Jour {
     /** @pdGenerated default getter */
     public java.util.List<Creneau> getCreneaux() {
         if (creneaux == null)
-            creneaux = new java.util.HashSet<Creneau>();
+            creneaux = new java.util.List<Creneau>();
         return creneaux;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorCreneaux() {
         if (creneaux == null)
-            creneaux = new java.util.HashSet<Creneau>();
+            creneaux = new java.util.List<Creneau>();
         return creneaux.iterator();
     }
    
@@ -56,7 +56,7 @@ public class Jour {
         if (newCreneau == null)
             return;
         if (this.creneaux == null)
-            this.creneaux = new java.util.HashSet<Creneau>();
+            this.creneaux = new java.util.List<Creneau>();
         if (!this.creneaux.contains(newCreneau)) {
             this.creneaux.add(newCreneau);
             newCreneau.setJour(this);      
@@ -91,14 +91,14 @@ public class Jour {
     /** @pdGenerated default getter */
     public java.util.List<Entrainement> getEntrainements() {
         if (entrainements == null)
-            entrainements = new java.util.HashSet<Entrainement>();
+            entrainements = new java.util.List<Entrainement>();
         return entrainements;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorEntrainements() {
         if (entrainements == null)
-            entrainements = new java.util.HashSet<Entrainement>();
+            entrainements = new java.util.List<Entrainement>();
         return entrainements.iterator();
     }
 
@@ -116,7 +116,7 @@ public class Jour {
         if (newEntrainement == null)
             return;
         if (this.entrainements == null)
-            this.entrainements = new java.util.HashSet<Entrainement>();
+            this.entrainements = new java.util.List<Entrainement>();
         if (!this.entrainements.contains(newEntrainement)) {
             this.entrainements.add(newEntrainement);
             newEntrainement.setJour(this);      

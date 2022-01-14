@@ -27,14 +27,14 @@ public class Equipe {
     /** @pdGenerated default getter */
     public java.util.List<Joueur> getJoueurs() {
         if (joueurs == null)
-            joueurs = new java.util.HashSet<Joueur>();
+            joueurs = new java.util.List<Joueur>();
         return joueurs;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorJoueur() {
         if (joueurs == null)
-            joueurs = new java.util.HashSet<Joueur>();
+            joueurs = new java.util.List<Joueur>();
         return joueurs.iterator();
     }
    
@@ -52,7 +52,7 @@ public class Equipe {
         if (newJoueur == null)
             return;
         if (this.joueurs == null)
-            this.joueurs = new java.util.HashSet<Joueur>();
+            this.joueurs = new java.util.List<Joueur>();
         if (!this.joueurs.contains(newJoueur)) {
             this.joueurs.add(newJoueur);
             newJoueur.setEquipe(this);      
@@ -87,14 +87,14 @@ public class Equipe {
     /** @pdGenerated default getter */
     public java.util.List<MatchDouble> getMatchsDoubles() {
         if (matchsDoubles == null)
-            matchsDoubles = new java.util.HashSet<MatchDouble>();
+            matchsDoubles = new java.util.List<MatchDouble>();
         return matchsDoubles;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchsDoubles() {
         if (matchsDoubles == null)
-            matchsDoubles = new java.util.HashSet<MatchDouble>();
+            matchsDoubles = new java.util.List<MatchDouble>();
         return matchsDoubles.iterator();
     }
    
@@ -112,7 +112,7 @@ public class Equipe {
         if (newMatchDouble == null)
             return;
         if (this.matchsDoubles == null)
-            this.matchsDoubles = new java.util.HashSet<MatchDouble>();
+            this.matchsDoubles = new java.util.List<MatchDouble>();
         if (!this.matchsDoubles.contains(newMatchDouble)) {
             this.matchsDoubles.add(newMatchDouble);
             newMatchDouble.addEquipe(this);      
