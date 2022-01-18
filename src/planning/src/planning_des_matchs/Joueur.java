@@ -13,15 +13,45 @@ public class Joueur {
     private String nom;
     private String prenom;
     private Nationalite nationalite;
-
+    private Boolean estQualifie;
     private Equipe equipe;
+    
 
-    public Joueur( int id, String nom, String prenom, Nationalite nationalite, Equipe equipe) {
+    public Joueur( int id, String nom, String prenom, Nationalite nationalite, Equipe equipe, Boolean estQualifie) {
         this.id=id;
         this.nationalite=nationalite;
         this.nom=nom;
         this.prenom=prenom;
         this.equipe=equipe;
+        this.estQualifie=estQualifie;
+    }
+    
+    static List<Joueur> getJoueursQualifie(){
+        List<Joueur> joueurs= Joueur.getList();
+        for (Joueur j :joueurs){
+            if (!j.getEstQualifie()){
+                joueurs.remove(j);
+            }
+        }
+        
+    }
+    
+    static List<Joueur> getJoueursPartQualif(){
+        List<Joueur> joueurs= Joueur.getList();
+        for (Joueur j :joueurs){
+            if (j.getEstQualifie()){
+                joueurs.remove(j);
+            }
+        }
+        
+    }
+    
+    public Boolean getEstQualifie(){
+        return estQualifie;
+    }
+    
+    public void setEstQualifie(Boolean estQualif){
+        estQualifie=estQualif;
     }
     
     public int getID() {

@@ -12,7 +12,9 @@ public class MatchSimple extends Match {
     public java.util.List<Joueur> joueurs;
     private boolean estQualif;
     
-    
+    public MatchSimple(){
+        super();
+    }
     
     
     public boolean estQualif() {

@@ -18,12 +18,16 @@ public abstract class Match {
     private java.util.List<EquipeRamassage> equipesRamassage;
     public Arbitre arbitreChaise;
     List<Arbitre> arbitres;
+    Match matchA;
+    Match matchB;
    
     public int getID() {
         return id;
     }
 
-
+    public Match(){
+        
+    }
    
     public Match(int id, Creneau creneau, Court court, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage) {

@@ -17,6 +17,11 @@ public class MatchDouble extends Match {
     private java.util.List<Arbitre> arbitresLigne;
     private java.util.List<EquipeRamassage> equipesRamassage;
     private List<Joueur> joueurs;
+    
+    public MatchDouble(){
+        super();
+    }
+    
     public MatchDouble(int id, Creneau creneau, Court court,Arbitre arbitreChaise,java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
         super(id,creneau,court,arbitreChaise,arbitresLigne,equipesRamassage);
