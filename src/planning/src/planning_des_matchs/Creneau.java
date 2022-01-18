@@ -6,6 +6,10 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public class Creneau {
@@ -13,6 +17,8 @@ public class Creneau {
     public Jour jour;
 
     public java.util.List<Match> matchs;
+    
+    public static List<Creneau> list = new LinkedList<>();
     
     
     Creneau(int heure, Jour jour){
@@ -107,5 +113,65 @@ public class Creneau {
             }
         }
     }
+    
+    
+    
+    public static List getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            Creneau court;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                court = (Creneau)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New list
+        List<Creneau> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
+        try {
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from creneau");
 
+            while (result.next()) {
+                Creneau creneau = new Creneau(
+                    result.getInt("heure"), 
+                    Jour.get(result.getDate("idjour"))
+                );
+
+                newList.add(creneau);
+            }
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+        list = newList;
+        return newList;
+    }
+    
+    public static List getList() {
+        return list;
+    }
+    
+    public static Creneau get(Jour jour, int heure) {
+        for (Creneau creneau : list) {
+            if (creneau.jour.equals(jour) && creneau.heure == heure) {
+                return creneau;
+            }
+        }
+        return null;
+    }
+    
+    
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof Creneau))
+            return false;
+        
+        Creneau creneau = (Creneau)other;
+        return this.jour.equals(creneau) && this.heure == creneau.heure;
+    }
 }

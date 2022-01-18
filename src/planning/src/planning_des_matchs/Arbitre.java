@@ -8,14 +8,13 @@ package planning_des_matchs;
 
 import database.DatabaseConnection;
 import java.util.*;
-import database.Tableable;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
 
 
 public class Arbitre {
-    private int idArbitre;
+    private int id;
     private String certification;
     private int nbMatchsFaitsS;     // TODO: Inutile si on garde les collections,
     private int nbMatchsFaitsD;     // on peut faire List.length()
@@ -26,26 +25,23 @@ public class Arbitre {
     private java.util.List<MatchSimple> matchsSimplesChaise;
     private java.util.List<MatchDouble> matchsDoublesChaise;
     private java.util.List<Match> matchsLigne;
-    private static List<Arbitre> Arbitres;
+    
+    private static List<Arbitre> list = new LinkedList<>();
+
     
     
     public Arbitre(int idArbitre, String certification, String nom, String prenom,Nationalite nationalite) {
-        this.idArbitre=idArbitre;
+        this.id=idArbitre;
         //TODO vérifier que la certification est reconnue
         this.certification=certification;
         this.nom=nom;
         this.prenom=prenom;
         this.nationalite=nationalite;
-        Arbitres.add(this);
-    }
-    
-    static List<Arbitre> getArbitres(){
-        return Arbitres;
     }
     
     
-    public int getIdArbitre() {
-        return idArbitre;
+    public int getId() {
+        return id;
     }
    
     public String getCertification() {
@@ -269,18 +265,18 @@ public class Arbitre {
     
     
     
-    public static List getTableFromDatabase() {
-        // Delete table
-        if (table != null) {
+    public static List getListFromDatabase() {
+        // Delete list
+        if (list != null) {
             Arbitre arbitre;
-            for (java.util.Iterator iter = table.iterator(); iter.hasNext();) {
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
                 arbitre = (Arbitre)iter.next();
                 iter.remove();
             }
         }
         
-        // New table
-        List<Arbitre> list = new LinkedList<>();
+        // New list
+        List<Arbitre> newList = new LinkedList<>();
         
         DatabaseConnection connection = DatabaseConnection.get();
         
@@ -297,30 +293,27 @@ public class Arbitre {
                         Nationalite.getRow(result.getInt("idnationalite"))
                 );
 
-                list.add(arbitre);
+                newList.add(arbitre);
             }
         }
         catch (SQLException e) {
             System.err.println(e.getMessage());
         }
         
-        table = list;
+        list = newList;
         return list;
     }
     
-    public static List getTable() {
-        return table;
+    public static List getList() {
+        return list;
     }
     
-    public static Arbitre getRow(int id) {
-        for (Arbitre row : table) {
-            if (row.idArbitre == id) {
+    public static Arbitre get(int id) {
+        for (Arbitre row : list) {
+            if (row.id == id) {
                 return row;
             }
         }
         return null;
     }
-    
-    
-    private static List<Arbitre> table = new LinkedList<>();
 }

@@ -6,6 +6,10 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public class Court {
@@ -15,6 +19,9 @@ public class Court {
 
     public java.util.List<Match> matchs;
     public java.util.List<Entrainement> entrainements;
+    
+    private static List<Court> list = new LinkedList<>();
+
     
     public Court(int id, String nom, boolean estPrincipal) {
         this.id=id;
@@ -166,4 +173,55 @@ public class Court {
         }
     }
 
+    
+    
+    public static List getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            Court court;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                court = (Court)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New list
+        List<Court> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
+        try {
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from court");
+
+            while (result.next()) {
+                Court court = new Court(
+                    result.getInt("idcourt"), 
+                    result.getString("nom"), 
+                    result.getBoolean("estprincipal")
+                );
+
+                newList.add(court);
+            }
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+        list = newList;
+        return newList;
+    }
+    
+    public static List getList() {
+        return list;
+    }
+    
+    public static Court get(int id) {
+        for (Court row : list) {
+            if (row.id == id) {
+                return row;
+            }
+        }
+        return null;
+    }
 }
