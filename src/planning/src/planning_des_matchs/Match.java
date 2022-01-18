@@ -26,23 +26,19 @@ public abstract class Match {
 
 
    
-    public Match(int id, Creneau creneau, Court court, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
+    public Match(int id, Creneau creneau, Court court, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage) {
         this.id = id;
         this.creneau = creneau;
         this.court = court;
         
-        this.arbitreChaise = arbitreChaise;
-
         if (arbitresLignes == null)
             arbitresLigne = new ArrayList(6);
-        else
-            this.arbitresLigne = arbitresLigne;
+        this.arbitresLigne = arbitresLigne;
 
         if (equipesRamassage == null)
             equipesRamassage = new ArrayList(2);
-        else
-            this.equipesRamassage = equipesRamassage;
+        this.equipesRamassage = equipesRamassage;
     }
         
     public Creneau getCreneau() {
@@ -125,7 +121,7 @@ public abstract class Match {
     
     abstract public void assignerArbitres();
 
-    
+
     /** @pdGenerated default getter */
     public java.util.List<EquipeRamassage> getEquipesRamassage() {
         if (equipesRamassage == null)

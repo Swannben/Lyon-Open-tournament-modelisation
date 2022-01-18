@@ -14,12 +14,14 @@ public class MatchDouble extends Match {
 
     public MatchDouble(int id, Creneau creneau, Court court,Arbitre arbitreChaise,java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
-        super(id,creneau,court,arbitreChaise,arbitresLigne,equipesRamassage);
+        super(id, creneau, court, arbitresLigne, equipesRamassage);
         
+        setArbitreChaise(arbitreChaise);
+
         if (equipes == null)
             equipes = new ArrayList(2);
         this.equipes = equipes;
-
+    }
         
     
     /** @pdGenerated default getter */
