@@ -6,13 +6,21 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
+
 
 public class Equipe {
     private int id;
 
     public java.util.List<Joueur> joueurs;
-    public java.util.List<MatchDouble> matchsDoubles;
+    //public java.util.List<MatchDouble> matchsDoubles;
+    
+    private static List<Equipe> list = new LinkedList<>();
+    
 
     public int getID() {
         return id;
@@ -85,30 +93,30 @@ public class Equipe {
     }
     
     /** @pdGenerated default getter */
-    public java.util.List<MatchDouble> getMatchsDoubles() {
+    /*public java.util.List<MatchDouble> getMatchsDoubles() {
         if (matchsDoubles == null)
             matchsDoubles = new java.util.HashSet<MatchDouble>();
         return matchsDoubles;
-    }
+    }*/
    
     /** @pdGenerated default iterator getter */
-    public java.util.Iterator getIteratorMatchsDoubles() {
+    /*public java.util.Iterator getIteratorMatchsDoubles() {
         if (matchsDoubles == null)
             matchsDoubles = new java.util.HashSet<MatchDouble>();
         return matchsDoubles.iterator();
-    }
+    }*/
    
     /** @pdGenerated default setter
       * @param newMatchDouble */
-    public void setMatchsDoubles(java.util.List<MatchDouble> newMatchDouble) {
+    /*public void setMatchsDoubles(java.util.List<MatchDouble> newMatchDouble) {
         removeAllMatchsDoubles();
         for (java.util.Iterator iter = newMatchDouble.iterator(); iter.hasNext();)
             addMatchDouble((MatchDouble)iter.next());
-    }
+    }*/
    
     /** @pdGenerated default add
       * @param newMatchDouble */
-    public void addMatchDouble(MatchDouble newMatchDouble) {
+    /*public void addMatchDouble(MatchDouble newMatchDouble) {
         if (newMatchDouble == null)
             return;
         if (this.matchsDoubles == null)
@@ -117,11 +125,11 @@ public class Equipe {
             this.matchsDoubles.add(newMatchDouble);
             newMatchDouble.addEquipe(this);      
         }
-    }
+    }*/
 
     /** @pdGenerated default remove
       * @param oldMatchDouble */
-    public void removeMatchDouble(MatchDouble oldMatchDouble) {
+    /*public void removeMatchDouble(MatchDouble oldMatchDouble) {
         if (oldMatchDouble == null)
             return;
         if (this.matchsDoubles != null)
@@ -129,10 +137,10 @@ public class Equipe {
                 this.matchsDoubles.remove(oldMatchDouble);
                 oldMatchDouble.removeEquipe(this);
             }
-    }
+    }*/
    
     /** @pdGenerated default removeAll */
-    public void removeAllMatchsDoubles() {
+    /*public void removeAllMatchsDoubles() {
         if (matchsDoubles != null) {
             MatchDouble oldMatchDouble;
             for (java.util.Iterator iter = getIteratorMatchsDoubles(); iter.hasNext();) {
@@ -141,6 +149,58 @@ public class Equipe {
                 oldMatchDouble.removeEquipe(this);
             }
         }
+    }*/
+    
+    
+    public static List<Equipe> getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            Equipe equipe;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                equipe = (Equipe)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New list
+        List<Equipe> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
+        try {
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from equipe");
+
+            while (result.next()) {
+                // TODO: get players : select * from equipe natural join joueur order by idequipe ?
+                Equipe equipe = new Equipe(
+                        result.getInt("idequipe")
+                );
+
+                newList.add(equipe);
+            }
+            
+            result.close();
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+        list = newList;
+        return list;
+    }
+    
+    public static List<Equipe> getList() {
+        return list;
+    }
+    
+    public static Equipe get(int id) {
+        for (Equipe equipe : list) {
+            if (equipe.id == id) {
+                return equipe;
+            }
+        }
+        return null;
     }
 
 }

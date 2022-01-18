@@ -158,7 +158,7 @@ public class Jour {
 
     
     public static List<Jour> getListFromDatabase() {
-        // Delete table
+        // Delete list
         if (list != null) {
             Jour jour;
             for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
@@ -167,7 +167,7 @@ public class Jour {
             }
         }
         
-        // New table
+        // New list
         List<Jour> newList = new LinkedList<>();
         
         DatabaseConnection connection = DatabaseConnection.get();
@@ -183,6 +183,8 @@ public class Jour {
 
                 newList.add(jour);
             }
+            
+            result.close();
         }
         catch (SQLException e) {
             System.err.println(e.getMessage());

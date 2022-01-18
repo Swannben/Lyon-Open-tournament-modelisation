@@ -6,17 +6,19 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public abstract class Match {
     private int id;
-    
-
     private Creneau creneau;
-    private Court court;
+    //private Court court;
     private java.util.List<Arbitre> arbitresLigne;
     private java.util.List<EquipeRamassage> equipesRamassage;
-    List<Arbitre> arbitres;
+    protected Arbitre arbitreChaise;
    
     public int getID() {
         return id;
@@ -24,10 +26,10 @@ public abstract class Match {
 
 
    
-    public Match(int id, Creneau creneau, Court court) {
+    public Match(int id, Creneau creneau) {
         this.id = id;
         this.creneau = creneau;
-        this.court= court;
+        //this.court= court;
         arbitresLigne = new ArrayList(6);
         equipesRamassage = new ArrayList(2);
     }
@@ -36,9 +38,9 @@ public abstract class Match {
         return creneau;
     }
     
-    public Court getCourt() {
+    /*public Court getCourt() {
         return court;
-    }
+    }*/
     
     /** @param newCreneau */
     public void setCreneau(Creneau newCreneau) {
@@ -46,17 +48,17 @@ public abstract class Match {
             if (this.creneau != null) {
                 Creneau oldCreneau = this.creneau;
                 this.creneau = null;
-                oldCreneau.removeMatch(this);
+                oldCreneau.setMatch(null);
             }
             if (newCreneau != null) {
                 this.creneau = newCreneau;
-                this.creneau.addMatch(this);
+                this.creneau.setMatch(this);
             }
         }    
     }
     
     /** @param newCourt */
-    public void setCourt(Court newCourt) {
+    /*public void setCourt(Court newCourt) {
         if (this.court == null || !this.court.equals(newCourt)) {
             if (this.court != null) {
                 Court oldCourt = this.court;
@@ -68,7 +70,7 @@ public abstract class Match {
                 this.court.addMatch(this);
             }
         }    
-    }
+    }*/
    
     /** @pdGenerated default getter */
     public java.util.List<Arbitre> getArbitresLigne() {
@@ -132,6 +134,8 @@ public abstract class Match {
     
     
     abstract public void assignerArbitre();
+    
+    
     /** @pdGenerated default getter */
     public java.util.List<EquipeRamassage> getEquipesRamassage() {
         if (equipesRamassage == null)
@@ -192,5 +196,69 @@ public abstract class Match {
             }
         }
     }
+    
+    
+        /** @pdGenerated default parent getter */
+    public Arbitre getArbitreChaise() {
+        return arbitreChaise;
+    }
+   
+    /** @pdGenerated default parent setter
+      * @param newArbitre */
+    abstract public void setArbitreChaise(Arbitre newArbitre);
 
+    
+    public static List<Joueur> getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            Joueur joueur;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                joueur = (Joueur)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New list
+        List<Joueur> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
+        try {
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from joueur");
+
+            while (result.next()) {
+                // TODO: get players : select * from joueur natural join joueur order by idjoueur ?
+                Joueur joueur = new Joueur(
+                        result.getInt("idjoueur"),
+                        result.getString("nom"),
+                        result.getString("prenom"),
+                        Nationalite.get(result.getInt("nationalite"))
+                );
+
+                newList.add(joueur);
+            }
+            
+            result.close();
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+        list = newList;
+        return list;
+    }
+    
+    public static List<Joueur> getList() {
+        return list;
+    }
+    
+    public static Joueur get(int id) {
+        for (Joueur joueur : list) {
+            if (joueur.id == id) {
+                return joueur;
+            }
+        }
+        return null;
+    }
 }

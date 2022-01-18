@@ -13,10 +13,13 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class Nationalite {
     private int id;
     private String libelle;
-    // TODO: On doit mettre une collection joueurs ?
+    
+    private static List<Nationalite> table = new LinkedList<>();
+
     
     Nationalite(int id, String libelle) {
         this.id=id;
@@ -36,16 +39,7 @@ public class Nationalite {
     }
     
     
-    public static Nationalite getRow(int id) {
-        for (Nationalite row : table) {
-            if (row.id == id) {
-                return row;
-            }
-        }
-        return null;
-    }
-    
-    public static List getTableFromDatabase() {
+    public static List getListFromDatabase() {
         // Delete table
         if (table != null) {
             Nationalite nationalite;
@@ -84,10 +78,16 @@ public class Nationalite {
         return list;
     }
     
-    public static List<Nationalite> getTable() {
+    public static List<Nationalite> getList() {
         return table;
     }
-
-    
-    private static List<Nationalite> table = new LinkedList<>();
+          
+    public static Nationalite get(int id) {
+        for (Nationalite row : table) {
+            if (row.id == id) {
+                return row;
+            }
+        }
+        return null;
+    }
 }

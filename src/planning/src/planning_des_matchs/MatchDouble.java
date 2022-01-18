@@ -9,13 +9,13 @@ package planning_des_matchs;
 import java.util.*;
 
 public class MatchDouble extends Match {
-    public java.util.List<Equipe> equipes;
-    public Arbitre arbitreChaise;
-    int id;
-    Creneau creneau;
-    Court court;
-    private java.util.List<Arbitre> arbitresLigne;
-    private java.util.List<EquipeRamassage> equipesRamassage;
+    private java.util.List<Equipe> equipes;
+    //private Arbitre arbitreChaise;
+    //int id;
+    //Creneau creneau;
+    //Court court;
+    //private java.util.List<Arbitre> arbitresLigne;
+    //private java.util.List<EquipeRamassage> equipesRamassage;
 
     public MatchDouble(int id, Creneau creneau, Court court) {
         super(id,creneau,court);
@@ -82,31 +82,23 @@ public class MatchDouble extends Match {
             }
         }
     }
-    
-    /** @pdGenerated default parent getter */
-    public Arbitre getArbitreChaise() {
-        return arbitreChaise;
-    }
    
+    
     /** @pdGenerated default parent setter
       * @param newArbitre */
+    @Override
     public void setArbitreChaise(Arbitre newArbitre) {
         if (this.arbitreChaise == null || !this.arbitreChaise.equals(newArbitre)) {
             if (this.arbitreChaise != null) {
                 Arbitre oldArbitre = this.arbitreChaise;
                 this.arbitreChaise = null;
-                oldArbitre.removeMatchDoubleChaise(this);
+                oldArbitre.subMatchDouble();
             }
             if (newArbitre != null) {
                 this.arbitreChaise = newArbitre;
-                this.arbitreChaise.addMatchDoubleChaise(this);
+                this.arbitreChaise.addMatchDouble();
             }
         }
-    }
-
-    @Override
-    public void assignerArbitre() {
-        
     }
 
 }

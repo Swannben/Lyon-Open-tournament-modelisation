@@ -17,7 +17,7 @@ public class Court {
     private String nom;
     private boolean estPrincipal;
 
-    public java.util.List<Match> matchs;
+    //public java.util.List<Match> matchs;
     public java.util.List<Entrainement> entrainements;
     
     private static List<Court> list = new LinkedList<>();
@@ -55,30 +55,30 @@ public class Court {
 
    
     /** @pdGenerated default getter */
-    public java.util.List<Match> getMatchs() {
+    /*public java.util.List<Match> getMatchs() {
         if (matchs == null)
             matchs = new java.util.HashSet<Match>();
         return matchs;
-    }
+    }*/
 
     /** @pdGenerated default iterator getter */
-    public java.util.Iterator getIteratorMatchs() {
+    /*public java.util.Iterator getIteratorMatchs() {
         if (matchs == null)
             matchs = new java.util.HashSet<Match>();
         return matchs.iterator();
-    }
+    }*/
 
     /** @pdGenerated default setter
       * @param newMatch */
-    public void setMatchs(java.util.List<Match> newMatch) {
+    /*public void setMatchs(java.util.List<Match> newMatch) {
         removeAllMatchs();
         for (java.util.Iterator iter = newMatch.iterator(); iter.hasNext();)
             addMatch((Match)iter.next());
-    }
+    }*/
 
     /** @pdGenerated default add
       * @param newMatch */
-    public void addMatch(Match newMatch) {
+    /*public void addMatch(Match newMatch) {
         if (newMatch == null)
             return;
         if (this.matchs == null)
@@ -87,11 +87,11 @@ public class Court {
             this.matchs.add(newMatch);
             newMatch.setCourt(this);      
         }
-    }
+    }*/
 
     /** @pdGenerated default remove
       * @param oldMatch */
-    public void removeMatch(Match oldMatch) {
+    /*public void removeMatch(Match oldMatch) {
         if (oldMatch == null)
             return;
         if (this.matchs != null) {
@@ -100,10 +100,10 @@ public class Court {
                 oldMatch.setCourt((Court)null);
             }
         }
-    }
+    }*/
 
     /** @pdGenerated default removeAll */
-    public void removeAllMatchs() {
+    /*public void removeAllMatchs() {
         if (matchs != null) {
             Match oldMatch;
             for (java.util.Iterator iter = getIteratorMatchs(); iter.hasNext();) {
@@ -112,7 +112,7 @@ public class Court {
                 oldMatch.setCourt((Court)null);
             }
         }
-    }
+    }*/
     
     /** @pdGenerated default getter */
     public java.util.List<Entrainement> getEntrainements() {
@@ -203,6 +203,8 @@ public class Court {
 
                 newList.add(court);
             }
+            
+            result.close();
         }
         catch (SQLException e) {
             System.err.println(e.getMessage());
