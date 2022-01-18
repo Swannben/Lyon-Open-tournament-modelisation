@@ -45,7 +45,7 @@ public class Arbitre implements Tableable {
         this.nationalite = nationalite;
     }
     
-    static List<Arbitre> getArbitres(){
+    static List<Arbitre> getList(){
         return Arbitres;
     }
     
@@ -98,14 +98,14 @@ public class Arbitre implements Tableable {
     /** @pdGenerated default getter */
     public java.util.List<MatchDouble> getMatchsDoublesChaise() {
         if (matchsDoublesChaise == null)
-            matchsDoublesChaise = new java.util.List<MatchDouble>();
+            matchsDoublesChaise = new java.util.ArrayList<MatchDouble>();
         return matchsDoublesChaise;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchsDoublesChaise() {
         if (matchsDoublesChaise == null)
-            matchsDoublesChaise = new java.util.List<MatchDouble>();
+            matchsDoublesChaise = new java.util.ArrayList<MatchDouble>();
         return matchsDoublesChaise.iterator();
     }
 
@@ -123,7 +123,7 @@ public class Arbitre implements Tableable {
         if (newMatchDouble == null)
             return;
         if (this.matchsDoublesChaise == null)
-            this.matchsDoublesChaise = new java.util.List<MatchDouble>();
+            this.matchsDoublesChaise = new java.util.ArrayList<MatchDouble>();
         if (!this.matchsDoublesChaise.contains(newMatchDouble)) {
             this.matchsDoublesChaise.add(newMatchDouble);
             newMatchDouble.setArbitreChaise(this);      
@@ -157,14 +157,14 @@ public class Arbitre implements Tableable {
     /** @pdGenerated default getter */
     public java.util.List<MatchSimple> getMatchsSimplesChaise() {
         if (matchsSimplesChaise == null)
-            matchsSimplesChaise = new java.util.List<MatchSimple>();
+            matchsSimplesChaise = new java.util.ArrayList<MatchSimple>();
         return matchsSimplesChaise;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchsSimplesChaise() {
         if (matchsSimplesChaise == null)
-            matchsSimplesChaise = new java.util.List<MatchSimple>();
+            matchsSimplesChaise = new java.util.ArrayList<MatchSimple>();
         return matchsSimplesChaise.iterator();
     }
 
@@ -182,7 +182,7 @@ public class Arbitre implements Tableable {
         if (newMatchSimple == null)
             return;
         if (this.matchsSimplesChaise == null)
-            this.matchsSimplesChaise = new java.util.List<MatchSimple>();
+            this.matchsSimplesChaise = new java.util.ArrayList<MatchSimple>();
         if (!this.matchsSimplesChaise.contains(newMatchSimple)) {
             this.matchsSimplesChaise.add(newMatchSimple);
             newMatchSimple.setArbitreChaise(this);      
@@ -216,20 +216,20 @@ public class Arbitre implements Tableable {
     /** @pdGenerated default getter */
     public java.util.List<Match> getMatchsLigne() {
         if (matchsLigne == null)
-            matchsLigne = new java.util.List<Match>();
+            matchsLigne = new java.util.ArrayList<Match>();
         return matchsLigne;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchsLigne() {
         if (matchsLigne == null)
-            matchsLigne = new java.util.List<Match>();
+            matchsLigne = new java.util.ArrayList<Match>();
         return matchsLigne.iterator();
     }
    
     /** @pdGenerated default setter
       * @param newMatch */
-    public void setMatchsLigne(java.util.List<Match> newMatchsLigne) {
+    public void setMatchsLigne(java.util.ArrayList<Match> newMatchsLigne) {
         removeAllMatch();
         for (java.util.Iterator iter = newMatchsLigne.iterator(); iter.hasNext();)
             addMatchLigne((Match)iter.next());
@@ -241,7 +241,7 @@ public class Arbitre implements Tableable {
         if (newMatch == null)
             return;
         if (this.matchsLigne == null)
-            this.matchsLigne = new java.util.List<Match>();
+            this.matchsLigne = new java.util.ArrayList<Match>();
         if (!this.matchsLigne.contains(newMatch)) {
             this.matchsLigne.add(newMatch);
             newMatch.addArbitreLigne(this);      

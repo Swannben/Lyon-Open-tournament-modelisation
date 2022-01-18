@@ -14,14 +14,14 @@ public class Joueur {
     private String prenom;
     private Nationalite nationalite;
 
-    public Equipe equipe;
-    public java.util.List<MatchSimple> matchsSimples;
+    private Equipe equipe;
 
-    public Joueur( int id, String nom, String prenom, Nationalite nationalite) {
+    public Joueur( int id, String nom, String prenom, Nationalite nationalite, Equipe equipe) {
         this.id=id;
         this.nationalite=nationalite;
         this.nom=nom;
         this.prenom=prenom;
+        this.equipe=equipe;
     }
     
     public int getID() {
@@ -54,10 +54,8 @@ public class Joueur {
     public void setNationalite(Nationalite newNationalite) {
         nationalite = newNationalite;
     }
-
-
-   
-   
+    
+    
     /** @pdGenerated default parent getter */
     public Equipe getEquipe() {
         return equipe;
@@ -79,63 +77,7 @@ public class Joueur {
         }
     }
     
-    /** @pdGenerated default getter */
-    public java.util.List<MatchSimple> getMatchsSimples() {
-        if (matchsSimples == null)
-            matchsSimples = new java.util.List<MatchSimple>();
-        return matchsSimples;
-    }
    
-    /** @pdGenerated default iterator getter */
-    public java.util.Iterator getIteratorMatchsSimples() {
-        if (matchsSimples == null)
-            matchsSimples = new java.util.List<MatchSimple>();
-        return matchsSimples.iterator();
-    }
-   
-    /** @pdGenerated default setter
-      * @param newMatchSimple */
-    public void setMatchsSimples(java.util.List<MatchSimple> newMatchSimple) {
-        removeAllMatchsSimples();
-        for (java.util.Iterator iter = newMatchSimple.iterator(); iter.hasNext();)
-            addMatchSimple((MatchSimple)iter.next());
-    }
-   
-    /** @pdGenerated default add
-      * @param newMatchSimple */
-    public void addMatchSimple(MatchSimple newMatchSimple) {
-        if (newMatchSimple == null)
-            return;
-        if (this.matchsSimples == null)
-            this.matchsSimples = new java.util.List<MatchSimple>();
-        if (!this.matchsSimples.contains(newMatchSimple)) {
-            this.matchsSimples.add(newMatchSimple);
-            newMatchSimple.addJoueur(this);      
-        }
-    }
-   
-    /** @pdGenerated default remove
-      * @param oldMatchSimple */
-    public void removeMatchSimple(MatchSimple oldMatchSimple) {
-        if (oldMatchSimple == null)
-            return;
-        if (this.matchsSimples != null)
-            if (this.matchsSimples.contains(oldMatchSimple)) {
-               this.matchsSimples.remove(oldMatchSimple);
-               oldMatchSimple.removeJoueur(this);
-            }
-    }
-   
-    /** @pdGenerated default removeAll */
-    public void removeAllMatchsSimples() {
-        if (matchsSimples != null) {
-            MatchSimple oldMatchSimple;
-            for (java.util.Iterator iter = getIteratorMatchsSimples(); iter.hasNext();) {
-                oldMatchSimple = (MatchSimple)iter.next();
-                iter.remove();
-                oldMatchSimple.removeJoueur(this);
-            }
-        }
-    }
+    
 
 }

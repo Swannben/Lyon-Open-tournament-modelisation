@@ -31,20 +31,20 @@ public class Jour {
     /** @pdGenerated default getter */
     public java.util.List<Creneau> getCreneaux() {
         if (creneaux == null)
-            creneaux = new java.util.List<Creneau>();
+            creneaux = new ArrayList<Creneau>();
         return creneaux;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorCreneaux() {
         if (creneaux == null)
-            creneaux = new java.util.List<Creneau>();
+            creneaux = new java.util.ArrayList<Creneau>();
         return creneaux.iterator();
     }
    
     /** @pdGenerated default setter
       * @param newCreneaux */
-    public void setCreneaux(java.util.List<Creneau> newCreneaux) {
+    public void setCreneaux(java.util.ArrayList<Creneau> newCreneaux) {
         removeAllCreneaux();
         for (java.util.Iterator iter = newCreneaux.iterator(); iter.hasNext();)
             addCreneau((Creneau)iter.next());
@@ -56,7 +56,7 @@ public class Jour {
         if (newCreneau == null)
             return;
         if (this.creneaux == null)
-            this.creneaux = new java.util.List<Creneau>();
+            this.creneaux = new java.util.ArrayList<Creneau>();
         if (!this.creneaux.contains(newCreneau)) {
             this.creneaux.add(newCreneau);
             newCreneau.setJour(this);      
@@ -91,14 +91,14 @@ public class Jour {
     /** @pdGenerated default getter */
     public java.util.List<Entrainement> getEntrainements() {
         if (entrainements == null)
-            entrainements = new java.util.List<Entrainement>();
+            entrainements = new java.util.ArrayList<Entrainement>();
         return entrainements;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorEntrainements() {
         if (entrainements == null)
-            entrainements = new java.util.List<Entrainement>();
+            entrainements = new java.util.ArrayList<Entrainement>();
         return entrainements.iterator();
     }
 
@@ -116,7 +116,7 @@ public class Jour {
         if (newEntrainement == null)
             return;
         if (this.entrainements == null)
-            this.entrainements = new java.util.List<Entrainement>();
+            this.entrainements = new java.util.ArrayList<Entrainement>();
         if (!this.entrainements.contains(newEntrainement)) {
             this.entrainements.add(newEntrainement);
             newEntrainement.setJour(this);      

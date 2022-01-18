@@ -36,14 +36,14 @@ public class EquipeRamassage {
     /** @pdGenerated default getter */
     public java.util.List<Match> getMatchs() {
         if (matchs == null)
-            matchs = new java.util.List<Match>();
+            matchs = new java.util.ArrayList<Match>();
         return matchs;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchs() {
         if (matchs == null)
-            matchs = new java.util.List<Match>();
+            matchs = new java.util.ArrayList<Match>();
         return matchs.iterator();
     }
    
@@ -61,7 +61,7 @@ public class EquipeRamassage {
         if (newMatch == null)
             return;
         if (this.matchs == null)
-            this.matchs = new java.util.List<Match>();
+            this.matchs = new java.util.ArrayList<Match>();
         if (!this.matchs.contains(newMatch)) {
             this.matchs.add(newMatch);
             newMatch.addEquipeRamassage(this);      

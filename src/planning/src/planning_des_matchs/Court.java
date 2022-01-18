@@ -50,14 +50,14 @@ public class Court {
     /** @pdGenerated default getter */
     public java.util.List<Match> getMatchs() {
         if (matchs == null)
-            matchs = new java.util.HashSet<Match>();
+            matchs = new java.util.ArrayList<Match>();
         return matchs;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchs() {
         if (matchs == null)
-            matchs = new java.util.HashSet<Match>();
+            matchs = new java.util.ArrayList<Match>();
         return matchs.iterator();
     }
 
@@ -75,7 +75,7 @@ public class Court {
         if (newMatch == null)
             return;
         if (this.matchs == null)
-            this.matchs = new java.util.HashSet<Match>();
+            this.matchs = new java.util.ArrayList<Match>();
         if (!this.matchs.contains(newMatch)) {
             this.matchs.add(newMatch);
             newMatch.setCourt(this);      
@@ -110,14 +110,14 @@ public class Court {
     /** @pdGenerated default getter */
     public java.util.List<Entrainement> getEntrainements() {
         if (entrainements == null)
-            entrainements = new java.util.HashSet<Entrainement>();
+            entrainements = new java.util.ArrayList<Entrainement>();
         return entrainements;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorEntrainements() {
         if (entrainements == null)
-            entrainements = new java.util.HashSet<Entrainement>();
+            entrainements = new java.util.ArrayList<Entrainement>();
         return entrainements.iterator();
     }
 
@@ -135,7 +135,7 @@ public class Court {
         if (newEntrainement == null)
             return;
         if (this.entrainements == null)
-            this.entrainements = new java.util.HashSet<Entrainement>();
+            this.entrainements = new java.util.ArrayList<Entrainement>();
         if (!this.entrainements.contains(newEntrainement)) {
             this.entrainements.add(newEntrainement);
             newEntrainement.setCourt(this);      

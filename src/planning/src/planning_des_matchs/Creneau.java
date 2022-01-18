@@ -30,14 +30,14 @@ public class Creneau {
     /** @pdGenerated default getter */
     public java.util.List<Match> getMatchs() {
         if (matchs == null)
-            matchs = new java.util.HashSet<Match>();
+            matchs = new java.util.ArrayList<Match>();
         return matchs;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorMatchs() {
         if (matchs == null)
-            matchs = new java.util.HashSet<Match>();
+            matchs = new java.util.ArrayList<Match>();
         return matchs.iterator();
     }
    
@@ -55,7 +55,7 @@ public class Creneau {
         if (newMatch == null)
             return;
         if (this.matchs == null)
-            this.matchs = new java.util.HashSet<Match>();
+            this.matchs = new java.util.ArrayList<Match>();
         if (!this.matchs.contains(newMatch)) {
             this.matchs.add(newMatch);
             newMatch.setCreneau(this);      

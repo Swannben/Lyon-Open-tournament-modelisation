@@ -9,32 +9,33 @@ package planning_des_matchs;
 import java.util.*;
 
 public class MatchDouble extends Match {
-    public java.util.List<Equipe> equipes;
-    public Arbitre arbitreChaise;
+    private java.util.List<Equipe> equipes;
+    private Arbitre arbitreChaise;
     int id;
     Creneau creneau;
     Court court;
     private java.util.List<Arbitre> arbitresLigne;
     private java.util.List<EquipeRamassage> equipesRamassage;
-
+    private List<Joueur> joueurs;
     public MatchDouble(int id, Creneau creneau, Court court,Arbitre arbitreChaise,java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
         super(id,creneau,court,arbitreChaise,arbitresLigne,equipesRamassage);
         this.equipes = equipes;
+        
     }
     
     
     /** @pdGenerated default getter */
     public java.util.List<Equipe> getEquipes() {
         if (equipes == null)
-            equipes = new java.util.List<Equipe>();
+            equipes = new java.util.ArrayList<Equipe>();
         return equipes;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorEquipes() {
         if (equipes == null)
-            equipes = new java.util.List<Equipe>();
+            equipes = new java.util.ArrayList<Equipe>();
         return equipes.iterator();
     }
    
@@ -52,7 +53,7 @@ public class MatchDouble extends Match {
         if (newEquipe == null)
            return;
         if (this.equipes == null)
-           this.equipes = new java.util.List<Equipe>();
+           this.equipes = new java.util.ArrayList<Equipe>();
         if (!this.equipes.contains(newEquipe)) {
            this.equipes.add(newEquipe);
            newEquipe.addMatchDouble(this);      
@@ -107,7 +108,7 @@ public class MatchDouble extends Match {
 
     @Override
     public void assignerArbitres() {
-        arbitres=Arbitre.getArbitres();
+        arbitres=Arbitre.getList();
         int i, c = 1;
         //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
         arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
@@ -131,6 +132,4 @@ public class MatchDouble extends Match {
         
         
     }
-    }
-
 }

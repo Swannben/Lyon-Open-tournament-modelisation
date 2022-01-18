@@ -77,14 +77,14 @@ public abstract class Match {
     /** @pdGenerated default getter */
     public java.util.List<Arbitre> getArbitresLigne() {
         if (arbitresLigne == null)
-            arbitresLigne = new java.util.List<Arbitre>();
+            arbitresLigne = new java.util.ArrayList<Arbitre>();
         return arbitresLigne;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorArbitresLigne() {
         if (arbitresLigne == null)
-            arbitresLigne = new java.util.List<Arbitre>();
+            arbitresLigne = new java.util.ArrayList<Arbitre>();
         return arbitresLigne.iterator();
    }
    
@@ -99,10 +99,8 @@ public abstract class Match {
     /** @pdGenerated default add
       * @param newArbitre */
     public void addArbitreLigne(Arbitre newArbitre) {
-        if (newArbitre == null)
-            return;
         if (this.arbitresLigne == null)
-            this.arbitresLigne = new java.util.List<Arbitre>();
+            this.arbitresLigne = new java.util.ArrayList<Arbitre>();
         if (!this.arbitresLigne.contains(newArbitre)) {
             this.arbitresLigne.add(newArbitre);
             newArbitre.addMatchLigne(this);      
@@ -139,14 +137,14 @@ public abstract class Match {
     /** @pdGenerated default getter */
     public java.util.List<EquipeRamassage> getEquipesRamassage() {
         if (equipesRamassage == null)
-            equipesRamassage = new java.util.List<EquipeRamassage>();
+            equipesRamassage = new java.util.ArrayList<EquipeRamassage>();
         return equipesRamassage;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorEquipesRamassage() {
         if (equipesRamassage == null)
-            equipesRamassage = new java.util.List<EquipeRamassage>();
+            equipesRamassage = new java.util.ArrayList<EquipeRamassage>();
         return equipesRamassage.iterator();
     }
    
@@ -164,7 +162,7 @@ public abstract class Match {
         if (newEquipeRamassage == null)
             return;
         if (this.equipesRamassage == null)
-            this.equipesRamassage = new java.util.List<EquipeRamassage>();
+            this.equipesRamassage = new java.util.ArrayList<EquipeRamassage>();
         if (!this.equipesRamassage.contains(newEquipeRamassage)) {
             this.equipesRamassage.add(newEquipeRamassage);
             newEquipeRamassage.addMatch(this);      

@@ -36,14 +36,14 @@ public class MatchSimple extends Match {
     /** @pdGenerated default getter */
     public java.util.List<Joueur> getJoueurs() {
         if (joueurs == null)
-            joueurs = new java.util.List<Joueur>();
+            joueurs = new java.util.ArrayList<Joueur>();
         return joueurs;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorJoueurs() {
         if (joueurs == null)
-            joueurs = new java.util.List<Joueur>();
+            joueurs = new java.util.ArrayList<Joueur>();
         return joueurs.iterator();
     }
    
@@ -61,10 +61,9 @@ public class MatchSimple extends Match {
         if (newJoueur == null)
            return;
         if (this.joueurs == null)
-           this.joueurs = new java.util.List<Joueur>();
+           this.joueurs = new java.util.ArrayList<Joueur>();
         if (!this.joueurs.contains(newJoueur)) {
-           this.joueurs.add(newJoueur);
-           newJoueur.addMatchSimple(this);      
+           this.joueurs.add(newJoueur);   
         }
     }
    
@@ -76,7 +75,6 @@ public class MatchSimple extends Match {
         if (this.joueurs != null) {
             if (this.joueurs.contains(oldJoueur)) {
                 this.joueurs.remove(oldJoueur);
-                oldJoueur.removeMatchSimple(this);
             }
         }
     }
@@ -88,7 +86,6 @@ public class MatchSimple extends Match {
             for (java.util.Iterator iter = getIteratorJoueurs(); iter.hasNext();) {
                 oldJoueur = (Joueur)iter.next();
                 iter.remove();
-                oldJoueur.removeMatchSimple(this);
             }
         }
     }
@@ -116,7 +113,7 @@ public class MatchSimple extends Match {
 
     @Override
     public void assignerArbitres() {
-        arbitres=Arbitre.getArbitres();
+        arbitres=Arbitre.getList();
         int i, c = 1;
         //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
         arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
