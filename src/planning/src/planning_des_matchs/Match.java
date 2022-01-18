@@ -13,9 +13,9 @@ import java.sql.Statement;
 import java.util.*;
 
 public abstract class Match {
-    private int id;
+    private final int id;
     private Creneau creneau;
-    private Court court;
+    private List<int> score;    // sets gagnés
     protected java.util.List<Arbitre> arbitresLigne;
     private java.util.List<EquipeRamassage> equipesRamassage;
     protected Arbitre arbitreChaise;
@@ -26,11 +26,13 @@ public abstract class Match {
 
 
    
-    public Match(int id, Creneau creneau, Court court, java.util.List<Arbitre> arbitresLigne, 
-            java.util.List<EquipeRamassage> equipesRamassage) {
+    public Match(int id, Creneau creneau, List<int> score, java.util.List<Arbitre> arbitresLigne, java.util.List<EquipeRamassage> equipesRamassage) {
         this.id = id;
         this.creneau = creneau;
-        this.court = court;
+        
+        if (score == null)
+            score = new ArrayList(2);
+        this.score = score;
         
         if (arbitresLignes == null)
             arbitresLigne = new ArrayList(6);

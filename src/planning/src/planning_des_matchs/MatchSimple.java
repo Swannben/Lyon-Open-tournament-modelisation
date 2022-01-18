@@ -23,9 +23,9 @@ public class MatchSimple extends Match {
     }
 
    
-    public MatchSimple(int id, Creneau creneau, Court court, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
+    public MatchSimple(int id, Creneau creneau, List<int> score, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage) {
-        super(id, creneau, court, arbitreChaise, arbitresLigne, equipesRamassage);
+        super(id, creneau, score, arbitreChaise, arbitresLigne, equipesRamassage);
         this.estQualif=estQualif;
 
         setArbitreChaise(arbitreChaise);

@@ -12,9 +12,9 @@ public class MatchDouble extends Match {
     private java.util.List<Equipe> equipes;
 
 
-    public MatchDouble(int id, Creneau creneau, Court court,Arbitre arbitreChaise,java.util.List<Arbitre> arbitresLigne, 
+    public MatchDouble(int id, Creneau creneau, List<int> score, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
-        super(id, creneau, court, arbitresLigne, equipesRamassage);
+        super(id, creneau, score, arbitresLigne, equipesRamassage);
         
         setArbitreChaise(arbitreChaise);
 
