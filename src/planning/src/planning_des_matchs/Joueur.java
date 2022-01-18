@@ -6,17 +6,21 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public class Joueur {
-    private int id;
+    private final int id;
     private String nom;
     private String prenom;
     private Nationalite nationalite;
-
     private Equipe equipe;
 
-    public Joueur( int id, String nom, String prenom, Nationalite nationalite, Equipe equipe) {
+
+    public Joueur(int id, String nom, String prenom, Nationalite nationalite, Equipe equipe) {
         this.id=id;
         this.nationalite=nationalite;
         this.nom=nom;
@@ -77,7 +81,59 @@ public class Joueur {
         }
     }
     
-   
     
+    public static List<Joueur> getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            Joueur joueur;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                joueur = (Joueur)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New list
+        List<Joueur> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
+        try {
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from joueur");
 
+            while (result.next()) {
+                // TODO: get players : select * from joueur natural join joueur order by idjoueur ?
+                Joueur joueur = new Joueur(
+                        result.getInt("idjoueur"),
+                        result.getString("nom"),
+                        result.getString("prenom"),
+                        Nationalite.get(result.getInt("nationalite"))
+                );
+
+                newList.add(joueur);
+            }
+            
+            result.close();
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+        list = newList;
+        return list;
+    }
+    
+    
+    public static List<Joueur> getList() {
+        return list;
+    }
+    
+    public static Joueur get(int id) {
+        for (Joueur joueur : list) {
+            if (joueur.id == id) {
+                return joueur;
+            }
+        }
+        return null;
+    }
 }

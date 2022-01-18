@@ -9,11 +9,9 @@ package planning_des_matchs;
 import java.util.*;
 
 public class MatchSimple extends Match {
-    public java.util.List<Joueur> joueurs;
+    private java.util.List<Joueur> joueurs;
     private boolean estQualif;
-    
-    
-    
+        
     
     public boolean estQualif() {
         return estQualif;
@@ -27,8 +25,13 @@ public class MatchSimple extends Match {
    
     public MatchSimple(int id, Creneau creneau, Court court, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage) {
-        super(id,creneau,court,arbitreChaise, arbitresLigne, equipesRamassage);
+        super(id, creneau, court, arbitreChaise, arbitresLigne, equipesRamassage);
         this.estQualif=estQualif;
+
+        setArbitreChaise(arbitreChaise);
+
+        if (joueurs == null)
+            joueurs = new ArrayList(2);
         this.joueurs = joueurs;
     }
     
@@ -89,11 +92,6 @@ public class MatchSimple extends Match {
             }
         }
     }
-    
-    /** @pdGenerated default parent getter */
-    public Arbitre getArbitreChaise() {
-        return arbitreChaise;
-    }
    
     /** @pdGenerated default parent setter
       * @param newArbitre */
@@ -102,11 +100,11 @@ public class MatchSimple extends Match {
             if (this.arbitreChaise != null) {
                 Arbitre oldArbitre = this.arbitreChaise;
                 this.arbitreChaise = null;
-                oldArbitre.removeMatchSimpleChaise(this);
+                oldArbitre.subMatchSimple();
             }
             if (newArbitre != null) {
                 this.arbitreChaise = newArbitre;
-                this.arbitreChaise.addMatchSimpleChaise(this);
+                this.arbitreChaise.addMatchDouble();
             }
         }
     }
@@ -137,5 +135,6 @@ public class MatchSimple extends Match {
         
         
     }
+
 
 }
