@@ -3,4 +3,4 @@
 /src/planning/build/
 /.idea/
 *.iml
-/src/planning/dist/
+.DS_Store
