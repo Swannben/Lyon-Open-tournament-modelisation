@@ -12,9 +12,6 @@ public class MatchDouble extends Match {
     private java.util.List<Equipe> equipes;
     private Arbitre arbitreChaise;
     int id;
-    Creneau creneau;
-    Court court;
-    private java.util.List<Arbitre> arbitresLigne;
     private java.util.List<EquipeRamassage> equipesRamassage;
     private List<Joueur> joueurs;
     
