@@ -24,11 +24,15 @@ public class MatchDouble extends Match {
     
     public MatchDouble(int id, Creneau creneau, Court court,Arbitre arbitreChaise,java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
-        super(id,creneau,court,arbitreChaise,arbitresLigne,equipesRamassage);
-        this.equipes = equipes;
+        super(id, creneau, score, arbitresLigne, equipesRamassage);
         
+        setArbitreChaise(arbitreChaise);
+
+        if (equipes == null)
+            equipes = new ArrayList(2);
+        this.equipes = equipes;
     }
-    
+        
     
     /** @pdGenerated default getter */
     public java.util.List<Equipe> getEquipes() {
@@ -89,24 +93,21 @@ public class MatchDouble extends Match {
             }
         }
     }
-    
-    /** @pdGenerated default parent getter */
-    public Arbitre getArbitreChaise() {
-        return arbitreChaise;
-    }
    
+    
     /** @pdGenerated default parent setter
       * @param newArbitre */
+    @Override
     public void setArbitreChaise(Arbitre newArbitre) {
         if (this.arbitreChaise == null || !this.arbitreChaise.equals(newArbitre)) {
             if (this.arbitreChaise != null) {
                 Arbitre oldArbitre = this.arbitreChaise;
                 this.arbitreChaise = null;
-                oldArbitre.removeMatchDoubleChaise(this);
+                oldArbitre.subMatchDouble();
             }
             if (newArbitre != null) {
                 this.arbitreChaise = newArbitre;
-                this.arbitreChaise.addMatchDoubleChaise(this);
+                this.arbitreChaise.addMatchDouble();
             }
         }
     }

@@ -44,6 +44,10 @@ public class DatabaseConnection {
         }
     }
     
+    public Statement getStatement() {
+        return statement;
+    }
+    
     
     
     private DatabaseConnection(String login, String password) throws SQLException {
