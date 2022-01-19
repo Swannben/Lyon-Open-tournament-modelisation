@@ -103,6 +103,10 @@ create table vip
    prenom               varchar(254),
    numerotel            int,
    typevip              int,
+/* 0 = rien
+ * 
+ */
+   idnationalite          int,
    primary key (idvip)
 );
 
@@ -184,14 +188,10 @@ create table typechambre
 
 create table arbitre
 (
-   idarbitre            serial not null,
-   idnationalite        int,
-   idutilisateur        int,
+   idarbitre            int not null,     -- idvip
    certification        varchar(254),
    nbdematchfaits       int,
    nbdematchfaitd       int,
-   nom                  varchar(254),
-   prenom               varchar(254),
    primary key (idarbitre)
 );
 
@@ -252,12 +252,8 @@ create table jouesimple
 
 create table joueur
 (
-   idjoueur             serial not null,
+   idjoueur             int not null,     -- idvip
    idequipe             int,
-   idnationalite        int,
-   nom                  varchar(254),
-   prenom               varchar(254),
-   idutilisateur        int,
    estqualifie          boolean,
    primary key (idjoueur)
 );
@@ -327,6 +323,9 @@ alter table vip add constraint fk_vip_utilisateur foreign key (idutilisateur)
 
 -- Hébergement ----------------------------------
 
+alter table vip add constraint fk_vip_nationalite foreign key (idnationalite)
+      references nationalite (idnationalite) on delete set null on update cascade;
+
 alter table chambre add constraint fk_chambre_typechambre foreign key (idhotel, idtypechambre)
       references typechambre (idhotel, idtypechambre) on delete restrict on update cascade;
 
@@ -357,11 +356,8 @@ alter table typechambre add constraint fk_typechambre_hotel foreign key (idhotel
 
 -- Planning -------------------------------------
 
-alter table arbitre add constraint fk_arbitre_nationalite foreign key (idnationalite)
-      references nationalite (idnationalite) on delete set null on update cascade;
-
-alter table arbitre add constraint fk_arbitre_utilisateur foreign key (idutilisateur)
-      references utilisateur (idutilisateur) on delete set null on update cascade;
+alter table arbitre add constraint fk_arbitre_vip foreign key (idarbitre)
+      references vip (idvip) on delete cascade on update cascade;
 
 alter table creneau add constraint fk_creneau_court foreign key (idcourt)
       references court (idcourt) on delete restrict on update cascade;
@@ -390,11 +386,8 @@ alter table jouesimple add constraint fk_jouesimple_matchsimple foreign key (idm
 alter table joueur add constraint fk_joueur_equipe foreign key (idequipe)
       references equipe (idequipe) on delete set null on update cascade;
 
-alter table joueur add constraint fk_joueur_nationalite foreign key (idnationalite)
-      references nationalite (idnationalite) on delete set null on update cascade;
-
-alter table joueur add constraint fk_joueur_utilisateur foreign key (idutilisateur)
-      references utilisateur (idutilisateur) on delete set null on update cascade;
+alter table joueur add constraint fk_joueur_vip foreign key (idjoueur)
+      references vip (idvip) on delete cascade on update cascade;
       
 alter table ligne add constraint fk_ligne_arbitre foreign key (idarbitre)
       references arbitre (idarbitre) on delete cascade on update cascade;
