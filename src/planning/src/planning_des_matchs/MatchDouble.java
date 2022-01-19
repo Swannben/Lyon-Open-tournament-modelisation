@@ -6,13 +6,19 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public class MatchDouble extends Match {
     private java.util.List<Equipe> equipes;
 
+    private static List<MatchDouble> list = new LinkedList<>(); 
 
-    public MatchDouble(int id, Creneau creneau, List<int> score, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
+
+    public MatchDouble(int id, Creneau creneau, List<Integer> score, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
         super(id, creneau, score, arbitresLigne, equipesRamassage);
         
@@ -127,5 +133,118 @@ public class MatchDouble extends Match {
         }
         
         
+    }
+    
+    
+    public static List<MatchDouble> getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            MatchDouble matchDouble;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                matchDouble = (MatchDouble)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New list
+        List<MatchDouble> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
+        try {
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from matchdouble natural join match");
+            ResultSet creneauResult = null;
+            int matchID;
+            Creneau creneau;
+            
+            while (result.next()) {
+                matchID = result.getInt("idmatch");
+                
+                // Find creneau
+                creneauResult = statement.executeQuery("select * from creneau where matchid = " + matchID);
+                if (result.next()) {
+                    creneau = Creneau.get(
+                            Jour.get(result.getDate("jour")), 
+                            result.getInt("heure")
+                    );
+                }
+                else {
+                    creneau = null;
+                }
+                
+                // Create score
+                ArrayList<Set> sets = new ArrayList<>(5);
+                ResultSet setResult = null;
+                for (int i = 1; i <= 5; i++) {
+                    setResult = statement.executeQuery("select * from set where idset = " + result.getInt("set"+i));
+                    if (result.next()) {
+                        sets.add(new Set(
+                                result.getInt("jeux1"), result.getInt("jeux2"), 
+                                result.getInt("pointsdernierjeu1"), result.getInt("pointsdernierjeu1")
+                        ));
+                    }
+                    else {
+                        break;
+                    }
+                }
+                if (setResult != null)
+                    setResult.close();     
+                
+                // Create score
+                ArrayList<Set> sets = new ArrayList<>(5);
+                ResultSet setResult = null;
+                for (int i = 1; i <= 5; i++) {
+                    setResult = statement.executeQuery("select * from set where idset = " + result.getInt("set"+i));
+                    if (result.next()) {
+                        sets.add(new Set(
+                                result.getInt("jeux1"), result.getInt("jeux2"), 
+                                result.getInt("pointsdernierjeu1"), result.getInt("pointsdernierjeu1")
+                        ));
+                    }
+                    else {
+                        break;
+                    }
+                }
+                if (setResult != null)
+                    setResult.close();
+                
+                // New MatchDouble
+                MatchDouble matchDouble = new MatchDouble(
+                        matchID,
+                        creneau,
+                        sets,
+                        Arbitre.get(result.getInt("idarbitre")),
+                        lignes,
+                        equipesRamassage,
+                        equipes
+                );
+
+                newList.add(matchDouble);
+            }
+            
+            if (creneauResult != null)
+                creneauResult.close();
+            result.close();
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+        list = newList;
+        return list;
+    }
+    
+    public static List<MatchDouble> getList() {
+        return list;
+    }
+    
+    public static MatchDouble get(int id) {
+        for (MatchDouble matchDouble : list) {
+            if (matchDouble.id == id) {
+                return matchDouble;
+            }
+        }
+        return null;
     }
 }

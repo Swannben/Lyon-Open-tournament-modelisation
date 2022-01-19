@@ -12,6 +12,8 @@ public class MatchSimple extends Match {
     private java.util.List<Joueur> joueurs;
     private boolean estQualif;
         
+    private static List<MatchSimple> list = new LinkedList<>(); 
+
     
     public boolean estQualif() {
         return estQualif;
@@ -23,9 +25,9 @@ public class MatchSimple extends Match {
     }
 
    
-    public MatchSimple(int id, Creneau creneau, List<int> score, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
+    public MatchSimple(int id, Creneau creneau, List<Integer> score, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage) {
-        super(id, creneau, score, arbitreChaise, arbitresLigne, equipesRamassage);
+        super(id, creneau, score, arbitresLigne, equipesRamassage);
         this.estQualif=estQualif;
 
         setArbitreChaise(arbitreChaise);
