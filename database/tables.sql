@@ -153,10 +153,9 @@ create table reservation
 (
    idchambre            int not null,
    idvip                int not null,
-   idreservation        int not null,
    datearrivee          date,
    datedepart           date,
-   primary key (idchambre, idvip, idreservation)
+   primary key (idvip)
 );
 
 create table "service"
@@ -315,124 +314,124 @@ create table ramassage
 
 
 
--- Clefs étrnagères -------------------------------------------------
+-- Clefs étrangères -------------------------------------------------
 
 -- Commun ---------------------------------------
 
 alter table vip add constraint fk_vip_vip foreign key (accompagne)
-      references vip (idvip) on delete restrict on update restrict;
+      references vip (idvip) on delete set null on update set null;
 
 alter table vip add constraint fk_vip_utilisateur foreign key (idutilisateur)
-      references utilisateur (idutilisateur) on delete restrict on update restrict;
+      references utilisateur (idutilisateur) on delete set null on update set null;
 
 
 -- Hébergement ----------------------------------
 
 alter table chambre add constraint fk_chambre_typechambre foreign key (idhotel, idtypechambre)
-      references typechambre (idhotel, idtypechambre) on delete restrict on update restrict;
+      references typechambre (idhotel, idtypechambre) on delete restrict on update cascade;
 
 alter table demande add constraint fk_demande_typechambre foreign key (idhotel, idtypechambre)
-      references typechambre (idhotel, idtypechambre) on delete restrict on update restrict;
+      references typechambre (idhotel, idtypechambre) on delete restrict on update cascade;
 
 alter table demande add constraint fk_demande_vip foreign key (demandeur)
-      references vip (idvip) on delete restrict on update restrict;
+      references vip (idvip) on delete restrict on update cascade;
 
 alter table hotel add constraint fk_hotel_utilisateur foreign key (idutilisateur)
-      references utilisateur (idutilisateur) on delete restrict on update restrict;
+      references utilisateur (idutilisateur) on delete set null on update cascade;
 
 alter table hotelproposeservice add constraint fk_hotelproposeservice_hotel foreign key (idhotel)
-      references hotel (idhotel) on delete restrict on update restrict;
+      references hotel (idhotel) on delete cascade on update cascade;
 
 alter table hotelproposeservice add constraint fk_hotelproposeservice_service foreign key (idservice)
-      references service (idservice) on delete restrict on update restrict;
+      references service (idservice) on delete cascade on update cascade;
 
 alter table reservation add constraint fk_reservation_chambre foreign key (idchambre)
-      references chambre (idchambre) on delete restrict on update restrict;
+      references chambre (idchambre) on delete restrict on update cascade;
 
 alter table reservation add constraint fk_reservation_vip foreign key (idvip)
-      references vip (idvip) on delete restrict on update restrict;
+      references vip (idvip) on delete restrict on update cascade;
 
 alter table typechambre add constraint fk_typechambre_hotel foreign key (idhotel)
-      references hotel (idhotel) on delete restrict on update restrict;
+      references hotel (idhotel) on delete cascade on update cascade;
 
 
 -- Planning -------------------------------------
 
 alter table arbitre add constraint fk_arbitre_nationalite foreign key (idnationalite)
-      references nationalite (idnationalite) on delete restrict on update restrict;
+      references nationalite (idnationalite) on delete set null on update cascade;
 
 alter table arbitre add constraint fk_arbitre_utilisateur foreign key (idutilisateur)
-      references utilisateur (idutilisateur) on delete restrict on update restrict;
+      references utilisateur (idutilisateur) on delete set null on update cascade;
 
 alter table creneau add constraint fk_creneau_court foreign key (idcourt)
-      references court (idcourt) on delete restrict on update restrict;
+      references court (idcourt) on delete restrict on update cascade;
 
 alter table creneau add constraint fk_creneau_match foreign key (idmatch)
-      references "match" (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete restrict on update cascade;
 
 alter table entrainement add constraint fk_entrainement_court foreign key (idcourt)
-      references court (idcourt) on delete restrict on update restrict;
+      references court (idcourt) on delete restrict on update cascade;
 
 alter table entrainement add constraint fk_entrainement_joueur foreign key (idjoueur)
-      references joueur (idjoueur) on delete restrict on update restrict;
+      references joueur (idjoueur) on delete cascade on update cascade;
 
 alter table jouedouble add constraint fk_jouedouble_equipe foreign key (idequipe)
-      references equipe (idequipe) on delete restrict on update restrict;
+      references equipe (idequipe) on delete cascade on update cascade;
 
 alter table jouedouble add constraint fk_jouedouble_matchdouble foreign key (idmatch)
-      references matchdouble (idmatch) on delete restrict on update restrict;
+      references matchdouble (idmatch) on delete cascade on update cascade;
 
 alter table jouesimple add constraint fk_jouesimple_joueur foreign key (idjoueur)
-      references joueur (idjoueur) on delete restrict on update restrict;
+      references joueur (idjoueur) on delete cascade on update cascade;
 
 alter table jouesimple add constraint fk_jouesimple_matchsimple foreign key (idmatch)
-      references matchsimple (idmatch) on delete restrict on update restrict;
+      references matchsimple (idmatch) on delete cascade on update cascade;
 
 alter table joueur add constraint fk_joueur_equipe foreign key (idequipe)
-      references equipe (idequipe) on delete restrict on update restrict;
+      references equipe (idequipe) on delete set null on update cascade;
 
 alter table joueur add constraint fk_joueur_nationalite foreign key (idnationalite)
-      references nationalite (idnationalite) on delete restrict on update restrict;
+      references nationalite (idnationalite) on delete set null on update cascade;
 
 alter table joueur add constraint fk_joueur_utilisateur foreign key (idutilisateur)
-      references utilisateur (idutilisateur) on delete restrict on update restrict;
+      references utilisateur (idutilisateur) on delete set null on update cascade;
       
 alter table ligne add constraint fk_ligne_arbitre foreign key (idarbitre)
-      references arbitre (idarbitre) on delete restrict on update restrict;
+      references arbitre (idarbitre) on delete cascade on update cascade;
 
 alter table ligne add constraint fk_ligne_match foreign key (idmatch)
-      references "match" (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete cascade on update cascade;
 
-alter table match add constraint fk_match_set1 foreign key (set1)
-      references "set" (idset) on delete set null on update restrict;
+alter table "match" add constraint fk_match_set1 foreign key (set1)
+      references "set" (idset) on delete set null on update cascade;
 
-alter table match add constraint fk_match_set2 foreign key (set2)
-      references "set" (idset) on delete set null on update restrict;
+alter table "match" add constraint fk_match_set2 foreign key (set2)
+      references "set" (idset) on delete set null on update cascade;
 
-alter table match add constraint fk_match_set3 foreign key (set3)
-      references "set" (idset) on delete set null on update restrict;
+alter table "match" add constraint fk_match_set3 foreign key (set3)
+      references "set" (idset) on delete set null on update cascade;
 
-alter table match add constraint fk_match_set4 foreign key (set4)
-      references "set" (idset) on delete set null on update restrict;
+alter table "match" add constraint fk_match_set4 foreign key (set4)
+      references "set" (idset) on delete set null on update cascade;
 
-alter table match add constraint fk_match_set5 foreign key (set5)
-      references "set" (idset) on delete set null on update restrict;
+alter table "match" add constraint fk_match_set5 foreign key (set5)
+      references "set" (idset) on delete set null on update cascade;
 
 alter table matchdouble add constraint fk_matchdouble_arbitre foreign key (idarbitre)
-      references arbitre (idarbitre) on delete restrict on update restrict;
+      references arbitre (idarbitre) on delete set null on update cascade;
 
 alter table matchdouble add constraint fk_matchdouble_match foreign key (idmatch)
-      references "match" (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete cascade on update cascade;
 
 alter table matchsimple add constraint fk_matchsimple_match foreign key (idmatch)
-      references "match" (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete cascade on update cascade;
 
 alter table matchsimple add constraint fk_chaise foreign key (idarbitre)
-      references arbitre (idarbitre) on delete restrict on update restrict;
+      references arbitre (idarbitre) on delete set null on update cascade;
 
 alter table ramassage add constraint fk_ramassage_equiperamassage foreign key (idequiperam)
-      references equiperamassage (idequiperam) on delete restrict on update restrict;
+      references equiperamassage (idequiperam) on delete cascade on update cascade;
 
 alter table ramassage add constraint fk_ramassage_match foreign key (idmatch)
-      references "match" (idmatch) on delete restrict on update restrict;
+      references "match" (idmatch) on delete cascade on update cascade;
 

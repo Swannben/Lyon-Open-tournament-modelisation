@@ -32,9 +32,9 @@ public abstract class Match {
     }
     
     
-    private final int id;
+    protected final int id;
     private Creneau creneau;
-    private List<Integer> score;    // sets gagnés
+    private List<Set> score;    // sets gagnés
     protected java.util.List<Arbitre> arbitresLigne;
     private java.util.List<EquipeRamassage> equipesRamassage;
     protected Arbitre arbitreChaise;
@@ -45,7 +45,7 @@ public abstract class Match {
     }
 
    
-    public Match(int id, Creneau creneau, List<Integer> score, java.util.List<Arbitre> arbitresLigne, java.util.List<EquipeRamassage> equipesRamassage) {
+    public Match(int id, Creneau creneau, List<Set> score, java.util.List<Arbitre> arbitresLigne, java.util.List<EquipeRamassage> equipesRamassage) {
         this.id = id;
         this.creneau = creneau;
         
