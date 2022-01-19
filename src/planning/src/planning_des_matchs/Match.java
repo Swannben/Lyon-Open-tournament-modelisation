@@ -230,8 +230,10 @@ public abstract class Match {
     public void assignerEquipesRamassage(){
         int i;
         //TODO gérer l'emploi du temps des listes
+        List<EquipeRamassage> listEquipes = EquipeRamassage.getList();
+        int randomIndex = new Random().nextInt(listEquipes.size());
         for (i=0;i<2;i++){
-            //equipesRamassage.add((new Random().nextInt(EquipeRamassage.getList().size())));
+            equipesRamassage.add(listEquipes.get(randomIndex));
         }
     }
     
