@@ -18,14 +18,13 @@ public class MatchDouble extends Match {
     int id;
     private java.util.List<EquipeRamassage> equipesRamassage;
     
+    private static List<MatchDouble> list = new LinkedList<>(); 
+
+    
     public MatchDouble(){
         super();
     }
     
-    public MatchDouble(int id, Creneau creneau, Court court,Arbitre arbitreChaise,java.util.List<Arbitre> arbitresLigne, 
-
-    private static List<MatchDouble> list = new LinkedList<>(); 
-
 
     public MatchDouble(int id, Creneau creneau, List<Set> score, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
@@ -154,7 +153,6 @@ public class MatchDouble extends Match {
 
         }
         
-        */
     }
     
     

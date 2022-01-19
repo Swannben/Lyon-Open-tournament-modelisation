@@ -14,9 +14,9 @@ import java.util.Map;
 import java.util.StringJoiner;
 
 
-public class Utilisateur {
+public class ConnectedUser {
     
-    public Utilisateur() {
+    public ConnectedUser() {
         
     }
     

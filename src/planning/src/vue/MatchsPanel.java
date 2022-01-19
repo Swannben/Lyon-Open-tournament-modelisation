@@ -9,12 +9,12 @@ package vue;
  *
  * @author cleme
  */
-public class Matchs extends javax.swing.JPanel {
+public class MatchsPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form Planning
      */
-    public Matchs() {
+    public MatchsPanel() {
         initComponents();
     }
 

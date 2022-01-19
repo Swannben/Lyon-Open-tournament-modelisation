@@ -231,7 +231,7 @@ public abstract class Match {
         int i;
         //TODO gérer l'emploi du temps des listes
         for (i=0;i<2;i++){
-        equipesRamassage.add((new Random().nextInt(EquipeRamassage.getList()).size()));
+            //equipesRamassage.add((new Random().nextInt(EquipeRamassage.getList().size())));
         }
     }
     
@@ -245,58 +245,4 @@ public abstract class Match {
       * @param newArbitre */
     abstract public void setArbitreChaise(Arbitre newArbitre);
 
-    
-    public static List<Joueur> getListFromDatabase() {
-        // Delete list
-        if (list != null) {
-            Joueur joueur;
-            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
-                joueur = (Joueur)iter.next();
-                iter.remove();
-            }
-        }
-        
-        // New list
-        List<Joueur> newList = new LinkedList<>();
-        
-        DatabaseConnection connection = DatabaseConnection.get();
-        
-        try {
-            Statement statement = connection.getStatement();
-            ResultSet result = statement.executeQuery("select * from joueur");
-
-            while (result.next()) {
-                // TODO: get players : select * from joueur natural join joueur order by idjoueur ?
-                Joueur joueur = new Joueur(
-                        result.getInt("idjoueur"),
-                        result.getString("nom"),
-                        result.getString("prenom"),
-                        Nationalite.get(result.getInt("nationalite"))
-                );
-
-                newList.add(joueur);
-            }
-            
-            result.close();
-        }
-        catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        
-        list = newList;
-        return list;
-    }
-    
-    public static List<Joueur> getList() {
-        return list;
-    }
-    
-    public static Joueur get(int id) {
-        for (Joueur joueur : list) {
-            if (joueur.id == id) {
-                return joueur;
-            }
-        }
-        return null;
-    }
 }

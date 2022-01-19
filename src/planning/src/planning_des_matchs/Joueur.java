@@ -12,20 +12,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 
-public class Joueur {
-    private final int id;
-    private String nom;
-    private String prenom;
-    private Nationalite nationalite;
-    private Boolean estQualifie;
+public class Joueur extends VIP {
+    private boolean estQualifie;
     private Equipe equipe;
     
+    private static List<Joueur> list = new LinkedList<>();
+    
 
-    public Joueur( int id, String nom, String prenom, Nationalite nationalite, Equipe equipe, Boolean estQualifie) {
-        this.id=id;
-        this.nationalite=nationalite;
-        this.nom=nom;
-        this.prenom=prenom;
+    public Joueur(int idJoueur, int idUtilisateur, String nom, String prenom, String numeroTel, 
+            int typeVIP, Nationalite nationalite, Equipe equipe, boolean estQualifie) {
+        super(idJoueur, idUtilisateur, nom, prenom, numeroTel, typeVIP, nationalite);
         this.equipe=equipe;
         this.estQualifie=estQualifie;
     }
@@ -58,38 +54,7 @@ public class Joueur {
     public void setEstQualifie(Boolean estQualif){
         estQualifie=estQualif;
     }
-    
-    public int getID() {
-       return id;
-    }
 
-    public String getNom() {
-       return nom;
-    }
-
-    /** @param newNom */
-    public void setNom(String newNom) {
-       nom = newNom;
-    }
-   
-    public String getPrenom() {
-        return prenom;
-    }
-   
-    /** @param newPrenom */
-    public void setPrenom(String newPrenom) {
-        prenom = newPrenom;
-    }
-   
-    public Nationalite getNationalite() {
-        return nationalite;
-    }
-
-    /** @param newNationalite */
-    public void setNationalite(Nationalite newNationalite) {
-        nationalite = newNationalite;
-    }
-    
     
     /** @pdGenerated default parent getter */
     public Equipe getEquipe() {
@@ -130,16 +95,20 @@ public class Joueur {
         
         try {
             Statement statement = connection.getStatement();
-            ResultSet result = statement.executeQuery("select * from joueur");
+            ResultSet result = statement.executeQuery("select * from joueur, vip where idjoueur = idvip");
 
             while (result.next()) {
                 // TODO: get players : select * from joueur natural join joueur order by idjoueur ?
                 Joueur joueur = new Joueur(
-                        result.getInt("idjoueur"),
-                        result.getString("nom"),
+                        result.getInt("idvip"), 
+                        result.getInt("idutilisateur"), 
+                        result.getString("nom"), 
                         result.getString("prenom"),
-                        Nationalite.get(result.getInt("nationalite")),
-                        null // TODO: equipe
+                        result.getString("numerotel"), 
+                        result.getInt("typevip"), 
+                        Nationalite.get(result.getInt("idnationalite")),
+                        null, // TODO: equipe
+                        result.getBoolean("estqualifie")
                 );
 
                 newList.add(joueur);

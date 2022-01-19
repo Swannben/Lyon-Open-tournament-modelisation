@@ -62,7 +62,7 @@ public class UserConnection {
             ObjectMapper objectMapper = new ObjectMapper();
             String line = in.readLine();
             System.out.println(line);
-            Utilisateur user = objectMapper.readValue(line, Utilisateur.class);
+            ConnectedUser user = objectMapper.readValue(line, ConnectedUser.class);
             if (user.getId() != -1) {
                 // Authentication success
                 instance = new UserConnection(user);
@@ -92,16 +92,16 @@ public class UserConnection {
     }
     
     
-    private UserConnection(Utilisateur user) {
+    private UserConnection(ConnectedUser user) {
         authenticatedUser = user;
     }
     
-    public Utilisateur getAuthenticatedUser() {
+    public ConnectedUser getAuthenticatedUser() {
         return authenticatedUser;
     }
     
     
     private static UserConnection instance = null;
     
-    private Utilisateur authenticatedUser;
+    private ConnectedUser authenticatedUser;
 }

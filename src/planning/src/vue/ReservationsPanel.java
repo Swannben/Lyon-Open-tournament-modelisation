@@ -9,12 +9,12 @@ package vue;
  *
  * @author cleme
  */
-public class Reservations extends javax.swing.JPanel {
+public class ReservationsPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form Entrainements
      */
-    public Reservations() {
+    public ReservationsPanel() {
         initComponents();
     }
 
