@@ -12,10 +12,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 
+
 public abstract class Match {
     protected final int id;
     protected Creneau creneau;
-    protected List<int> score;    // sets gagnés
+    private List<Set> score;    // sets gagnés
     protected java.util.List<Arbitre> arbitresLigne;
     private java.util.List<EquipeRamassage> equipesRamassage;
     Match matchA;
@@ -45,15 +46,33 @@ public abstract class Match {
         this.profondeur = profondeur;
     }
    
+    
+    protected static class Set {
+        public Set() {}
+        
+        public Set(int jeux1, int jeux2, int pointsDernierJeuPerdant1, int pointsDernierJeuPerdant2) {
+            this.jeux1 = jeux1;
+            this.jeux2 = jeux2;
+            this.pointsDernierJeuPerdant1 = pointsDernierJeuPerdant1;
+            this.pointsDernierJeuPerdant2 = pointsDernierJeuPerdant2;
+        }
+        
+        public int jeux1 = 0;
+        public int jeux2 = 0;
+        public int pointsDernierJeuPerdant1 = 0;
+        public int pointsDernierJeuPerdant2 = 0;
+    }
+    
+    
+
+    
+    
     public int getID() {
         return id;
     }
 
-    public Match(){
-        
-    }
    
-    public Match(int id, Creneau creneau, List<int> score, java.util.List<Arbitre> arbitresLigne, java.util.List<EquipeRamassage> equipesRamassage) {
+    public Match(int id, Creneau creneau, List<Set> score, java.util.List<Arbitre> arbitresLigne, java.util.List<EquipeRamassage> equipesRamassage) {
         this.id = id;
         this.creneau = creneau;
         
@@ -118,7 +137,6 @@ public abstract class Match {
             this.arbitresLigne = new java.util.ArrayList<Arbitre>();
         if (!this.arbitresLigne.contains(newArbitre)) {
             this.arbitresLigne.add(newArbitre);
-            newArbitre.addMatchLigne(this);      
         }
     }
    
@@ -130,7 +148,6 @@ public abstract class Match {
         if (this.arbitresLigne != null) {
             if (this.arbitresLigne.contains(oldArbitre)) {
                 this.arbitresLigne.remove(oldArbitre);
-                oldArbitre.removeMatch(this);
             }
         }
     }
@@ -142,7 +159,6 @@ public abstract class Match {
             for (java.util.Iterator iter = getIteratorArbitresLigne(); iter.hasNext();) {
                 oldArbitre = (Arbitre)iter.next();
                 iter.remove();
-                oldArbitre.removeMatch(this);
             }
         }
     }

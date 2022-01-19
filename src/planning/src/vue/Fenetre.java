@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vue;
 
 import database.UserConnection;
 import database.Utilisateur;
 
-/**
- *
- * @author cleme
- */
+
 public class Fenetre extends javax.swing.JFrame {
 
     /**
@@ -19,12 +11,14 @@ public class Fenetre extends javax.swing.JFrame {
      */
     public Fenetre() {
         initComponents();
-        hideUserSpecificPanels();
     }
     
+    
     private void hideUserSpecificPanels() {
-        if (tabs.indexOfComponent(planningPanel) != -1)
-            tabs.remove(planningPanel);
+        if (tabs.indexOfComponent(matchsPanel) != -1)
+            tabs.remove(matchsPanel);
+        if (tabs.indexOfComponent(reservationsPanel) != -1)
+            tabs.remove(reservationsPanel);
     }
     
     private void displayLoggedIn(Utilisateur user) {
@@ -57,7 +51,8 @@ public class Fenetre extends javax.swing.JFrame {
                 case 3:     // Responsable de l'hebergement du tournoi
                     break;
                 case 4:     // Joueur
-                    tabs.addTab("Planning", planningPanel);
+                    tabs.addTab("Matchs", matchsPanel);
+                    tabs.addTab("Réservations", reservationsPanel);
                     break;
                 case 5:     // Arbitre
                     break;
@@ -87,7 +82,6 @@ public class Fenetre extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         passwordField = new javax.swing.JTextField();
         submitLogButton = new javax.swing.JButton();
-        planningPanel = new vue.Planning();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,7 +116,7 @@ public class Fenetre extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(emailField)
                     .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
@@ -158,19 +152,6 @@ public class Fenetre extends javax.swing.JFrame {
 
         tabs.addTab("Accueil", jPanel1);
 
-        javax.swing.GroupLayout planningPanelLayout = new javax.swing.GroupLayout(planningPanel);
-        planningPanel.setLayout(planningPanelLayout);
-        planningPanelLayout.setHorizontalGroup(
-            planningPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 415, Short.MAX_VALUE)
-        );
-        planningPanelLayout.setVerticalGroup(
-            planningPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 272, Short.MAX_VALUE)
-        );
-
-        tabs.addTab("Planning", planningPanel);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,7 +160,7 @@ public class Fenetre extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabs)
+            .addComponent(tabs, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -194,7 +175,7 @@ public class Fenetre extends javax.swing.JFrame {
         else {
             // Log in
             UserConnection.open(emailField.getText(), passwordField.getText());
-        }            
+        }
         updatePanels();
     }//GEN-LAST:event_submitLogButtonActionPerformed
 
@@ -232,6 +213,10 @@ public class Fenetre extends javax.swing.JFrame {
             }
         });
     }
+
+    // Panels
+    private Matchs matchsPanel = new Matchs();
+    private Reservations reservationsPanel = new Reservations();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField emailField;
@@ -241,7 +226,6 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField passwordField;
-    private vue.Planning planningPanel;
     private javax.swing.JButton submitLogButton;
     private javax.swing.JTabbedPane tabs;
     // End of variables declaration//GEN-END:variables

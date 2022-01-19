@@ -6,6 +6,10 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public class MatchSimple extends Match {
@@ -16,6 +20,9 @@ public class MatchSimple extends Match {
         super();
     }
     
+        
+    private static List<MatchSimple> list = new LinkedList<>(); 
+
     
     public boolean estQualif() {
         return estQualif;
@@ -27,7 +34,8 @@ public class MatchSimple extends Match {
     }
 
    
-    public MatchSimple(int id, Creneau creneau, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
+    public MatchSimple(int id, Creneau creneau, List<Set> score, boolean estQualif, Arbitre arbitreChaise, 
+            java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage) {
         super(id, creneau, score, arbitresLigne, equipesRamassage);
         this.estQualif=estQualif;
@@ -117,7 +125,7 @@ public class MatchSimple extends Match {
             }
             if (newArbitre != null) {
                 this.arbitreChaise = newArbitre;
-                this.arbitreChaise.addMatchDouble();
+                this.arbitreChaise.addMatchSimple();
             }
         }
     }
@@ -146,7 +154,143 @@ public class MatchSimple extends Match {
 
         }
         
+        */
+    }
+
+    
+    public static List<MatchSimple> getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            MatchSimple matchSimple;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                matchSimple = (MatchSimple)iter.next();
+                iter.remove();
+            }
+        }
         
+        // New list
+        List<MatchSimple> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
+        try {
+            Statement statement = connection.getStatement();
+            ResultSet matchSimpleResult = statement.executeQuery("select * from matchsimple natural join match");
+            ResultSet creneauResult = null;
+            int matchID;
+            Creneau creneau = null;
+            
+            while (matchSimpleResult.next()) {
+                matchID = matchSimpleResult.getInt("idmatch");
+                
+                // Find creneau
+                ResultSet result = statement.executeQuery("select * from creneau where matchid = " + matchID);
+                if (result.next()) {
+                    creneau = Creneau.get(
+                            Jour.get(result.getDate("jour")), 
+                            result.getInt("heure")
+                    );
+                }
+                if (result != null) {
+                    result.close();
+                    result = null;
+                }
+                
+                // Get score
+                ArrayList<Set> sets = new ArrayList<>(5);
+                {
+                    int setID;
+                    for (int i = 1; i <= 5; i++) {
+                        setID = matchSimpleResult.getInt("set"+i);
+                        if (setID == 0)
+                            break;
+                        
+                        result = statement.executeQuery("select * from set where idset = " + setID);
+                        if (result.next()) {
+                            sets.add(new Set(
+                                    result.getInt("jeux1"), result.getInt("jeux2"), 
+                                    result.getInt("pointsdernierjeu1"), result.getInt("pointsdernierjeu1")
+                            ));
+                        }
+                        else {
+                            break;
+                        }
+                    }
+                    if (result != null) {
+                        result.close(); 
+                        result = null;
+                    }
+                }
+                
+                // Get arbitresLigne
+                ArrayList<Arbitre> arbitresLigne = new ArrayList<>(6);
+                result = statement.executeQuery("select idarbitre from ligne where idmatch = " + matchID);
+                {
+                    int i = 0;
+                    while (result.next() && i < 6) {
+                        arbitresLigne.add(Arbitre.get(result.getInt("idarbitre")));
+                        i++;
+                    }
+                }
+                if (result != null) {
+                    result.close();
+                    result = null;
+                }
+                
+                // Get equipesRamassage
+                ArrayList<EquipeRamassage> equipesRamassage = new ArrayList<>(2);
+                result = statement.executeQuery("select idequiperam from ramassage where idmatch = " + matchID);
+                {
+                    int i = 0;
+                    while (result.next() && i < 2) {
+                        equipesRamassage.add(EquipeRamassage.get(result.getInt("idequiperam")));
+                        i++;
+                    }
+                }
+                if (result != null) {
+                    result.close();
+                    result = null;
+                }
+                
+                // Get joueurs
+                ArrayList<Joueur> joueurs = new ArrayList<>(2);
+                result = statement.executeQuery("select idjoueur from jouesimple where idmatch = " + matchID);
+                {
+                    int i = 0;
+                    while (result.next() && i < 2) {
+                        joueurs.add(Joueur.get(result.getInt("idjoueur")));
+                        i++;
+                    }
+                }
+                if (result != null) {
+                    result.close();
+                    result = null;
+                }
+                
+                // New MatchSimple
+                MatchSimple matchSimple = new MatchSimple(
+                        matchID,
+                        creneau,
+                        sets,
+                        matchSimpleResult.getBoolean("estqualif"),
+                        Arbitre.get(matchSimpleResult.getInt("idarbitre")),
+                        joueurs,
+                        arbitresLigne,
+                        equipesRamassage
+
+                );
+
+                newList.add(matchSimple);
+            }
+            
+            matchSimpleResult.close();
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+        list = newList;
+        return list;
     }
 
 }

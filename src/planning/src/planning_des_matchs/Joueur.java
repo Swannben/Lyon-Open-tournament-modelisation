@@ -138,7 +138,8 @@ public class Joueur {
                         result.getInt("idjoueur"),
                         result.getString("nom"),
                         result.getString("prenom"),
-                        Nationalite.get(result.getInt("nationalite"))
+                        Nationalite.get(result.getInt("nationalite")),
+                        null // TODO: equipe
                 );
 
                 newList.add(joueur);
