@@ -6,6 +6,10 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public class Court {
@@ -13,8 +17,11 @@ public class Court {
     private String nom;
     private boolean estPrincipal;
 
-    public java.util.List<Match> matchs;
+    //public java.util.List<Match> matchs;
     public java.util.List<Entrainement> entrainements;
+    
+    private static List<Court> list = new LinkedList<>();
+
     
     public Court(int id, String nom, boolean estPrincipal) {
         this.id=id;
@@ -48,43 +55,43 @@ public class Court {
 
    
     /** @pdGenerated default getter */
-    public java.util.List<Match> getMatchs() {
+    /*public java.util.List<Match> getMatchs() {
         if (matchs == null)
-            matchs = new java.util.HashSet<Match>();
+            matchs = new java.util.ArrayList<Match>();
         return matchs;
-    }
+    }*/
 
     /** @pdGenerated default iterator getter */
-    public java.util.Iterator getIteratorMatchs() {
+    /*public java.util.Iterator getIteratorMatchs() {
         if (matchs == null)
-            matchs = new java.util.HashSet<Match>();
+            matchs = new java.util.ArrayList<Match>();
         return matchs.iterator();
-    }
+    }*/
 
     /** @pdGenerated default setter
       * @param newMatch */
-    public void setMatchs(java.util.List<Match> newMatch) {
+    /*public void setMatchs(java.util.List<Match> newMatch) {
         removeAllMatchs();
         for (java.util.Iterator iter = newMatch.iterator(); iter.hasNext();)
             addMatch((Match)iter.next());
-    }
+    }*/
 
     /** @pdGenerated default add
       * @param newMatch */
-    public void addMatch(Match newMatch) {
+    /*public void addMatch(Match newMatch) {
         if (newMatch == null)
             return;
         if (this.matchs == null)
-            this.matchs = new java.util.HashSet<Match>();
+            this.matchs = new java.util.ArrayList<Match>();
         if (!this.matchs.contains(newMatch)) {
             this.matchs.add(newMatch);
             newMatch.setCourt(this);      
         }
-    }
+    }*/
 
     /** @pdGenerated default remove
       * @param oldMatch */
-    public void removeMatch(Match oldMatch) {
+    /*public void removeMatch(Match oldMatch) {
         if (oldMatch == null)
             return;
         if (this.matchs != null) {
@@ -93,10 +100,10 @@ public class Court {
                 oldMatch.setCourt((Court)null);
             }
         }
-    }
+    }*/
 
     /** @pdGenerated default removeAll */
-    public void removeAllMatchs() {
+    /*public void removeAllMatchs() {
         if (matchs != null) {
             Match oldMatch;
             for (java.util.Iterator iter = getIteratorMatchs(); iter.hasNext();) {
@@ -105,19 +112,19 @@ public class Court {
                 oldMatch.setCourt((Court)null);
             }
         }
-    }
+    }*/
     
     /** @pdGenerated default getter */
     public java.util.List<Entrainement> getEntrainements() {
         if (entrainements == null)
-            entrainements = new java.util.HashSet<Entrainement>();
+            entrainements = new java.util.ArrayList<Entrainement>();
         return entrainements;
     }
 
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorEntrainements() {
         if (entrainements == null)
-            entrainements = new java.util.HashSet<Entrainement>();
+            entrainements = new java.util.ArrayList<Entrainement>();
         return entrainements.iterator();
     }
 
@@ -135,7 +142,7 @@ public class Court {
         if (newEntrainement == null)
             return;
         if (this.entrainements == null)
-            this.entrainements = new java.util.HashSet<Entrainement>();
+            this.entrainements = new java.util.ArrayList<Entrainement>();
         if (!this.entrainements.contains(newEntrainement)) {
             this.entrainements.add(newEntrainement);
             newEntrainement.setCourt(this);      
@@ -166,4 +173,57 @@ public class Court {
         }
     }
 
+    
+    
+    public static List getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            Court court;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                court = (Court)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New list
+        List<Court> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
+        try {
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from court");
+
+            while (result.next()) {
+                Court court = new Court(
+                    result.getInt("idcourt"), 
+                    result.getString("nom"), 
+                    result.getBoolean("estprincipal")
+                );
+
+                newList.add(court);
+            }
+            
+            result.close();
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+        list = newList;
+        return newList;
+    }
+    
+    public static List getList() {
+        return list;
+    }
+    
+    public static Court get(int id) {
+        for (Court row : list) {
+            if (row.id == id) {
+                return row;
+            }
+        }
+        return null;
+    }
 }

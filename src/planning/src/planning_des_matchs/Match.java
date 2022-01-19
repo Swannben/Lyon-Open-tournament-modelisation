@@ -6,17 +6,19 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public abstract class Match {
-    private int id;
-    
-
+    private final int id;
     private Creneau creneau;
-    private Court court;
-    private java.util.List<Arbitre> arbitresLigne;
+    private List<int> score;    // sets gagnés
+    protected java.util.List<Arbitre> arbitresLigne;
     private java.util.List<EquipeRamassage> equipesRamassage;
-    List<Arbitre> arbitres;
+    protected Arbitre arbitreChaise;
    
     public int getID() {
         return id;
@@ -24,20 +26,25 @@ public abstract class Match {
 
 
    
-    public Match(int id, Creneau creneau, Court court) {
+    public Match(int id, Creneau creneau, List<int> score, java.util.List<Arbitre> arbitresLigne, java.util.List<EquipeRamassage> equipesRamassage) {
         this.id = id;
         this.creneau = creneau;
-        this.court= court;
-        arbitresLigne = new ArrayList(6);
-        equipesRamassage = new ArrayList(2);
+        
+        if (score == null)
+            score = new ArrayList(2);
+        this.score = score;
+        
+        if (arbitresLignes == null)
+            arbitresLigne = new ArrayList(6);
+        this.arbitresLigne = arbitresLigne;
+
+        if (equipesRamassage == null)
+            equipesRamassage = new ArrayList(2);
+        this.equipesRamassage = equipesRamassage;
     }
         
     public Creneau getCreneau() {
         return creneau;
-    }
-    
-    public Court getCourt() {
-        return court;
     }
     
     /** @param newCreneau */
@@ -46,26 +53,11 @@ public abstract class Match {
             if (this.creneau != null) {
                 Creneau oldCreneau = this.creneau;
                 this.creneau = null;
-                oldCreneau.removeMatch(this);
+                oldCreneau.setMatch(null);
             }
             if (newCreneau != null) {
                 this.creneau = newCreneau;
-                this.creneau.addMatch(this);
-            }
-        }    
-    }
-    
-    /** @param newCourt */
-    public void setCourt(Court newCourt) {
-        if (this.court == null || !this.court.equals(newCourt)) {
-            if (this.court != null) {
-                Court oldCourt = this.court;
-                this.court = null;
-                oldCourt.removeMatch(this);
-            }
-            if (newCourt != null) {
-                this.court = newCourt;
-                this.court.addMatch(this);
+                this.creneau.setMatch(this);
             }
         }    
     }
@@ -73,14 +65,14 @@ public abstract class Match {
     /** @pdGenerated default getter */
     public java.util.List<Arbitre> getArbitresLigne() {
         if (arbitresLigne == null)
-            arbitresLigne = new java.util.HashSet<Arbitre>();
+            arbitresLigne = new java.util.ArrayList<Arbitre>();
         return arbitresLigne;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorArbitresLigne() {
         if (arbitresLigne == null)
-            arbitresLigne = new java.util.HashSet<Arbitre>();
+            arbitresLigne = new java.util.ArrayList<Arbitre>();
         return arbitresLigne.iterator();
    }
    
@@ -95,10 +87,8 @@ public abstract class Match {
     /** @pdGenerated default add
       * @param newArbitre */
     public void addArbitreLigne(Arbitre newArbitre) {
-        if (newArbitre == null)
-            return;
         if (this.arbitresLigne == null)
-            this.arbitresLigne = new java.util.HashSet<Arbitre>();
+            this.arbitresLigne = new java.util.ArrayList<Arbitre>();
         if (!this.arbitresLigne.contains(newArbitre)) {
             this.arbitresLigne.add(newArbitre);
             newArbitre.addMatchLigne(this);      
@@ -131,18 +121,20 @@ public abstract class Match {
     }
     
     
-    abstract public void assignerArbitre();
+    abstract public void assignerArbitres();
+
+
     /** @pdGenerated default getter */
     public java.util.List<EquipeRamassage> getEquipesRamassage() {
         if (equipesRamassage == null)
-            equipesRamassage = new java.util.HashSet<EquipeRamassage>();
+            equipesRamassage = new java.util.ArrayList<EquipeRamassage>();
         return equipesRamassage;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorEquipesRamassage() {
         if (equipesRamassage == null)
-            equipesRamassage = new java.util.HashSet<EquipeRamassage>();
+            equipesRamassage = new java.util.ArrayList<EquipeRamassage>();
         return equipesRamassage.iterator();
     }
    
@@ -160,7 +152,7 @@ public abstract class Match {
         if (newEquipeRamassage == null)
             return;
         if (this.equipesRamassage == null)
-            this.equipesRamassage = new java.util.HashSet<EquipeRamassage>();
+            this.equipesRamassage = new java.util.ArrayList<EquipeRamassage>();
         if (!this.equipesRamassage.contains(newEquipeRamassage)) {
             this.equipesRamassage.add(newEquipeRamassage);
             newEquipeRamassage.addMatch(this);      
@@ -192,5 +184,69 @@ public abstract class Match {
             }
         }
     }
+    
+    
+        /** @pdGenerated default parent getter */
+    public Arbitre getArbitreChaise() {
+        return arbitreChaise;
+    }
+   
+    /** @pdGenerated default parent setter
+      * @param newArbitre */
+    abstract public void setArbitreChaise(Arbitre newArbitre);
 
+    
+    public static List<Joueur> getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            Joueur joueur;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                joueur = (Joueur)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New list
+        List<Joueur> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
+        try {
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from joueur");
+
+            while (result.next()) {
+                // TODO: get players : select * from joueur natural join joueur order by idjoueur ?
+                Joueur joueur = new Joueur(
+                        result.getInt("idjoueur"),
+                        result.getString("nom"),
+                        result.getString("prenom"),
+                        Nationalite.get(result.getInt("nationalite"))
+                );
+
+                newList.add(joueur);
+            }
+            
+            result.close();
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        
+        list = newList;
+        return list;
+    }
+    
+    public static List<Joueur> getList() {
+        return list;
+    }
+    
+    public static Joueur get(int id) {
+        for (Joueur joueur : list) {
+            if (joueur.id == id) {
+                return joueur;
+            }
+        }
+        return null;
+    }
 }

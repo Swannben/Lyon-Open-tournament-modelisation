@@ -9,31 +9,32 @@ package planning_des_matchs;
 import java.util.*;
 
 public class MatchDouble extends Match {
-    public java.util.List<Equipe> equipes;
-    public Arbitre arbitreChaise;
-    int id;
-    Creneau creneau;
-    Court court;
-    private java.util.List<Arbitre> arbitresLigne;
-    private java.util.List<EquipeRamassage> equipesRamassage;
+    private java.util.List<Equipe> equipes;
 
-    public MatchDouble(int id, Creneau creneau, Court court) {
-        super(id,creneau,court);
-        equipes = new ArrayList(2);
+
+    public MatchDouble(int id, Creneau creneau, List<int> score, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
+            java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
+        super(id, creneau, score, arbitresLigne, equipesRamassage);
+        
+        setArbitreChaise(arbitreChaise);
+
+        if (equipes == null)
+            equipes = new ArrayList(2);
+        this.equipes = equipes;
     }
-    
+        
     
     /** @pdGenerated default getter */
     public java.util.List<Equipe> getEquipes() {
         if (equipes == null)
-            equipes = new java.util.HashSet<Equipe>();
+            equipes = new java.util.ArrayList<Equipe>();
         return equipes;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorEquipes() {
         if (equipes == null)
-            equipes = new java.util.HashSet<Equipe>();
+            equipes = new java.util.ArrayList<Equipe>();
         return equipes.iterator();
     }
    
@@ -51,7 +52,7 @@ public class MatchDouble extends Match {
         if (newEquipe == null)
            return;
         if (this.equipes == null)
-           this.equipes = new java.util.HashSet<Equipe>();
+           this.equipes = new java.util.ArrayList<Equipe>();
         if (!this.equipes.contains(newEquipe)) {
            this.equipes.add(newEquipe);
            newEquipe.addMatchDouble(this);      
@@ -82,31 +83,49 @@ public class MatchDouble extends Match {
             }
         }
     }
-    
-    /** @pdGenerated default parent getter */
-    public Arbitre getArbitreChaise() {
-        return arbitreChaise;
-    }
    
+    
     /** @pdGenerated default parent setter
       * @param newArbitre */
+    @Override
     public void setArbitreChaise(Arbitre newArbitre) {
         if (this.arbitreChaise == null || !this.arbitreChaise.equals(newArbitre)) {
             if (this.arbitreChaise != null) {
                 Arbitre oldArbitre = this.arbitreChaise;
                 this.arbitreChaise = null;
-                oldArbitre.removeMatchDoubleChaise(this);
+                oldArbitre.subMatchDouble();
             }
             if (newArbitre != null) {
                 this.arbitreChaise = newArbitre;
-                this.arbitreChaise.addMatchDoubleChaise(this);
+                this.arbitreChaise.addMatchDouble();
             }
         }
     }
 
     @Override
-    public void assignerArbitre() {
+    public void assignerArbitres() {
+        arbitres=Arbitre.getList();
+        int i, c = 1;
+        //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
+        arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
+        
+        while (c>0){
+            c=0;
+            if (arbitreChaise.getNbMatchsFaitsD()>=2 || arbitreChaise.getCertification()!="ITT1"){
+                c++;
+                for (i=0;i<joueurs.size();i++){
+                    if (arbitreChaise.getNationalite().equals(joueurs.get(i).getNationalite())){
+                        c++;
+                    }
+                }
+            }
+        }
+        
+        for (i=0;i<6;i++){
+            arbitresLigne.add(arbitres.get(new Random().nextInt(arbitres.size())));
+
+        }
+        
         
     }
-
 }
