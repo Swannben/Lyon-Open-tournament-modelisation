@@ -13,7 +13,6 @@ public class MatchDouble extends Match {
     private Arbitre arbitreChaise;
     int id;
     private java.util.List<EquipeRamassage> equipesRamassage;
-    private List<Joueur> joueurs;
     
     public MatchDouble(){
         super();
@@ -29,7 +28,23 @@ public class MatchDouble extends Match {
             equipes = new ArrayList(2);
         this.equipes = equipes;
     }
-        
+    
+    @Override
+    public MatchDouble getMatchA() {
+        return (MatchDouble) matchA;
+    }
+    
+    @Override
+    public MatchDouble getMatchB() {
+        return (MatchDouble) matchB;
+    }
+    
+    public List<Joueur> getJoueurs(){
+        ArrayList<Joueur> joueurs= new ArrayList<>(4);
+        joueurs.addAll(equipes.get(1).getJoueurs());
+        joueurs.addAll(equipes.get(0).getJoueurs());
+        return joueurs;
+    }
     
     /** @pdGenerated default getter */
     public java.util.List<Equipe> getEquipes() {
@@ -61,8 +76,7 @@ public class MatchDouble extends Match {
         if (this.equipes == null)
            this.equipes = new java.util.ArrayList<Equipe>();
         if (!this.equipes.contains(newEquipe)) {
-           this.equipes.add(newEquipe);
-           newEquipe.addMatchDouble(this);      
+           this.equipes.add(newEquipe);     
         }
     }
    
@@ -74,7 +88,6 @@ public class MatchDouble extends Match {
         if (this.equipes != null) {
             if (this.equipes.contains(oldEquipe)) {
                 this.equipes.remove(oldEquipe);
-                oldEquipe.removeMatchDouble(this);
             }
         }
     }
@@ -86,7 +99,6 @@ public class MatchDouble extends Match {
             for (java.util.Iterator iter = getIteratorEquipes(); iter.hasNext();) {
                 oldEquipe = (Equipe)iter.next();
                 iter.remove();
-                oldEquipe.removeMatchDouble(this);
             }
         }
     }
@@ -111,7 +123,7 @@ public class MatchDouble extends Match {
 
     @Override
     public void assignerArbitres() {
-        arbitres=Arbitre.getList();
+        List<Arbitre> arbitres=Arbitre.getList();
         int i, c = 1;
         //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
         arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
@@ -120,8 +132,8 @@ public class MatchDouble extends Match {
             c=0;
             if (arbitreChaise.getNbMatchsFaitsD()>=2 || arbitreChaise.getCertification()!="ITT1"){
                 c++;
-                for (i=0;i<joueurs.size();i++){
-                    if (arbitreChaise.getNationalite().equals(joueurs.get(i).getNationalite())){
+                for (i=0;i<4;i++){
+                    if (arbitreChaise.getNationalite().equals(this.getJoueurs().get(i).getNationalite())){
                         c++;
                     }
                 }

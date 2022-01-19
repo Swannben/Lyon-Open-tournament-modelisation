@@ -31,23 +31,24 @@ public class Joueur {
     }
     
     static List<Joueur> getJoueursQualifie(){
-        List<Joueur> joueurs= Joueur.getList();
-        for (Joueur j :joueurs){
+        List<Joueur> joueurs= new LinkedList<>();
+        for (Joueur j :Joueur.getList()){
             if (!j.getEstQualifie()){
-                joueurs.remove(j);
+                joueurs.add(j);
             }
         }
-        
+        return joueurs;
     }
     
-    static List<Joueur> getJoueursPartQualif(){
-        List<Joueur> joueurs= Joueur.getList();
-        for (Joueur j :joueurs){
+    public static List<Joueur> getJoueursPartQualif(){
+        List<Joueur> joueurs= new LinkedList<>();
+        
+        for (Joueur j : Joueur.getList()){
             if (j.getEstQualifie()){
-                joueurs.remove(j);
+                joueurs.add(j);
             }
         }
-        
+        return joueurs;
     }
     
     public Boolean getEstQualifie(){

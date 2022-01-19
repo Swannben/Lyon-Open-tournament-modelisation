@@ -27,9 +27,9 @@ public class MatchSimple extends Match {
     }
 
    
-    public MatchSimple(int id, Creneau creneau, List<int> score, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
+    public MatchSimple(int id, Creneau creneau, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage) {
-        super(id, creneau, score, arbitreChaise, arbitresLigne, equipesRamassage);
+        super(id, creneau, score, arbitresLigne, equipesRamassage);
         this.estQualif=estQualif;
 
         setArbitreChaise(arbitreChaise);
@@ -37,6 +37,15 @@ public class MatchSimple extends Match {
         if (joueurs == null)
             joueurs = new ArrayList(2);
         this.joueurs = joueurs;
+    }
+    
+    @Override
+    public MatchSimple getMatchA() {
+        return (MatchSimple) matchA;
+    }
+    @Override
+    public MatchSimple getMatchB() {
+        return (MatchSimple) matchB;
     }
     
     
@@ -115,7 +124,7 @@ public class MatchSimple extends Match {
 
     @Override
     public void assignerArbitres() {
-        arbitres=Arbitre.getList();
+        List<Arbitre> arbitres=Arbitre.getList();
         int i, c = 1;
         //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
         arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
@@ -139,6 +148,5 @@ public class MatchSimple extends Match {
         
         
     }
-
 
 }

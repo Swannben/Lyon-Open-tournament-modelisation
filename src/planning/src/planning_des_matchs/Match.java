@@ -21,6 +21,29 @@ public abstract class Match {
     Match matchA;
     Match matchB;
     protected Arbitre arbitreChaise;
+    protected int profondeur;
+
+
+
+    abstract public Match getMatchA();
+
+    public void setMatchA(Match matchA) {
+        this.matchA = matchA;
+    }
+
+    abstract public Match getMatchB() ;
+
+    public void setMatchB(Match matchB) {
+        this.matchB = matchB;
+    }
+
+    public int getProfondeur() {
+        return profondeur;
+    }
+
+    public void setProfondeur(int profondeur) {
+        this.profondeur = profondeur;
+    }
    
     public int getID() {
         return id;
@@ -159,7 +182,6 @@ public abstract class Match {
             this.equipesRamassage = new java.util.ArrayList<EquipeRamassage>();
         if (!this.equipesRamassage.contains(newEquipeRamassage)) {
             this.equipesRamassage.add(newEquipeRamassage);
-            newEquipeRamassage.addMatch(this);      
         }
     }
    
@@ -171,7 +193,6 @@ public abstract class Match {
         if (this.equipesRamassage != null) {
             if (this.equipesRamassage.contains(oldEquipeRamassage)) {
                 this.equipesRamassage.remove(oldEquipeRamassage);
-                oldEquipeRamassage.removeMatch(this);
             }
         }
     }
@@ -184,8 +205,15 @@ public abstract class Match {
             {
                 oldEquipeRamassage = (EquipeRamassage)iter.next();
                 iter.remove();
-                oldEquipeRamassage.removeMatch(this);
             }
+        }
+    }
+    
+    public void assignerEquipesRamassage(){
+        int i;
+        //TODO gérer l'emploi du temps des listes
+        for (i=0;i<2;i++){
+        equipesRamassage.add((new Random().nextInt(EquipeRamassage.getList()).size()));
         }
     }
     
