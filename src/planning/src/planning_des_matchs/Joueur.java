@@ -18,6 +18,9 @@ public class Joueur {
     private String prenom;
     private Nationalite nationalite;
     private Equipe equipe;
+    private boolean estQualifie;
+    
+    private static List<Joueur> list = new LinkedList<>();
 
 
     public Joueur(int id, String nom, String prenom, Nationalite nationalite, Equipe equipe) {
@@ -107,7 +110,8 @@ public class Joueur {
                         result.getInt("idjoueur"),
                         result.getString("nom"),
                         result.getString("prenom"),
-                        Nationalite.get(result.getInt("nationalite"))
+                        Nationalite.get(result.getInt("nationalite")),
+                        null // TODO: equipe
                 );
 
                 newList.add(joueur);
