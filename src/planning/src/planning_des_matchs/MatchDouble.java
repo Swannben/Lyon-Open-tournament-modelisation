@@ -18,7 +18,7 @@ public class MatchDouble extends Match {
     private static List<MatchDouble> list = new LinkedList<>(); 
 
 
-    public MatchDouble(int id, Creneau creneau, List<Integer> score, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
+    public MatchDouble(int id, Creneau creneau, List<Set> score, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
             java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
         super(id, creneau, score, arbitresLigne, equipesRamassage);
         
@@ -153,69 +153,105 @@ public class MatchDouble extends Match {
         
         try {
             Statement statement = connection.getStatement();
-            ResultSet result = statement.executeQuery("select * from matchdouble natural join match");
+            ResultSet matchDoubleResult = statement.executeQuery("select * from matchdouble natural join match");
             ResultSet creneauResult = null;
             int matchID;
-            Creneau creneau;
+            Creneau creneau = null;
             
-            while (result.next()) {
-                matchID = result.getInt("idmatch");
+            while (matchDoubleResult.next()) {
+                matchID = matchDoubleResult.getInt("idmatch");
                 
                 // Find creneau
-                creneauResult = statement.executeQuery("select * from creneau where matchid = " + matchID);
+                ResultSet result = statement.executeQuery("select * from creneau where matchid = " + matchID);
                 if (result.next()) {
                     creneau = Creneau.get(
                             Jour.get(result.getDate("jour")), 
                             result.getInt("heure")
                     );
                 }
-                else {
-                    creneau = null;
+                if (result != null) {
+                    result.close();
+                    result = null;
                 }
                 
-                // Create score
+                // Get score
                 ArrayList<Set> sets = new ArrayList<>(5);
-                ResultSet setResult = null;
-                for (int i = 1; i <= 5; i++) {
-                    setResult = statement.executeQuery("select * from set where idset = " + result.getInt("set"+i));
-                    if (result.next()) {
-                        sets.add(new Set(
-                                result.getInt("jeux1"), result.getInt("jeux2"), 
-                                result.getInt("pointsdernierjeu1"), result.getInt("pointsdernierjeu1")
-                        ));
+                {
+                    int setID;
+                    for (int i = 1; i <= 5; i++) {
+                        setID = matchDoubleResult.getInt("set"+i);
+                        if (setID == 0)
+                            break;
+                        
+                        result = statement.executeQuery("select * from set where idset = " + setID);
+                        if (result.next()) {
+                            sets.add(new Set(
+                                    result.getInt("jeux1"), result.getInt("jeux2"), 
+                                    result.getInt("pointsdernierjeu1"), result.getInt("pointsdernierjeu1")
+                            ));
+                        }
+                        else {
+                            break;
+                        }
                     }
-                    else {
-                        break;
+                    if (result != null) {
+                        result.close(); 
+                        result = null;
                     }
                 }
-                if (setResult != null)
-                    setResult.close();     
                 
-                // Create score
-                ArrayList<Set> sets = new ArrayList<>(5);
-                ResultSet setResult = null;
-                for (int i = 1; i <= 5; i++) {
-                    setResult = statement.executeQuery("select * from set where idset = " + result.getInt("set"+i));
-                    if (result.next()) {
-                        sets.add(new Set(
-                                result.getInt("jeux1"), result.getInt("jeux2"), 
-                                result.getInt("pointsdernierjeu1"), result.getInt("pointsdernierjeu1")
-                        ));
-                    }
-                    else {
-                        break;
+                // Get arbitresLigne
+                ArrayList<Arbitre> arbitresLigne = new ArrayList<>(6);
+                result = statement.executeQuery("select idarbitre from ligne where idmatch = " + matchID);
+                {
+                    int i = 0;
+                    while (result.next() && i < 6) {
+                        arbitresLigne.add(Arbitre.get(result.getInt("idarbitre")));
+                        i++;
                     }
                 }
-                if (setResult != null)
-                    setResult.close();
+                if (result != null) {
+                    result.close();
+                    result = null;
+                }
+                
+                // Get equipesRamassage
+                ArrayList<EquipeRamassage> equipesRamassage = new ArrayList<>(2);
+                result = statement.executeQuery("select idequiperam from ramassage where idmatch = " + matchID);
+                {
+                    int i = 0;
+                    while (result.next() && i < 2) {
+                        equipesRamassage.add(EquipeRamassage.get(result.getInt("idequiperam")));
+                        i++;
+                    }
+                }
+                if (result != null) {
+                    result.close();
+                    result = null;
+                }
+                
+                // Get equipes
+                ArrayList<Equipe> equipes = new ArrayList<>(2);
+                result = statement.executeQuery("select idequipe from jouedouble where idmatch = " + matchID);
+                {
+                    int i = 0;
+                    while (result.next() && i < 2) {
+                        equipes.add(Equipe.get(result.getInt("idequipe")));
+                        i++;
+                    }
+                }
+                if (result != null) {
+                    result.close();
+                    result = null;
+                }
                 
                 // New MatchDouble
                 MatchDouble matchDouble = new MatchDouble(
                         matchID,
                         creneau,
                         sets,
-                        Arbitre.get(result.getInt("idarbitre")),
-                        lignes,
+                        Arbitre.get(matchDoubleResult.getInt("idarbitre")),
+                        arbitresLigne,
                         equipesRamassage,
                         equipes
                 );
@@ -223,9 +259,7 @@ public class MatchDouble extends Match {
                 newList.add(matchDouble);
             }
             
-            if (creneauResult != null)
-                creneauResult.close();
-            result.close();
+            matchDoubleResult.close();
         }
         catch (SQLException e) {
             System.err.println(e.getMessage());
