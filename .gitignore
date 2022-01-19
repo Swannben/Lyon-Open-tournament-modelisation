@@ -1,3 +1,5 @@
 *.zargo~
 /src/planning/nbproject/private/
 /src/planning/build/
+/.idea/
+*.iml
