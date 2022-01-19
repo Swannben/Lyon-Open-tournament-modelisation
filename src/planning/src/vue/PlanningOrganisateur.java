@@ -28,95 +28,152 @@ public class PlanningOrganisateur extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        arbre = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        tournoi_panel = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        qualif_panel = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        huitieme_qualif = new javax.swing.JPanel();
+        jScrollPanel_match1qualif = new javax.swing.JScrollPane();
+        match1qualif = new javax.swing.JTable();
+        jScrollPanel_match2qualif = new javax.swing.JScrollPane();
+        match2qualif = new javax.swing.JTable();
+        jScrollPanel_match3qualif = new javax.swing.JScrollPane();
+        match3qualif = new javax.swing.JTable();
+        jScrollPanel_match4qualif = new javax.swing.JScrollPane();
+        match4qualif = new javax.swing.JTable();
+        jScrollPanel_match5qualif = new javax.swing.JScrollPane();
+        match5qualif = new javax.swing.JTable();
+        jScrollPanel_match6qualif = new javax.swing.JScrollPane();
+        match6qualif = new javax.swing.JTable();
+        jScrollPanel_match7qualif = new javax.swing.JScrollPane();
+        match7qualif = new javax.swing.JTable();
+        jScrollPanel_match8qualif = new javax.swing.JScrollPane();
+        match8qualif = new javax.swing.JTable();
+        quatrieme2 = new javax.swing.JPanel();
+        jScrollPanel_match9qualif = new javax.swing.JScrollPane();
+        Match57 = new javax.swing.JTable();
+        jScrollPanel_match10qualif = new javax.swing.JScrollPane();
+        Match58 = new javax.swing.JTable();
+        jScrollPanel_match11qualif = new javax.swing.JScrollPane();
+        Match59 = new javax.swing.JTable();
+        jScrollPanel_match12qualif = new javax.swing.JScrollPane();
+        Match60 = new javax.swing.JTable();
+        TournoiSimple = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        seizieme = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        Match1 = new javax.swing.JTable();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        Match2 = new javax.swing.JTable();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        Match3 = new javax.swing.JTable();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        Match4 = new javax.swing.JTable();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        Match5 = new javax.swing.JTable();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        Match6 = new javax.swing.JTable();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        Match7 = new javax.swing.JTable();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        Match8 = new javax.swing.JTable();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        Match9 = new javax.swing.JTable();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        Match10 = new javax.swing.JTable();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        Match11 = new javax.swing.JTable();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        Match12 = new javax.swing.JTable();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        Match13 = new javax.swing.JTable();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        Match14 = new javax.swing.JTable();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        Match15 = new javax.swing.JTable();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        Match16 = new javax.swing.JTable();
+        huitieme = new javax.swing.JPanel();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        Match19 = new javax.swing.JTable();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        Match20 = new javax.swing.JTable();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        Match21 = new javax.swing.JTable();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        Match22 = new javax.swing.JTable();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        Match23 = new javax.swing.JTable();
+        jScrollPane29 = new javax.swing.JScrollPane();
+        Match24 = new javax.swing.JTable();
+        jScrollPane30 = new javax.swing.JScrollPane();
+        Match25 = new javax.swing.JTable();
+        jScrollPane31 = new javax.swing.JScrollPane();
+        Match26 = new javax.swing.JTable();
+        quatrieme = new javax.swing.JPanel();
+        jScrollPane32 = new javax.swing.JScrollPane();
+        Match27 = new javax.swing.JTable();
+        jScrollPane34 = new javax.swing.JScrollPane();
+        Match29 = new javax.swing.JTable();
+        jScrollPane33 = new javax.swing.JScrollPane();
+        Match28 = new javax.swing.JTable();
+        jScrollPane35 = new javax.swing.JScrollPane();
+        Match30 = new javax.swing.JTable();
+        demi_final = new javax.swing.JPanel();
+        jScrollPane36 = new javax.swing.JScrollPane();
+        Match31 = new javax.swing.JTable();
+        jScrollPane37 = new javax.swing.JScrollPane();
+        Match32 = new javax.swing.JTable();
+        tour_final = new javax.swing.JPanel();
+        jScrollPane38 = new javax.swing.JScrollPane();
+        Match33 = new javax.swing.JTable();
+        TournoiDouble = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        huitieme1 = new javax.swing.JPanel();
+        jScrollPane39 = new javax.swing.JScrollPane();
+        Match34 = new javax.swing.JTable();
+        jScrollPane40 = new javax.swing.JScrollPane();
+        Match35 = new javax.swing.JTable();
+        jScrollPane41 = new javax.swing.JScrollPane();
+        Match36 = new javax.swing.JTable();
+        jScrollPane42 = new javax.swing.JScrollPane();
+        Match37 = new javax.swing.JTable();
+        jScrollPane43 = new javax.swing.JScrollPane();
+        Match38 = new javax.swing.JTable();
+        jScrollPane44 = new javax.swing.JScrollPane();
+        Match39 = new javax.swing.JTable();
+        jScrollPane45 = new javax.swing.JScrollPane();
+        Match40 = new javax.swing.JTable();
+        jScrollPane46 = new javax.swing.JScrollPane();
+        Match41 = new javax.swing.JTable();
+        quatrieme1 = new javax.swing.JPanel();
+        jScrollPane47 = new javax.swing.JScrollPane();
+        Match42 = new javax.swing.JTable();
+        jScrollPane48 = new javax.swing.JScrollPane();
+        Match43 = new javax.swing.JTable();
+        jScrollPane49 = new javax.swing.JScrollPane();
+        Match44 = new javax.swing.JTable();
+        jScrollPane50 = new javax.swing.JScrollPane();
+        Match45 = new javax.swing.JTable();
+        demi_final1 = new javax.swing.JPanel();
+        jScrollPane51 = new javax.swing.JScrollPane();
+        Match46 = new javax.swing.JTable();
+        jScrollPane52 = new javax.swing.JScrollPane();
+        Match47 = new javax.swing.JTable();
+        tour_final1 = new javax.swing.JPanel();
+        jScrollPane53 = new javax.swing.JScrollPane();
+        Match48 = new javax.swing.JTable();
+        ButtonsArbre = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        Match = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
+        Planning = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
 
-        addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                formAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-
-        jButton2.setText("Trouver Arbitre");
-
-        jButton1.setText("Générer Tournoi");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(473, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
-                .addContainerGap(174, Short.MAX_VALUE))
-        );
-
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setText("jLabel2");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addContainerGap(205, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-
-        Match.setModel(new javax.swing.table.DefaultTableModel(
+        match1qualif.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -126,63 +183,1467 @@ public class PlanningOrganisateur extends javax.swing.JFrame {
                 "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
             }
         ));
-        jScrollPane4.setViewportView(Match);
+        jScrollPanel_match1qualif.setViewportView(match1qualif);
+        if (match1qualif.getColumnModel().getColumnCount() > 0) {
+            match1qualif.getColumnModel().getColumn(0).setMinWidth(50);
+            match1qualif.getColumnModel().getColumn(0).setPreferredWidth(100);
+            match1qualif.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+        match2qualif.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match2qualif.setViewportView(match2qualif);
+        if (match2qualif.getColumnModel().getColumnCount() > 0) {
+            match2qualif.getColumnModel().getColumn(0).setMinWidth(50);
+            match2qualif.getColumnModel().getColumn(0).setPreferredWidth(100);
+            match2qualif.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        match3qualif.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match3qualif.setViewportView(match3qualif);
+        if (match3qualif.getColumnModel().getColumnCount() > 0) {
+            match3qualif.getColumnModel().getColumn(0).setMinWidth(50);
+            match3qualif.getColumnModel().getColumn(0).setPreferredWidth(100);
+            match3qualif.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        match4qualif.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match4qualif.setViewportView(match4qualif);
+        if (match4qualif.getColumnModel().getColumnCount() > 0) {
+            match4qualif.getColumnModel().getColumn(0).setMinWidth(50);
+            match4qualif.getColumnModel().getColumn(0).setPreferredWidth(100);
+            match4qualif.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        match5qualif.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match5qualif.setViewportView(match5qualif);
+        if (match5qualif.getColumnModel().getColumnCount() > 0) {
+            match5qualif.getColumnModel().getColumn(0).setMinWidth(50);
+            match5qualif.getColumnModel().getColumn(0).setPreferredWidth(100);
+            match5qualif.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        match6qualif.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match6qualif.setViewportView(match6qualif);
+        if (match6qualif.getColumnModel().getColumnCount() > 0) {
+            match6qualif.getColumnModel().getColumn(0).setMinWidth(50);
+            match6qualif.getColumnModel().getColumn(0).setPreferredWidth(100);
+            match6qualif.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        match7qualif.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match7qualif.setViewportView(match7qualif);
+        if (match7qualif.getColumnModel().getColumnCount() > 0) {
+            match7qualif.getColumnModel().getColumn(0).setMinWidth(50);
+            match7qualif.getColumnModel().getColumn(0).setPreferredWidth(100);
+            match7qualif.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        match8qualif.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match8qualif.setViewportView(match8qualif);
+        if (match8qualif.getColumnModel().getColumnCount() > 0) {
+            match8qualif.getColumnModel().getColumn(0).setMinWidth(50);
+            match8qualif.getColumnModel().getColumn(0).setPreferredWidth(100);
+            match8qualif.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match57.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match9qualif.setViewportView(Match57);
+        if (Match57.getColumnModel().getColumnCount() > 0) {
+            Match57.getColumnModel().getColumn(0).setMinWidth(50);
+            Match57.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match57.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match58.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match10qualif.setViewportView(Match58);
+        if (Match58.getColumnModel().getColumnCount() > 0) {
+            Match58.getColumnModel().getColumn(0).setMinWidth(50);
+            Match58.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match58.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match59.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match11qualif.setViewportView(Match59);
+        if (Match59.getColumnModel().getColumnCount() > 0) {
+            Match59.getColumnModel().getColumn(0).setMinWidth(50);
+            Match59.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match59.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match60.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPanel_match12qualif.setViewportView(Match60);
+        if (Match60.getColumnModel().getColumnCount() > 0) {
+            Match60.getColumnModel().getColumn(0).setMinWidth(50);
+            Match60.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match60.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        javax.swing.GroupLayout quatrieme2Layout = new javax.swing.GroupLayout(quatrieme2);
+        quatrieme2.setLayout(quatrieme2Layout);
+        quatrieme2Layout.setHorizontalGroup(
+            quatrieme2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quatrieme2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(quatrieme2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPanel_match9qualif, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match10qualif, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match11qualif, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match12qualif, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(492, 492, 492))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+        quatrieme2Layout.setVerticalGroup(
+            quatrieme2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quatrieme2Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jScrollPanel_match9qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(jScrollPanel_match10qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(jScrollPanel_match11qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(jScrollPanel_match12qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout huitieme_qualifLayout = new javax.swing.GroupLayout(huitieme_qualif);
+        huitieme_qualif.setLayout(huitieme_qualifLayout);
+        huitieme_qualifLayout.setHorizontalGroup(
+            huitieme_qualifLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(huitieme_qualifLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(huitieme_qualifLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPanel_match1qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match2qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match3qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match4qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match5qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match6qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match7qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPanel_match8qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(quatrieme2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        huitieme_qualifLayout.setVerticalGroup(
+            huitieme_qualifLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(huitieme_qualifLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(395, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(616, Short.MAX_VALUE))
-        );
-
-        jScrollPane2.setViewportView(jPanel2);
-
-        javax.swing.GroupLayout arbreLayout = new javax.swing.GroupLayout(arbre);
-        arbre.setLayout(arbreLayout);
-        arbreLayout.setHorizontalGroup(
-            arbreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
-            .addGroup(arbreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        arbreLayout.setVerticalGroup(
-            arbreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(arbreLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 266, Short.MAX_VALUE))
-            .addGroup(arbreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(arbreLayout.createSequentialGroup()
-                    .addGap(249, 249, 249)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPanel_match1qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPanel_match2qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPanel_match3qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPanel_match4qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPanel_match5qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPanel_match6qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPanel_match7qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPanel_match8qualif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addComponent(quatrieme2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Tournoi", arbre);
+        jScrollPane4.setViewportView(huitieme_qualif);
+
+        javax.swing.GroupLayout qualif_panelLayout = new javax.swing.GroupLayout(qualif_panel);
+        qualif_panel.setLayout(qualif_panelLayout);
+        qualif_panelLayout.setHorizontalGroup(
+            qualif_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, qualif_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        qualif_panelLayout.setVerticalGroup(
+            qualif_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Qualifications", qualif_panel);
+
+        Match1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane6.setViewportView(Match1);
+        if (Match1.getColumnModel().getColumnCount() > 0) {
+            Match1.getColumnModel().getColumn(0).setMinWidth(50);
+            Match1.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match1.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane7.setViewportView(Match2);
+        if (Match2.getColumnModel().getColumnCount() > 0) {
+            Match2.getColumnModel().getColumn(0).setMinWidth(50);
+            Match2.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match2.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane8.setViewportView(Match3);
+        if (Match3.getColumnModel().getColumnCount() > 0) {
+            Match3.getColumnModel().getColumn(0).setMinWidth(50);
+            Match3.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match3.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane9.setViewportView(Match4);
+        if (Match4.getColumnModel().getColumnCount() > 0) {
+            Match4.getColumnModel().getColumn(0).setMinWidth(50);
+            Match4.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match4.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane10.setViewportView(Match5);
+        if (Match5.getColumnModel().getColumnCount() > 0) {
+            Match5.getColumnModel().getColumn(0).setMinWidth(50);
+            Match5.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match5.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane11.setViewportView(Match6);
+        if (Match6.getColumnModel().getColumnCount() > 0) {
+            Match6.getColumnModel().getColumn(0).setMinWidth(50);
+            Match6.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match6.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane12.setViewportView(Match7);
+        if (Match7.getColumnModel().getColumnCount() > 0) {
+            Match7.getColumnModel().getColumn(0).setMinWidth(50);
+            Match7.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match7.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane13.setViewportView(Match8);
+        if (Match8.getColumnModel().getColumnCount() > 0) {
+            Match8.getColumnModel().getColumn(0).setMinWidth(50);
+            Match8.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match8.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane14.setViewportView(Match9);
+        if (Match9.getColumnModel().getColumnCount() > 0) {
+            Match9.getColumnModel().getColumn(0).setMinWidth(50);
+            Match9.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match9.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane15.setViewportView(Match10);
+        if (Match10.getColumnModel().getColumnCount() > 0) {
+            Match10.getColumnModel().getColumn(0).setMinWidth(50);
+            Match10.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match10.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane16.setViewportView(Match11);
+        if (Match11.getColumnModel().getColumnCount() > 0) {
+            Match11.getColumnModel().getColumn(0).setMinWidth(50);
+            Match11.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match11.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane17.setViewportView(Match12);
+        if (Match12.getColumnModel().getColumnCount() > 0) {
+            Match12.getColumnModel().getColumn(0).setMinWidth(50);
+            Match12.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match12.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match13.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane18.setViewportView(Match13);
+        if (Match13.getColumnModel().getColumnCount() > 0) {
+            Match13.getColumnModel().getColumn(0).setMinWidth(50);
+            Match13.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match13.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match14.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane19.setViewportView(Match14);
+        if (Match14.getColumnModel().getColumnCount() > 0) {
+            Match14.getColumnModel().getColumn(0).setMinWidth(50);
+            Match14.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match14.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match15.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane20.setViewportView(Match15);
+        if (Match15.getColumnModel().getColumnCount() > 0) {
+            Match15.getColumnModel().getColumn(0).setMinWidth(50);
+            Match15.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match15.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match16.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane21.setViewportView(Match16);
+        if (Match16.getColumnModel().getColumnCount() > 0) {
+            Match16.getColumnModel().getColumn(0).setMinWidth(50);
+            Match16.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match16.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match19.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane24.setViewportView(Match19);
+        if (Match19.getColumnModel().getColumnCount() > 0) {
+            Match19.getColumnModel().getColumn(0).setMinWidth(50);
+            Match19.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match19.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match20.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane25.setViewportView(Match20);
+        if (Match20.getColumnModel().getColumnCount() > 0) {
+            Match20.getColumnModel().getColumn(0).setMinWidth(50);
+            Match20.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match20.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match21.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane26.setViewportView(Match21);
+        if (Match21.getColumnModel().getColumnCount() > 0) {
+            Match21.getColumnModel().getColumn(0).setMinWidth(50);
+            Match21.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match21.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match22.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane27.setViewportView(Match22);
+        if (Match22.getColumnModel().getColumnCount() > 0) {
+            Match22.getColumnModel().getColumn(0).setMinWidth(50);
+            Match22.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match22.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match23.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane28.setViewportView(Match23);
+        if (Match23.getColumnModel().getColumnCount() > 0) {
+            Match23.getColumnModel().getColumn(0).setMinWidth(50);
+            Match23.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match23.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match24.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane29.setViewportView(Match24);
+        if (Match24.getColumnModel().getColumnCount() > 0) {
+            Match24.getColumnModel().getColumn(0).setMinWidth(50);
+            Match24.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match24.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match25.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane30.setViewportView(Match25);
+        if (Match25.getColumnModel().getColumnCount() > 0) {
+            Match25.getColumnModel().getColumn(0).setMinWidth(50);
+            Match25.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match25.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match26.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane31.setViewportView(Match26);
+        if (Match26.getColumnModel().getColumnCount() > 0) {
+            Match26.getColumnModel().getColumn(0).setMinWidth(50);
+            Match26.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match26.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match27.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane32.setViewportView(Match27);
+        if (Match27.getColumnModel().getColumnCount() > 0) {
+            Match27.getColumnModel().getColumn(0).setMinWidth(50);
+            Match27.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match27.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match29.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane34.setViewportView(Match29);
+        if (Match29.getColumnModel().getColumnCount() > 0) {
+            Match29.getColumnModel().getColumn(0).setMinWidth(50);
+            Match29.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match29.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match28.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane33.setViewportView(Match28);
+        if (Match28.getColumnModel().getColumnCount() > 0) {
+            Match28.getColumnModel().getColumn(0).setMinWidth(50);
+            Match28.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match28.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match30.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane35.setViewportView(Match30);
+        if (Match30.getColumnModel().getColumnCount() > 0) {
+            Match30.getColumnModel().getColumn(0).setMinWidth(50);
+            Match30.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match30.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match31.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane36.setViewportView(Match31);
+        if (Match31.getColumnModel().getColumnCount() > 0) {
+            Match31.getColumnModel().getColumn(0).setMinWidth(50);
+            Match31.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match31.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match32.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane37.setViewportView(Match32);
+        if (Match32.getColumnModel().getColumnCount() > 0) {
+            Match32.getColumnModel().getColumn(0).setMinWidth(50);
+            Match32.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match32.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match33.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane38.setViewportView(Match33);
+        if (Match33.getColumnModel().getColumnCount() > 0) {
+            Match33.getColumnModel().getColumn(0).setMinWidth(50);
+            Match33.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match33.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        javax.swing.GroupLayout tour_finalLayout = new javax.swing.GroupLayout(tour_final);
+        tour_final.setLayout(tour_finalLayout);
+        tour_finalLayout.setHorizontalGroup(
+            tour_finalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tour_finalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        tour_finalLayout.setVerticalGroup(
+            tour_finalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tour_finalLayout.createSequentialGroup()
+                .addContainerGap(666, Short.MAX_VALUE)
+                .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(613, 613, 613))
+        );
+
+        javax.swing.GroupLayout demi_finalLayout = new javax.swing.GroupLayout(demi_final);
+        demi_final.setLayout(demi_finalLayout);
+        demi_finalLayout.setHorizontalGroup(
+            demi_finalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(demi_finalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(demi_finalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tour_final, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        demi_finalLayout.setVerticalGroup(
+            demi_finalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, demi_finalLayout.createSequentialGroup()
+                .addGap(294, 294, 294)
+                .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(294, 294, 294))
+            .addComponent(tour_final, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout quatriemeLayout = new javax.swing.GroupLayout(quatrieme);
+        quatrieme.setLayout(quatriemeLayout);
+        quatriemeLayout.setHorizontalGroup(
+            quatriemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quatriemeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(quatriemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane32, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane35, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(demi_final, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        quatriemeLayout.setVerticalGroup(
+            quatriemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quatriemeLayout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(267, 267, 267)
+                .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(267, 267, 267)
+                .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(267, 267, 267)
+                .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(demi_final, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout huitiemeLayout = new javax.swing.GroupLayout(huitieme);
+        huitieme.setLayout(huitiemeLayout);
+        huitiemeLayout.setHorizontalGroup(
+            huitiemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(huitiemeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(huitiemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(quatrieme, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        huitiemeLayout.setVerticalGroup(
+            huitiemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(huitiemeLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(quatrieme, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout seiziemeLayout = new javax.swing.GroupLayout(seizieme);
+        seizieme.setLayout(seiziemeLayout);
+        seiziemeLayout.setHorizontalGroup(
+            seiziemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(seiziemeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(seiziemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(huitieme, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        seiziemeLayout.setVerticalGroup(
+            seiziemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(seiziemeLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(seiziemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(huitieme, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(seiziemeLayout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 19, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        jScrollPane5.setViewportView(seizieme);
+
+        javax.swing.GroupLayout TournoiSimpleLayout = new javax.swing.GroupLayout(TournoiSimple);
+        TournoiSimple.setLayout(TournoiSimpleLayout);
+        TournoiSimpleLayout.setHorizontalGroup(
+            TournoiSimpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TournoiSimpleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        TournoiSimpleLayout.setVerticalGroup(
+            TournoiSimpleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TournoiSimpleLayout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+
+        jTabbedPane2.addTab("Tournoi Simple", TournoiSimple);
+
+        Match34.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane39.setViewportView(Match34);
+        if (Match34.getColumnModel().getColumnCount() > 0) {
+            Match34.getColumnModel().getColumn(0).setMinWidth(50);
+            Match34.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match34.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match35.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane40.setViewportView(Match35);
+        if (Match35.getColumnModel().getColumnCount() > 0) {
+            Match35.getColumnModel().getColumn(0).setMinWidth(50);
+            Match35.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match35.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match36.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane41.setViewportView(Match36);
+        if (Match36.getColumnModel().getColumnCount() > 0) {
+            Match36.getColumnModel().getColumn(0).setMinWidth(50);
+            Match36.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match36.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match37.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane42.setViewportView(Match37);
+        if (Match37.getColumnModel().getColumnCount() > 0) {
+            Match37.getColumnModel().getColumn(0).setMinWidth(50);
+            Match37.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match37.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match38.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane43.setViewportView(Match38);
+        if (Match38.getColumnModel().getColumnCount() > 0) {
+            Match38.getColumnModel().getColumn(0).setMinWidth(50);
+            Match38.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match38.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match39.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane44.setViewportView(Match39);
+        if (Match39.getColumnModel().getColumnCount() > 0) {
+            Match39.getColumnModel().getColumn(0).setMinWidth(50);
+            Match39.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match39.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match40.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane45.setViewportView(Match40);
+        if (Match40.getColumnModel().getColumnCount() > 0) {
+            Match40.getColumnModel().getColumn(0).setMinWidth(50);
+            Match40.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match40.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match41.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane46.setViewportView(Match41);
+        if (Match41.getColumnModel().getColumnCount() > 0) {
+            Match41.getColumnModel().getColumn(0).setMinWidth(50);
+            Match41.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match41.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match42.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane47.setViewportView(Match42);
+        if (Match42.getColumnModel().getColumnCount() > 0) {
+            Match42.getColumnModel().getColumn(0).setMinWidth(50);
+            Match42.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match42.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match43.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane48.setViewportView(Match43);
+        if (Match43.getColumnModel().getColumnCount() > 0) {
+            Match43.getColumnModel().getColumn(0).setMinWidth(50);
+            Match43.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match43.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match44.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane49.setViewportView(Match44);
+        if (Match44.getColumnModel().getColumnCount() > 0) {
+            Match44.getColumnModel().getColumn(0).setMinWidth(50);
+            Match44.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match44.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match45.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane50.setViewportView(Match45);
+        if (Match45.getColumnModel().getColumnCount() > 0) {
+            Match45.getColumnModel().getColumn(0).setMinWidth(50);
+            Match45.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match45.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match46.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane51.setViewportView(Match46);
+        if (Match46.getColumnModel().getColumnCount() > 0) {
+            Match46.getColumnModel().getColumn(0).setMinWidth(50);
+            Match46.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match46.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match47.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane52.setViewportView(Match47);
+        if (Match47.getColumnModel().getColumnCount() > 0) {
+            Match47.getColumnModel().getColumn(0).setMinWidth(50);
+            Match47.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match47.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        Match48.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Joueur PTS", "SET1", "SET2", "SET3", "SET4", "SET5"
+            }
+        ));
+        jScrollPane53.setViewportView(Match48);
+        if (Match48.getColumnModel().getColumnCount() > 0) {
+            Match48.getColumnModel().getColumn(0).setMinWidth(50);
+            Match48.getColumnModel().getColumn(0).setPreferredWidth(100);
+            Match48.getColumnModel().getColumn(0).setMaxWidth(100);
+        }
+
+        javax.swing.GroupLayout tour_final1Layout = new javax.swing.GroupLayout(tour_final1);
+        tour_final1.setLayout(tour_final1Layout);
+        tour_final1Layout.setHorizontalGroup(
+            tour_final1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tour_final1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        tour_final1Layout.setVerticalGroup(
+            tour_final1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tour_final1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(305, 305, 305))
+        );
+
+        javax.swing.GroupLayout demi_final1Layout = new javax.swing.GroupLayout(demi_final1);
+        demi_final1.setLayout(demi_final1Layout);
+        demi_final1Layout.setHorizontalGroup(
+            demi_final1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(demi_final1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(demi_final1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane51, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tour_final1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        demi_final1Layout.setVerticalGroup(
+            demi_final1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, demi_final1Layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(jScrollPane51, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(140, 140, 140))
+            .addComponent(tour_final1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout quatrieme1Layout = new javax.swing.GroupLayout(quatrieme1);
+        quatrieme1.setLayout(quatrieme1Layout);
+        quatrieme1Layout.setHorizontalGroup(
+            quatrieme1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quatrieme1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(quatrieme1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane47, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane49, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane50, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(demi_final1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        quatrieme1Layout.setVerticalGroup(
+            quatrieme1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quatrieme1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(demi_final1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout huitieme1Layout = new javax.swing.GroupLayout(huitieme1);
+        huitieme1.setLayout(huitieme1Layout);
+        huitieme1Layout.setHorizontalGroup(
+            huitieme1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(huitieme1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(huitieme1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(quatrieme1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        huitieme1Layout.setVerticalGroup(
+            huitieme1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(huitieme1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addComponent(quatrieme1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jScrollPane2.setViewportView(huitieme1);
+
+        javax.swing.GroupLayout TournoiDoubleLayout = new javax.swing.GroupLayout(TournoiDouble);
+        TournoiDouble.setLayout(TournoiDoubleLayout);
+        TournoiDoubleLayout.setHorizontalGroup(
+            TournoiDoubleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TournoiDoubleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        TournoiDoubleLayout.setVerticalGroup(
+            TournoiDoubleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Tournoi Double", TournoiDouble);
+
+        jButton2.setText("Attribuer Score");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Générer Tournoi");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ButtonsArbreLayout = new javax.swing.GroupLayout(ButtonsArbre);
+        ButtonsArbre.setLayout(ButtonsArbreLayout);
+        ButtonsArbreLayout.setHorizontalGroup(
+            ButtonsArbreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ButtonsArbreLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ButtonsArbreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(474, Short.MAX_VALUE))
+        );
+        ButtonsArbreLayout.setVerticalGroup(
+            ButtonsArbreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ButtonsArbreLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout tournoi_panelLayout = new javax.swing.GroupLayout(tournoi_panel);
+        tournoi_panel.setLayout(tournoi_panelLayout);
+        tournoi_panelLayout.setHorizontalGroup(
+            tournoi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(tournoi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(ButtonsArbre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        tournoi_panelLayout.setVerticalGroup(
+            tournoi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tournoi_panelLayout.createSequentialGroup()
+                .addComponent(jTabbedPane2)
+                .addGap(76, 76, 76))
+            .addGroup(tournoi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tournoi_panelLayout.createSequentialGroup()
+                    .addContainerGap(392, Short.MAX_VALUE)
+                    .addComponent(ButtonsArbre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
+        );
+
+        jTabbedPane1.addTab("Tournoi", tournoi_panel);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
 
         jButton3.setText("Déplacer Match");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -212,51 +1673,37 @@ public class PlanningOrganisateur extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addComponent(jButton4))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable1);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 594, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))
+        javax.swing.GroupLayout PlanningLayout = new javax.swing.GroupLayout(Planning);
+        Planning.setLayout(PlanningLayout);
+        PlanningLayout.setHorizontalGroup(
+            PlanningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 625, Short.MAX_VALUE)
+            .addGroup(PlanningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(PlanningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 505, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(251, 251, 251)
+        PlanningLayout.setVerticalGroup(
+            PlanningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+            .addGroup(PlanningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PlanningLayout.createSequentialGroup()
+                    .addContainerGap(398, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 269, Short.MAX_VALUE)))
+                    .addContainerGap()))
+            .addGroup(PlanningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PlanningLayout.createSequentialGroup()
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+                    .addGap(85, 85, 85)))
         );
 
-        jTabbedPane1.addTab("Planning", jPanel1);
+        jTabbedPane1.addTab("Planning", Planning);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -264,15 +1711,14 @@ public class PlanningOrganisateur extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -288,31 +1734,156 @@ public class PlanningOrganisateur extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_formAncestorAdded
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Match;
-    private javax.swing.JPanel arbre;
+    private javax.swing.JPanel ButtonsArbre;
+    private javax.swing.JTable Match1;
+    private javax.swing.JTable Match10;
+    private javax.swing.JTable Match11;
+    private javax.swing.JTable Match12;
+    private javax.swing.JTable Match13;
+    private javax.swing.JTable Match14;
+    private javax.swing.JTable Match15;
+    private javax.swing.JTable Match16;
+    private javax.swing.JTable Match19;
+    private javax.swing.JTable Match2;
+    private javax.swing.JTable Match20;
+    private javax.swing.JTable Match21;
+    private javax.swing.JTable Match22;
+    private javax.swing.JTable Match23;
+    private javax.swing.JTable Match24;
+    private javax.swing.JTable Match25;
+    private javax.swing.JTable Match26;
+    private javax.swing.JTable Match27;
+    private javax.swing.JTable Match28;
+    private javax.swing.JTable Match29;
+    private javax.swing.JTable Match3;
+    private javax.swing.JTable Match30;
+    private javax.swing.JTable Match31;
+    private javax.swing.JTable Match32;
+    private javax.swing.JTable Match33;
+    private javax.swing.JTable Match34;
+    private javax.swing.JTable Match35;
+    private javax.swing.JTable Match36;
+    private javax.swing.JTable Match37;
+    private javax.swing.JTable Match38;
+    private javax.swing.JTable Match39;
+    private javax.swing.JTable Match4;
+    private javax.swing.JTable Match40;
+    private javax.swing.JTable Match41;
+    private javax.swing.JTable Match42;
+    private javax.swing.JTable Match43;
+    private javax.swing.JTable Match44;
+    private javax.swing.JTable Match45;
+    private javax.swing.JTable Match46;
+    private javax.swing.JTable Match47;
+    private javax.swing.JTable Match48;
+    private javax.swing.JTable Match5;
+    private javax.swing.JTable Match57;
+    private javax.swing.JTable Match58;
+    private javax.swing.JTable Match59;
+    private javax.swing.JTable Match6;
+    private javax.swing.JTable Match60;
+    private javax.swing.JTable Match7;
+    private javax.swing.JTable Match8;
+    private javax.swing.JTable Match9;
+    private javax.swing.JPanel Planning;
+    private javax.swing.JPanel TournoiDouble;
+    private javax.swing.JPanel TournoiSimple;
+    private javax.swing.JPanel demi_final;
+    private javax.swing.JPanel demi_final1;
+    private javax.swing.JPanel huitieme;
+    private javax.swing.JPanel huitieme1;
+    private javax.swing.JPanel huitieme_qualif;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
+    private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane30;
+    private javax.swing.JScrollPane jScrollPane31;
+    private javax.swing.JScrollPane jScrollPane32;
+    private javax.swing.JScrollPane jScrollPane33;
+    private javax.swing.JScrollPane jScrollPane34;
+    private javax.swing.JScrollPane jScrollPane35;
+    private javax.swing.JScrollPane jScrollPane36;
+    private javax.swing.JScrollPane jScrollPane37;
+    private javax.swing.JScrollPane jScrollPane38;
+    private javax.swing.JScrollPane jScrollPane39;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JScrollPane jScrollPane40;
+    private javax.swing.JScrollPane jScrollPane41;
+    private javax.swing.JScrollPane jScrollPane42;
+    private javax.swing.JScrollPane jScrollPane43;
+    private javax.swing.JScrollPane jScrollPane44;
+    private javax.swing.JScrollPane jScrollPane45;
+    private javax.swing.JScrollPane jScrollPane46;
+    private javax.swing.JScrollPane jScrollPane47;
+    private javax.swing.JScrollPane jScrollPane48;
+    private javax.swing.JScrollPane jScrollPane49;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane50;
+    private javax.swing.JScrollPane jScrollPane51;
+    private javax.swing.JScrollPane jScrollPane52;
+    private javax.swing.JScrollPane jScrollPane53;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JScrollPane jScrollPanel_match10qualif;
+    private javax.swing.JScrollPane jScrollPanel_match11qualif;
+    private javax.swing.JScrollPane jScrollPanel_match12qualif;
+    private javax.swing.JScrollPane jScrollPanel_match1qualif;
+    private javax.swing.JScrollPane jScrollPanel_match2qualif;
+    private javax.swing.JScrollPane jScrollPanel_match3qualif;
+    private javax.swing.JScrollPane jScrollPanel_match4qualif;
+    private javax.swing.JScrollPane jScrollPanel_match5qualif;
+    private javax.swing.JScrollPane jScrollPanel_match6qualif;
+    private javax.swing.JScrollPane jScrollPanel_match7qualif;
+    private javax.swing.JScrollPane jScrollPanel_match8qualif;
+    private javax.swing.JScrollPane jScrollPanel_match9qualif;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable match1qualif;
+    private javax.swing.JTable match2qualif;
+    private javax.swing.JTable match3qualif;
+    private javax.swing.JTable match4qualif;
+    private javax.swing.JTable match5qualif;
+    private javax.swing.JTable match6qualif;
+    private javax.swing.JTable match7qualif;
+    private javax.swing.JTable match8qualif;
+    private javax.swing.JPanel qualif_panel;
+    private javax.swing.JPanel quatrieme;
+    private javax.swing.JPanel quatrieme1;
+    private javax.swing.JPanel quatrieme2;
+    private javax.swing.JPanel seizieme;
+    private javax.swing.JPanel tour_final;
+    private javax.swing.JPanel tour_final1;
+    private javax.swing.JPanel tournoi_panel;
     // End of variables declaration//GEN-END:variables
 }
