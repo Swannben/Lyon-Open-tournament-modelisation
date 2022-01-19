@@ -6,44 +6,49 @@
 
 package planning_des_matchs;
 
+import database.DatabaseConnection;
 import java.util.*;
-import database.Tableable;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.SQLException;
 
 
-public class Arbitre implements Tableable {
-    private int idArbitre;
+public class Arbitre {
+    private int id;
     private String certification;
-    private int nbMatchsFaitsS;     // TODO: Inutile si on garde les collections,
-    private int nbMatchsFaitsD;     // on peut faire List.length()
+    private int nbMatchsFaitsS;
+    private int nbMatchsFaitsD;
     private String nom;
     private String prenom;
     private Nationalite nationalite;
 
-    private java.util.List<MatchSimple> matchsSimplesChaise;
-    private java.util.List<MatchDouble> matchsDoublesChaise;
-    private java.util.List<Match> matchsLigne;
-    private static List<Arbitre> Arbitres;
+    //private java.util.List<MatchSimple> matchsSimplesChaise;
+    //private java.util.List<MatchDouble> matchsDoublesChaise;
+    //private java.util.List<Match> matchsLigne;
     
+    private static List<Arbitre> list = new LinkedList<>();
+
     
-    public Arbitre(int idArbitre, String certification, String nom, String prenom,Nationalite nationalite) {
-        this.idArbitre=idArbitre;
+    public Arbitre(int idArbitre, String certification, String nom, String prenom, Nationalite nationalite) {
+        this.id=idArbitre;
         //TODO vérifier que la certification est reconnue
         this.certification=certification;
         this.nom=nom;
         this.prenom=prenom;
         this.nationalite=nationalite;
-        Arbitres.add(this);
+    }
+
+    public Nationalite getNationalite() {
+        return nationalite;
+    }
+
+    public void setNationalite(Nationalite nationalite) {
+        this.nationalite = nationalite;
     }
     
-    static List<Arbitre> getArbitres(){
-        return Arbitres;
-    }
     
-    
-    public int getIdArbitre() {
-        return idArbitre;
+    public int getId() {
+        return id;
     }
    
     public String getCertification() {
@@ -59,10 +64,26 @@ public class Arbitre implements Tableable {
     public int getNbMatchsFaitsS() {
         return nbMatchsFaitsS;
     }
-
-
+    
+    public int addMatchSimple() {
+        return ++nbMatchsFaitsS;
+    }
+    
+    public int subMatchSimple() {
+        
+        return --nbMatchsFaitsS;
+    }
+        
     public int getNbMatchsFaitsD() {
         return nbMatchsFaitsD;
+    }
+    
+    public int addMatchDouble() {
+        return ++nbMatchsFaitsD;
+    }
+    
+    public int subMatchDouble() {
+        return --nbMatchsFaitsD;
     }
 
     public String getNom() {
@@ -83,48 +104,46 @@ public class Arbitre implements Tableable {
         prenom = newPrenom;
     }
    
-    // TODO: Les méthodes sur les collections ne devraient pas concerner des collections entières
-    // mais plus des éléments précis, ex : ajouter, enlever
-    // Pour la modification du moins. 
+    
     
     /** @pdGenerated default getter */
-    public java.util.List<MatchDouble> getMatchsDoublesChaise() {
+    /*public java.util.List<MatchDouble> getMatchsDoublesChaise() {
         if (matchsDoublesChaise == null)
-            matchsDoublesChaise = new java.util.HashSet<MatchDouble>();
+            matchsDoublesChaise = new java.util.ArrayList<MatchDouble>();
         return matchsDoublesChaise;
-    }
+    }*/
 
     /** @pdGenerated default iterator getter */
-    public java.util.Iterator getIteratorMatchsDoublesChaise() {
+    /*public java.util.Iterator getIteratorMatchsDoublesChaise() {
         if (matchsDoublesChaise == null)
-            matchsDoublesChaise = new java.util.HashSet<MatchDouble>();
+            matchsDoublesChaise = new java.util.ArrayList<MatchDouble>();
         return matchsDoublesChaise.iterator();
-    }
+    }*/
 
     /** @pdGenerated default setter
       * @param newMatchDouble */
-    public void setMatchsDoublesChaises(java.util.List<MatchDouble> newMatchsDoublesChaise) {
+    /*public void setMatchsDoublesChaises(java.util.List<MatchDouble> newMatchsDoublesChaise) {
         removeAllMatchsDoublesChaise();
         for (java.util.Iterator iter = newMatchsDoublesChaise.iterator(); iter.hasNext();)
             addMatchDoubleChaise((MatchDouble)iter.next());
-    }
+    }*/
    
     /** @pdGenerated default add
       * @param newMatchDouble */
-    public void addMatchDoubleChaise(MatchDouble newMatchDouble) {
+    /*public void addMatchDoubleChaise(MatchDouble newMatchDouble) {
         if (newMatchDouble == null)
             return;
         if (this.matchsDoublesChaise == null)
-            this.matchsDoublesChaise = new java.util.HashSet<MatchDouble>();
+            this.matchsDoublesChaise = new java.util.ArrayList<MatchDouble>();
         if (!this.matchsDoublesChaise.contains(newMatchDouble)) {
             this.matchsDoublesChaise.add(newMatchDouble);
             newMatchDouble.setArbitreChaise(this);      
         }
-    }
+    }*/
    
     /** @pdGenerated default remove
       * @param oldMatchDouble */
-    public void removeMatchDoubleChaise(MatchDouble oldMatchDouble) {
+    /*public void removeMatchDoubleChaise(MatchDouble oldMatchDouble) {
         if (oldMatchDouble == null)
             return;
         if (this.matchsDoublesChaise != null)
@@ -132,10 +151,10 @@ public class Arbitre implements Tableable {
                 this.matchsDoublesChaise.remove(oldMatchDouble);
                 oldMatchDouble.setArbitreChaise((Arbitre)null);
             }
-    }
+    }*/
    
     /** @pdGenerated default removeAll */
-    public void removeAllMatchsDoublesChaise() {
+    /*public void removeAllMatchsDoublesChaise() {
         if (matchsDoublesChaise != null) {
             MatchDouble oldMatchDouble;
             for (java.util.Iterator iter = getIteratorMatchsDoublesChaise(); iter.hasNext();) {
@@ -144,46 +163,46 @@ public class Arbitre implements Tableable {
                 oldMatchDouble.setArbitreChaise((Arbitre)null);
             }
         }
-    }
+    }*/
         
     /** @pdGenerated default getter */
-    public java.util.List<MatchSimple> getMatchsSimplesChaise() {
+    /*public java.util.List<MatchSimple> getMatchsSimplesChaise() {
         if (matchsSimplesChaise == null)
-            matchsSimplesChaise = new java.util.HashSet<MatchSimple>();
+            matchsSimplesChaise = new java.util.ArrayList<MatchSimple>();
         return matchsSimplesChaise;
-    }
+    }*/
 
     /** @pdGenerated default iterator getter */
-    public java.util.Iterator getIteratorMatchsSimplesChaise() {
+    /*public java.util.Iterator getIteratorMatchsSimplesChaise() {
         if (matchsSimplesChaise == null)
-            matchsSimplesChaise = new java.util.HashSet<MatchSimple>();
+            matchsSimplesChaise = new java.util.ArrayList<MatchSimple>();
         return matchsSimplesChaise.iterator();
-    }
+    }*/
 
     /** @pdGenerated default setter
       * @param newMatchSimple */
-    public void setMatchsSimplesChaises(java.util.List<MatchSimple> newMatchsSimplesChaise) {
+    /*public void setMatchsSimplesChaises(java.util.List<MatchSimple> newMatchsSimplesChaise) {
         removeAllMatchsSimplesChaise();
         for (java.util.Iterator iter = newMatchsSimplesChaise.iterator(); iter.hasNext();)
             addMatchSimpleChaise((MatchSimple)iter.next());
-    }
+    }*/
    
     /** @pdGenerated default add
       * @param newMatchSimple */
-    public void addMatchSimpleChaise(MatchSimple newMatchSimple) {
+    /*public void addMatchSimpleChaise(MatchSimple newMatchSimple) {
         if (newMatchSimple == null)
             return;
         if (this.matchsSimplesChaise == null)
-            this.matchsSimplesChaise = new java.util.HashSet<MatchSimple>();
+            this.matchsSimplesChaise = new java.util.ArrayList<MatchSimple>();
         if (!this.matchsSimplesChaise.contains(newMatchSimple)) {
             this.matchsSimplesChaise.add(newMatchSimple);
             newMatchSimple.setArbitreChaise(this);      
         }
-    }
+    }*/
    
     /** @pdGenerated default remove
       * @param oldMatchSimple */
-    public void removeMatchSimpleChaise(MatchSimple oldMatchSimple) {
+    /*public void removeMatchSimpleChaise(MatchSimple oldMatchSimple) {
         if (oldMatchSimple == null)
             return;
         if (this.matchsSimplesChaise != null)
@@ -191,10 +210,10 @@ public class Arbitre implements Tableable {
                 this.matchsSimplesChaise.remove(oldMatchSimple);
                 oldMatchSimple.setArbitreChaise((Arbitre)null);
             }
-    }
+    }*/
    
     /** @pdGenerated default removeAll */
-    public void removeAllMatchsSimplesChaise() {
+    /*public void removeAllMatchsSimplesChaise() {
         if (matchsSimplesChaise != null) {
             MatchSimple oldMatchSimple;
             for (java.util.Iterator iter = getIteratorMatchsSimplesChaise(); iter.hasNext();) {
@@ -203,46 +222,46 @@ public class Arbitre implements Tableable {
                 oldMatchSimple.setArbitreChaise((Arbitre)null);
             }
         }
-    }
+    }*/
     
     /** @pdGenerated default getter */
-    public java.util.List<Match> getMatchsLigne() {
+    /*public java.util.List<Match> getMatchsLigne() {
         if (matchsLigne == null)
-            matchsLigne = new java.util.HashSet<Match>();
+            matchsLigne = new java.util.ArrayList<Match>();
         return matchsLigne;
-    }
+    }*/
    
     /** @pdGenerated default iterator getter */
-    public java.util.Iterator getIteratorMatchsLigne() {
+    /*public java.util.Iterator getIteratorMatchsLigne() {
         if (matchsLigne == null)
-            matchsLigne = new java.util.HashSet<Match>();
+            matchsLigne = new java.util.ArrayList<Match>();
         return matchsLigne.iterator();
-    }
+    }*/
    
     /** @pdGenerated default setter
       * @param newMatch */
-    public void setMatchsLigne(java.util.List<Match> newMatchsLigne) {
+    /*public void setMatchsLigne(java.util.List<Match> newMatchsLigne) {
         removeAllMatch();
         for (java.util.Iterator iter = newMatchsLigne.iterator(); iter.hasNext();)
             addMatchLigne((Match)iter.next());
-    }
+    }*/
    
     /** @pdGenerated default add
       * @param newMatch */
-    public void addMatchLigne(Match newMatch) {
+    /*public void addMatchLigne(Match newMatch) {
         if (newMatch == null)
             return;
         if (this.matchsLigne == null)
-            this.matchsLigne = new java.util.HashSet<Match>();
+            this.matchsLigne = new java.util.ArrayList<Match>();
         if (!this.matchsLigne.contains(newMatch)) {
             this.matchsLigne.add(newMatch);
             newMatch.addArbitreLigne(this);      
         }
-    }
+    }*/
    
     /** @pdGenerated default remove
       * @param oldMatch */
-    public void removeMatch(Match oldMatch) {
+    /*public void removeMatch(Match oldMatch) {
         if (oldMatch == null)
             return;
         if (this.matchsLigne != null)
@@ -250,10 +269,10 @@ public class Arbitre implements Tableable {
                 this.matchsLigne.remove(oldMatch);
                 oldMatch.removeArbitreLigne(this);
             }
-    }
+    }*/
    
     /** @pdGenerated default removeAll */
-    public void removeAllMatch() {
+    /*public void removeAllMatch() {
         if (matchsLigne != null) {
             Match oldMatch;
             for (java.util.Iterator iter = getIteratorMatchsLigne(); iter.hasNext();) {
@@ -262,36 +281,62 @@ public class Arbitre implements Tableable {
                 oldMatch.removeArbitreLigne(this);
             }
         }
-    }
+    }*/
     
-    @Override
-    public List getTable() {
-        List<Arbitre> list = new LinkedList<>();
-        /*
+    
+    
+    
+    public static List getListFromDatabase() {
+        // Delete list
+        if (list != null) {
+            Arbitre arbitre;
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
+                arbitre = (Arbitre)iter.next();
+                iter.remove();
+            }
+        }
+        
+        // New list
+        List<Arbitre> newList = new LinkedList<>();
+        
+        DatabaseConnection connection = DatabaseConnection.get();
+        
         try {
-            ResultSet result = statement.executeQuery("select * from " + Arbitre.getTableName());
+            Statement statement = connection.getStatement();
+            ResultSet result = statement.executeQuery("select * from arbitre");
 
             while (result.next()) {
-                instanceint i = result.getInt("userid");
-            String str = rs.getString("username");
+                Arbitre arbitre = new Arbitre(
+                        result.getInt("idarbitre"), 
+                        result.getString("certification"), 
+                        result.getString("nom"), 
+                        result.getString("prenom"),
+                        Nationalite.get(result.getInt("idnationalite"))
+                );
 
-            //Assuming you have a user object
-            User user = new User(i, str);
-
-            ll.add(user);
-          }
+                newList.add(arbitre);
+            }
+            
+            result.close();
         }
         catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-        */
         
+        list = newList;
         return list;
     }
     
-    @Override
-    public String getTableName() {
-        return "arbitre";
+    public static List getList() {
+        return list;
     }
-
+    
+    public static Arbitre get(int id) {
+        for (Arbitre row : list) {
+            if (row.id == id) {
+                return row;
+            }
+        }
+        return null;
+    }
 }

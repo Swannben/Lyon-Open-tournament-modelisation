@@ -9,12 +9,9 @@ package planning_des_matchs;
 import java.util.*;
 
 public class MatchSimple extends Match {
-    public java.util.List<Joueur> joueurs;
-    public Arbitre arbitreChaise;
+    private java.util.List<Joueur> joueurs;
     private boolean estQualif;
-    
-    
-    
+        
     
     public boolean estQualif() {
         return estQualif;
@@ -26,27 +23,30 @@ public class MatchSimple extends Match {
     }
 
    
-    public MatchSimple(int id, Creneau creneau, Court court, boolean estQualif, Arbitre arbitreChaise, Joueur joueur1,Joueur joueur2) {
-        super(id,creneau,court);
+    public MatchSimple(int id, Creneau creneau, List<int> score, boolean estQualif, Arbitre arbitreChaise,  java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
+            java.util.List<EquipeRamassage> equipesRamassage) {
+        super(id, creneau, score, arbitreChaise, arbitresLigne, equipesRamassage);
         this.estQualif=estQualif;
-        this.arbitreChaise=arbitreChaise;
-        joueurs = new ArrayList();
-        joueurs.add(joueur1);
-        joueurs.add(joueur2);
+
+        setArbitreChaise(arbitreChaise);
+
+        if (joueurs == null)
+            joueurs = new ArrayList(2);
+        this.joueurs = joueurs;
     }
     
     
     /** @pdGenerated default getter */
     public java.util.List<Joueur> getJoueurs() {
         if (joueurs == null)
-            joueurs = new java.util.HashSet<Joueur>();
+            joueurs = new java.util.ArrayList<Joueur>();
         return joueurs;
     }
    
     /** @pdGenerated default iterator getter */
     public java.util.Iterator getIteratorJoueurs() {
         if (joueurs == null)
-            joueurs = new java.util.HashSet<Joueur>();
+            joueurs = new java.util.ArrayList<Joueur>();
         return joueurs.iterator();
     }
    
@@ -64,10 +64,9 @@ public class MatchSimple extends Match {
         if (newJoueur == null)
            return;
         if (this.joueurs == null)
-           this.joueurs = new java.util.HashSet<Joueur>();
+           this.joueurs = new java.util.ArrayList<Joueur>();
         if (!this.joueurs.contains(newJoueur)) {
-           this.joueurs.add(newJoueur);
-           newJoueur.addMatchSimple(this);      
+           this.joueurs.add(newJoueur);   
         }
     }
    
@@ -79,7 +78,6 @@ public class MatchSimple extends Match {
         if (this.joueurs != null) {
             if (this.joueurs.contains(oldJoueur)) {
                 this.joueurs.remove(oldJoueur);
-                oldJoueur.removeMatchSimple(this);
             }
         }
     }
@@ -91,14 +89,8 @@ public class MatchSimple extends Match {
             for (java.util.Iterator iter = getIteratorJoueurs(); iter.hasNext();) {
                 oldJoueur = (Joueur)iter.next();
                 iter.remove();
-                oldJoueur.removeMatchSimple(this);
             }
         }
-    }
-    
-    /** @pdGenerated default parent getter */
-    public Arbitre getArbitreChaise() {
-        return arbitreChaise;
     }
    
     /** @pdGenerated default parent setter
@@ -108,23 +100,41 @@ public class MatchSimple extends Match {
             if (this.arbitreChaise != null) {
                 Arbitre oldArbitre = this.arbitreChaise;
                 this.arbitreChaise = null;
-                oldArbitre.removeMatchSimpleChaise(this);
+                oldArbitre.subMatchSimple();
             }
             if (newArbitre != null) {
                 this.arbitreChaise = newArbitre;
-                this.arbitreChaise.addMatchSimpleChaise(this);
+                this.arbitreChaise.addMatchDouble();
             }
         }
     }
 
     @Override
-    public void assignerArbitre() {
-        arbitres=Arbitre.getArbitres();
+    public void assignerArbitres() {
+        arbitres=Arbitre.getList();
+        int i, c = 1;
+        //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
+        arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
         
-        Arbitre selectionne;
-        selectionne = arbitres.get(new Random().nextInt(arbitres.size()));
+        while (c>0){
+            c=0;
+            if (arbitreChaise.getNbMatchsFaitsS()>=2 || arbitreChaise.getCertification()!="ITT1"){
+                c++;
+                for (i=0;i<joueurs.size();i++){
+                    if (arbitreChaise.getNationalite().equals(joueurs.get(i).getNationalite())){
+                        c++;
+                    }
+                }
+            }
+        }
         
-        if (selectionne=
+        for (i=0;i<6;i++){
+            arbitresLigne.add(arbitres.get(new Random().nextInt(arbitres.size())));
+
+        }
+        
+        
     }
+
 
 }

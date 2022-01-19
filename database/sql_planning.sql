@@ -165,7 +165,6 @@ create table ligne
 create table "match"
 (
    idmatch              serial not null,
-   estqualif            bool,
    primary key (idmatch)
 );
 
@@ -185,6 +184,7 @@ create table matchdouble
 create table matchsimple
 (
    idmatch              int not null,
+   estqualif            bool,
    idarbitre            int not null,
    primary key (idmatch)
 );
