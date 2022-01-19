@@ -118,7 +118,7 @@ public class MatchSimple extends Match {
 
     @Override
     public void assignerArbitres() {
-        arbitres=Arbitre.getList();
+        /*arbitres=Arbitre.getList();
         int i, c = 1;
         //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
         arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
@@ -140,7 +140,7 @@ public class MatchSimple extends Match {
 
         }
         
-        
+        */
     }
 
     

@@ -61,7 +61,6 @@ public class MatchDouble extends Match {
            this.equipes = new java.util.ArrayList<Equipe>();
         if (!this.equipes.contains(newEquipe)) {
            this.equipes.add(newEquipe);
-           newEquipe.addMatchDouble(this);      
         }
     }
    
@@ -73,7 +72,6 @@ public class MatchDouble extends Match {
         if (this.equipes != null) {
             if (this.equipes.contains(oldEquipe)) {
                 this.equipes.remove(oldEquipe);
-                oldEquipe.removeMatchDouble(this);
             }
         }
     }
@@ -85,7 +83,6 @@ public class MatchDouble extends Match {
             for (java.util.Iterator iter = getIteratorEquipes(); iter.hasNext();) {
                 oldEquipe = (Equipe)iter.next();
                 iter.remove();
-                oldEquipe.removeMatchDouble(this);
             }
         }
     }
@@ -110,7 +107,7 @@ public class MatchDouble extends Match {
 
     @Override
     public void assignerArbitres() {
-        arbitres=Arbitre.getList();
+        /*arbitres=Arbitre.getList();
         int i, c = 1;
         //TODO ajouter tous le traitement de l'emploi du temps de l'arbitre.
         arbitreChaise = arbitres.get(new Random().nextInt(arbitres.size()));
@@ -132,7 +129,7 @@ public class MatchDouble extends Match {
 
         }
         
-        
+        */
     }
     
     
