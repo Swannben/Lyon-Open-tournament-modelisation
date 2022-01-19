@@ -70,7 +70,9 @@ public abstract class Match {
     public int getID() {
         return id;
     }
-
+    public Match(){
+        id=0;
+    }
    
     public Match(int id, Creneau creneau, List<Set> score, java.util.List<Arbitre> arbitresLigne, java.util.List<EquipeRamassage> equipesRamassage) {
         this.id = id;
