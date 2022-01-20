@@ -18,7 +18,7 @@ public class Nationalite {
     private int id;
     private String libelle;
     
-    private static List<Nationalite> table = new LinkedList<>();
+    private static List<Nationalite> list = new LinkedList<>();
 
     
     Nationalite(int id, String libelle) {
@@ -41,9 +41,9 @@ public class Nationalite {
     
     public static List getListFromDatabase() {
         // Delete table
-        if (table != null) {
+        if (list != null) {
             Nationalite nationalite;
-            for (java.util.Iterator iter = table.iterator(); iter.hasNext();) {
+            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
                 nationalite = (Nationalite)iter.next();
                 iter.remove();
             }
@@ -59,9 +59,6 @@ public class Nationalite {
             ResultSet result = statement.executeQuery("select * from nationalite");
 
             while (result.next()) {
-                int i = result.getInt("userid");
-                String str = result.getString("username");
-                
                 Nationalite nationalite = new Nationalite(
                         result.getInt("idnationalite"), 
                         result.getString("libelle")
@@ -74,16 +71,16 @@ public class Nationalite {
             System.err.println(e.getMessage());
         }
         
-        table = list;
+        list = list;
         return list;
     }
     
     public static List<Nationalite> getList() {
-        return table;
+        return list;
     }
           
     public static Nationalite get(int id) {
-        for (Nationalite row : table) {
+        for (Nationalite row : list) {
             if (row.id == id) {
                 return row;
             }

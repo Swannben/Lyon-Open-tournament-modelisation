@@ -76,7 +76,7 @@ public abstract class Match {
    
     public Match(int id, Creneau creneau, List<Set> score, java.util.List<Arbitre> arbitresLigne, java.util.List<EquipeRamassage> equipesRamassage) {
         this.id = id;
-        this.creneau = creneau;
+        setCreneau(creneau);
         
         if (score == null)
             score = new ArrayList(2);

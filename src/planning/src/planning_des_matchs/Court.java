@@ -17,7 +17,6 @@ public class Court {
     private String nom;
     private boolean estPrincipal;
 
-    //public java.util.List<Match> matchs;
     public java.util.List<Entrainement> entrainements;
     
     private static List<Court> list = new LinkedList<>();

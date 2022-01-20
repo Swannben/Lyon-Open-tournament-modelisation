@@ -1,5 +1,6 @@
 package vue;
 
+import controller.Main;
 import database.UserConnection;
 import database.ConnectedUser;
 
@@ -178,10 +179,14 @@ public class Fenetre extends javax.swing.JFrame {
         if (connection != null) {
             // Log out
             connection.close();
+            Main.cleanData();
         }
         else {
             // Log in
             UserConnection.open(emailField.getText(), passwordField.getText());
+            if (UserConnection.get() != null) {
+                Main.retriveDatabase();
+            }
         }
         updatePanels();
     }//GEN-LAST:event_submitLogButtonActionPerformed

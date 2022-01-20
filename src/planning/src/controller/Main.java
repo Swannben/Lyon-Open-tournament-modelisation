@@ -5,6 +5,8 @@
  */
 package controller;
 
+import vue.Fenetre;
+
 /**
  *
  * @author swann
@@ -14,12 +16,31 @@ import planning_des_matchs.*;
 import java.util.*;
 
 public class Main {
+    
     public static void main(String[] args)
-    {
-        
+    {        
+        Fenetre.main(args);
     }
     
-    public void genererTournoi(){
+    public static void retriveDatabase() {
+        Nationalite.getListFromDatabase();
+        Jour.getListFromDatabase();
+        Creneau.getListFromDatabase();
+        Arbitre.getListFromDatabase();
+        Joueur.getListFromDatabase();
+        Equipe.getListFromDatabase();
+        EquipeRamassage.getListFromDatabase();
+        Court.getListFromDatabase();
+        //Entrainement.getListFromDatabase();
+        MatchDouble.getListFromDatabase();
+        MatchSimple.getListFromDatabase();
+    }
+    
+    public static void cleanData() {
+        // TODO
+    }
+    
+    public static void genererTournoi(){
         int i;
         List<Joueur> joueursMatch, joueursPartQualif= Joueur.getJoueursPartQualif();
         List<MatchSimple> matchsQualif= new ArrayList();  //second tour
