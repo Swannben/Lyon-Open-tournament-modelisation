@@ -1,4 +1,4 @@
-package database;
+package model.database;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
@@ -14,9 +14,9 @@ import java.util.Map;
 import java.util.StringJoiner;
 
 
-public class Utilisateur {
+public class ConnectedUser {
     
-    public Utilisateur() {
+    public ConnectedUser() {
         
     }
     

@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vue;
+package view;
 
 /**
  *
  * @author cleme
  */
-public class Reservations extends javax.swing.JPanel {
+public class ReservationsPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form Entrainements
      */
-    public Reservations() {
+    public ReservationsPanel() {
         initComponents();
     }
 

@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vue;
+package view;
 
 /**
  *
  * @author cleme
  */
-public class Matchs extends javax.swing.JPanel {
+public class MatchsPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form Planning
      */
-    public Matchs() {
+    public MatchsPanel() {
         initComponents();
     }
 

@@ -4,9 +4,9 @@
  * Purpose: Defines the Class Match
  ***********************************************************************/
 
-package planning_des_matchs;
+package model.entity;
 
-import database.DatabaseConnection;
+import model.database.DatabaseConnection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -76,7 +76,7 @@ public abstract class Match {
    
     public Match(int id, Creneau creneau, List<Set> score, java.util.List<Arbitre> arbitresLigne, java.util.List<EquipeRamassage> equipesRamassage) {
         this.id = id;
-        this.creneau = creneau;
+        setCreneau(creneau);
         
         if (score == null)
             score = new ArrayList(2);
@@ -230,8 +230,10 @@ public abstract class Match {
     public void assignerEquipesRamassage(){
         int i;
         //TODO gérer l'emploi du temps des listes
+        List<EquipeRamassage> listEquipes = EquipeRamassage.getList();
+        int randomIndex = new Random().nextInt(listEquipes.size());
         for (i=0;i<2;i++){
-        equipesRamassage.add((new Random().nextInt(EquipeRamassage.getList()).size()));
+            equipesRamassage.add(listEquipes.get(randomIndex));
         }
     }
     
@@ -245,58 +247,4 @@ public abstract class Match {
       * @param newArbitre */
     abstract public void setArbitreChaise(Arbitre newArbitre);
 
-    
-    public static List<Joueur> getListFromDatabase() {
-        // Delete list
-        if (list != null) {
-            Joueur joueur;
-            for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
-                joueur = (Joueur)iter.next();
-                iter.remove();
-            }
-        }
-        
-        // New list
-        List<Joueur> newList = new LinkedList<>();
-        
-        DatabaseConnection connection = DatabaseConnection.get();
-        
-        try {
-            Statement statement = connection.getStatement();
-            ResultSet result = statement.executeQuery("select * from joueur");
-
-            while (result.next()) {
-                // TODO: get players : select * from joueur natural join joueur order by idjoueur ?
-                Joueur joueur = new Joueur(
-                        result.getInt("idjoueur"),
-                        result.getString("nom"),
-                        result.getString("prenom"),
-                        Nationalite.get(result.getInt("nationalite"))
-                );
-
-                newList.add(joueur);
-            }
-            
-            result.close();
-        }
-        catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        
-        list = newList;
-        return list;
-    }
-    
-    public static List<Joueur> getList() {
-        return list;
-    }
-    
-    public static Joueur get(int id) {
-        for (Joueur joueur : list) {
-            if (joueur.id == id) {
-                return joueur;
-            }
-        }
-        return null;
-    }
 }

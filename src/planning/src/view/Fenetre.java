@@ -1,7 +1,8 @@
-package vue;
+package view;
 
-import database.UserConnection;
-import database.Utilisateur;
+import controller.Main;
+import model.database.UserConnection;
+import model.database.ConnectedUser;
 
 
 public class Fenetre extends javax.swing.JFrame {
@@ -17,11 +18,15 @@ public class Fenetre extends javax.swing.JFrame {
     private void hideUserSpecificPanels() {
         if (tabs.indexOfComponent(matchsPanel) != -1)
             tabs.remove(matchsPanel);
+        if (tabs.indexOfComponent(matchsAdminPanel) != -1)
+            tabs.remove(matchsAdminPanel);
         if (tabs.indexOfComponent(reservationsPanel) != -1)
             tabs.remove(reservationsPanel);
+        if (tabs.indexOfComponent(reservationsAdminPanel) != -1)
+            tabs.remove(reservationsAdminPanel);
     }
     
-    private void displayLoggedIn(Utilisateur user) {
+    private void displayLoggedIn(ConnectedUser user) {
         submitLogButton.setText("Déconnexion");
         emailField.setEnabled(false);
         passwordField.setEnabled(false);
@@ -41,20 +46,23 @@ public class Fenetre extends javax.swing.JFrame {
         UserConnection connection = UserConnection.get();
         hideUserSpecificPanels();
         if (connection != null) {
-            Utilisateur user = connection.getAuthenticatedUser();
+            ConnectedUser user = connection.getAuthenticatedUser();
             displayLoggedIn(user);
             switch (user.getType()) {
+                case 0:     // Admin
+                    tabs.addTab("Matchs", matchsAdminPanel);
+                    tabs.addTab("Réservations", reservationsAdminPanel);
                 case 1:     // Gerant de l'hebergement
                     break;
                 case 2:     // VIP
-                    break;
-                case 3:     // Responsable de l'hebergement du tournoi
-                    break;
+                case 5:     // Arbitre
                 case 4:     // Joueur
                     tabs.addTab("Matchs", matchsPanel);
                     tabs.addTab("Réservations", reservationsPanel);
                     break;
-                case 5:     // Arbitre
+                case 3:     // Responsable de l'hebergement du tournoi
+                    break;
+                default:
                     break;
             }
         } 
@@ -171,10 +179,14 @@ public class Fenetre extends javax.swing.JFrame {
         if (connection != null) {
             // Log out
             connection.close();
+            Main.cleanData();
         }
         else {
             // Log in
             UserConnection.open(emailField.getText(), passwordField.getText());
+            if (UserConnection.get() != null) {
+                Main.retriveDatabase();
+            }
         }
         updatePanels();
     }//GEN-LAST:event_submitLogButtonActionPerformed
@@ -215,8 +227,10 @@ public class Fenetre extends javax.swing.JFrame {
     }
 
     // Panels
-    private Matchs matchsPanel = new Matchs();
-    private Reservations reservationsPanel = new Reservations();
+    private MatchsPanel matchsPanel = new MatchsPanel();
+    private MatchsAdminPanel matchsAdminPanel = new MatchsAdminPanel();
+    private ReservationsPanel reservationsPanel = new ReservationsPanel();
+    private ReservationsAdminPanel reservationsAdminPanel = new ReservationsAdminPanel();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField emailField;

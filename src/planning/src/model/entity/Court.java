@@ -4,9 +4,9 @@
  * Purpose: Defines the Class Court
  ***********************************************************************/
 
-package planning_des_matchs;
+package model.entity;
 
-import database.DatabaseConnection;
+import model.database.DatabaseConnection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,7 +17,6 @@ public class Court {
     private String nom;
     private boolean estPrincipal;
 
-    //public java.util.List<Match> matchs;
     public java.util.List<Entrainement> entrainements;
     
     private static List<Court> list = new LinkedList<>();

@@ -4,7 +4,7 @@
  * Purpose: Defines the Class Entrainement
  ***********************************************************************/
 
-package planning_des_matchs;
+package model.entity;
 
 import java.util.*;
 
