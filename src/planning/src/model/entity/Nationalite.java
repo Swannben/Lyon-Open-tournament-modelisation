@@ -4,9 +4,9 @@
  * Purpose: Defines the Class Nationalite
  ***********************************************************************/
 
-package planning_des_matchs;
+package model.entity;
 
-import database.DatabaseConnection;
+import model.database.DatabaseConnection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;

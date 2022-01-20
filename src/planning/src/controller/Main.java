@@ -5,14 +5,24 @@
  */
 package controller;
 
-import vue.Fenetre;
+import model.entity.Match;
+import model.entity.Court;
+import model.entity.MatchDouble;
+import model.entity.Arbitre;
+import model.entity.MatchSimple;
+import model.entity.Equipe;
+import model.entity.Creneau;
+import model.entity.EquipeRamassage;
+import model.entity.Joueur;
+import model.entity.Jour;
+import model.entity.Nationalite;
+import view.Fenetre;
 
 /**
  *
  * @author swann
  */
 
-import planning_des_matchs.*;
 import java.util.*;
 
 public class Main {

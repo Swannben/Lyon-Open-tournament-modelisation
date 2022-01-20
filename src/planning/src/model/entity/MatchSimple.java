@@ -1,130 +1,131 @@
 /***********************************************************************
- * Module:  MatchDouble.java
+ * Module:  MatchSimple.java
  * Author:  swann
- * Purpose: Defines the Class MatchDouble
+ * Purpose: Defines the Class MatchSimple
  ***********************************************************************/
 
-package planning_des_matchs;
+package model.entity;
 
-import database.DatabaseConnection;
+import model.database.DatabaseConnection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 
-public class MatchDouble extends Match {
-    private java.util.List<Equipe> equipes;
-    private Arbitre arbitreChaise;
-    int id;
-    private java.util.List<EquipeRamassage> equipesRamassage;
+public class MatchSimple extends Match {
+    private java.util.List<Joueur> joueurs;
+    private boolean estQualif;
     
-    private static List<MatchDouble> list = new LinkedList<>(); 
-
-    
-    public MatchDouble(){
+    public MatchSimple(){
         super();
     }
     
-
-    public MatchDouble(int id, Creneau creneau, List<Set> score, Arbitre arbitreChaise, java.util.List<Arbitre> arbitresLigne, 
-            java.util.List<EquipeRamassage> equipesRamassage, List<Equipe> equipes) {
-        super(id, creneau, score, arbitresLigne, equipesRamassage);
         
+    private static List<MatchSimple> list = new LinkedList<>(); 
+
+    
+    public boolean estQualif() {
+        return estQualif;
+    }
+
+    /** @param newEstQualif */
+    public void setEstQualif(boolean newEstQualif) {
+        estQualif = newEstQualif;
+    }
+
+   
+    public MatchSimple(int id, Creneau creneau, List<Set> score, boolean estQualif, Arbitre arbitreChaise, 
+            java.util.List<Joueur> joueurs, java.util.List<Arbitre> arbitresLigne, 
+            java.util.List<EquipeRamassage> equipesRamassage) {
+        super(id, creneau, score, arbitresLigne, equipesRamassage);
+        this.estQualif=estQualif;
+
         setArbitreChaise(arbitreChaise);
 
-        if (equipes == null)
-            equipes = new ArrayList(2);
-        this.equipes = equipes;
+        if (joueurs == null)
+            joueurs = new ArrayList(2);
+        this.joueurs = joueurs;
     }
     
     @Override
-    public MatchDouble getMatchA() {
-        return (MatchDouble) matchA;
+    public MatchSimple getMatchA() {
+        return (MatchSimple) matchA;
     }
-    
     @Override
-    public MatchDouble getMatchB() {
-        return (MatchDouble) matchB;
+    public MatchSimple getMatchB() {
+        return (MatchSimple) matchB;
     }
     
-    public List<Joueur> getJoueurs(){
-        ArrayList<Joueur> joueurs= new ArrayList<>(4);
-        joueurs.addAll(equipes.get(1).getJoueurs());
-        joueurs.addAll(equipes.get(0).getJoueurs());
-        return joueurs;
-    }
     
     /** @pdGenerated default getter */
-    public java.util.List<Equipe> getEquipes() {
-        if (equipes == null)
-            equipes = new java.util.ArrayList<Equipe>();
-        return equipes;
+    public java.util.List<Joueur> getJoueurs() {
+        if (joueurs == null)
+            joueurs = new java.util.ArrayList<Joueur>();
+        return joueurs;
     }
    
     /** @pdGenerated default iterator getter */
-    public java.util.Iterator getIteratorEquipes() {
-        if (equipes == null)
-            equipes = new java.util.ArrayList<Equipe>();
-        return equipes.iterator();
+    public java.util.Iterator getIteratorJoueurs() {
+        if (joueurs == null)
+            joueurs = new java.util.ArrayList<Joueur>();
+        return joueurs.iterator();
     }
    
     /** @pdGenerated default setter
-      * @param newEquipe */
-    public void setEquipes(java.util.List<Equipe> newEquipes) {
-        removeAllEquipes();
-        for (java.util.Iterator iter = newEquipes.iterator(); iter.hasNext();)
-            addEquipe((Equipe)iter.next());
+      * @param newJoueur */
+    public void setJoueurs(java.util.List<Joueur> newJoueurs) {
+        removeAllJoueurs();
+        for (java.util.Iterator iter = newJoueurs.iterator(); iter.hasNext();)
+            addJoueur((Joueur)iter.next());
     }
    
     /** @pdGenerated default add
-      * @param newEquipe */
-    public void addEquipe(Equipe newEquipe) {
-        if (newEquipe == null)
+      * @param newJoueur */
+    public void addJoueur(Joueur newJoueur) {
+        if (newJoueur == null)
            return;
-        if (this.equipes == null)
-           this.equipes = new java.util.ArrayList<Equipe>();
-        if (!this.equipes.contains(newEquipe)) {
-           this.equipes.add(newEquipe);     
+        if (this.joueurs == null)
+           this.joueurs = new java.util.ArrayList<Joueur>();
+        if (!this.joueurs.contains(newJoueur)) {
+           this.joueurs.add(newJoueur);   
         }
     }
    
     /** @pdGenerated default remove
-      * @param oldEquipe */
-    public void removeEquipe(Equipe oldEquipe) {
-        if (oldEquipe == null)
+      * @param oldJoueur */
+    public void removeJoueur(Joueur oldJoueur) {
+        if (oldJoueur == null)
             return;
-        if (this.equipes != null) {
-            if (this.equipes.contains(oldEquipe)) {
-                this.equipes.remove(oldEquipe);
+        if (this.joueurs != null) {
+            if (this.joueurs.contains(oldJoueur)) {
+                this.joueurs.remove(oldJoueur);
             }
         }
     }
    
     /** @pdGenerated default removeAll */
-    public void removeAllEquipes() {
-        if (equipes != null) {
-            Equipe oldEquipe;
-            for (java.util.Iterator iter = getIteratorEquipes(); iter.hasNext();) {
-                oldEquipe = (Equipe)iter.next();
+    public void removeAllJoueurs() {
+        if (joueurs != null) {
+            Joueur oldJoueur;
+            for (java.util.Iterator iter = getIteratorJoueurs(); iter.hasNext();) {
+                oldJoueur = (Joueur)iter.next();
                 iter.remove();
             }
         }
     }
    
-    
     /** @pdGenerated default parent setter
       * @param newArbitre */
-    @Override
     public void setArbitreChaise(Arbitre newArbitre) {
         if (this.arbitreChaise == null || !this.arbitreChaise.equals(newArbitre)) {
             if (this.arbitreChaise != null) {
                 Arbitre oldArbitre = this.arbitreChaise;
                 this.arbitreChaise = null;
-                oldArbitre.subMatchDouble();
+                oldArbitre.subMatchSimple();
             }
             if (newArbitre != null) {
                 this.arbitreChaise = newArbitre;
-                this.arbitreChaise.addMatchDouble();
+                this.arbitreChaise.addMatchSimple();
             }
         }
     }
@@ -138,10 +139,10 @@ public class MatchDouble extends Match {
         
         while (c>0){
             c=0;
-            if (arbitreChaise.getNbMatchsFaitsD()>=2 || arbitreChaise.getCertification()!="ITT1"){
+            if (arbitreChaise.getNbMatchsFaitsS()>=2 || arbitreChaise.getCertification()!="ITT1"){
                 c++;
-                for (i=0;i<4;i++){
-                    if (arbitreChaise.getNationalite().equals(this.getJoueurs().get(i).getNationalite())){
+                for (i=0;i<joueurs.size();i++){
+                    if (arbitreChaise.getNationalite().equals(joueurs.get(i).getNationalite())){
                         c++;
                     }
                 }
@@ -154,32 +155,32 @@ public class MatchDouble extends Match {
         }
         
     }
+
     
-    
-    public static List<MatchDouble> getListFromDatabase() {
+    public static List<MatchSimple> getListFromDatabase() {
         // Delete list
         if (list != null) {
-            MatchDouble matchDouble;
+            MatchSimple matchSimple;
             for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
-                matchDouble = (MatchDouble)iter.next();
+                matchSimple = (MatchSimple)iter.next();
                 iter.remove();
             }
         }
         
         // New list
-        List<MatchDouble> newList = new LinkedList<>();
+        List<MatchSimple> newList = new LinkedList<>();
         
         DatabaseConnection connection = DatabaseConnection.get();
         
         try {
             Statement statement = connection.getStatement();
-            ResultSet matchDoubleResult = statement.executeQuery("select * from matchdouble natural join match");
+            ResultSet matchSimpleResult = statement.executeQuery("select * from matchsimple natural join match");
             ResultSet creneauResult = null;
             int matchID;
             Creneau creneau = null;
             
-            while (matchDoubleResult.next()) {
-                matchID = matchDoubleResult.getInt("idmatch");
+            while (matchSimpleResult.next()) {
+                matchID = matchSimpleResult.getInt("idmatch");
                 
                 // Find creneau
                 ResultSet result = statement.executeQuery("select * from creneau where matchid = " + matchID);
@@ -199,7 +200,7 @@ public class MatchDouble extends Match {
                 {
                     int setID;
                     for (int i = 1; i <= 5; i++) {
-                        setID = matchDoubleResult.getInt("set"+i);
+                        setID = matchSimpleResult.getInt("set"+i);
                         if (setID == 0)
                             break;
                         
@@ -250,13 +251,13 @@ public class MatchDouble extends Match {
                     result = null;
                 }
                 
-                // Get equipes
-                ArrayList<Equipe> equipes = new ArrayList<>(2);
-                result = statement.executeQuery("select idequipe from jouedouble where idmatch = " + matchID);
+                // Get joueurs
+                ArrayList<Joueur> joueurs = new ArrayList<>(2);
+                result = statement.executeQuery("select idjoueur from jouesimple where idmatch = " + matchID);
                 {
                     int i = 0;
                     while (result.next() && i < 2) {
-                        equipes.add(Equipe.get(result.getInt("idequipe")));
+                        joueurs.add(Joueur.get(result.getInt("idjoueur")));
                         i++;
                     }
                 }
@@ -265,21 +266,23 @@ public class MatchDouble extends Match {
                     result = null;
                 }
                 
-                // New MatchDouble
-                MatchDouble matchDouble = new MatchDouble(
+                // New MatchSimple
+                MatchSimple matchSimple = new MatchSimple(
                         matchID,
                         creneau,
                         sets,
-                        Arbitre.get(matchDoubleResult.getInt("idarbitre")),
+                        matchSimpleResult.getBoolean("estqualif"),
+                        Arbitre.get(matchSimpleResult.getInt("idarbitre")),
+                        joueurs,
                         arbitresLigne,
-                        equipesRamassage,
-                        equipes
+                        equipesRamassage
+
                 );
 
-                newList.add(matchDouble);
+                newList.add(matchSimple);
             }
             
-            matchDoubleResult.close();
+            matchSimpleResult.close();
         }
         catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -288,17 +291,5 @@ public class MatchDouble extends Match {
         list = newList;
         return list;
     }
-    
-    public static List<MatchDouble> getList() {
-        return list;
-    }
-    
-    public static MatchDouble get(int id) {
-        for (MatchDouble matchDouble : list) {
-            if (matchDouble.id == id) {
-                return matchDouble;
-            }
-        }
-        return null;
-    }
+
 }

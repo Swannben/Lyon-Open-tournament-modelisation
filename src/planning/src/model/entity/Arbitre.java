@@ -4,9 +4,9 @@
  * Purpose: Defines the Class Arbitre
  ***********************************************************************/
 
-package planning_des_matchs;
+package model.entity;
 
-import database.DatabaseConnection;
+import model.database.DatabaseConnection;
 import java.util.*;
 import java.sql.ResultSet;
 import java.sql.Statement;
