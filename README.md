@@ -17,7 +17,8 @@ La team Canada est composée de :
 
 ### Cloner le dépôt
 
-Pour cloner le dépôt, il ne faut pas oublier le mot-clef `--recursive` afin d'aussi cloner le dépôt de l'application Heroku.
+Pour cloner le dépôt, il ne faut pas oublier le mot-clef `--recursive` afin d'aussi cloner le dépôt de l'application Heroku. 
+Pour que l'application Heroku soit bien clonée, il faut en plus s'y connecter grâce au [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) (le processus sera détaillé par la suite).
 
 ```git
 git clone --recursive https://forge.univ-lyon1.fr/p2001337/cpoa.git
