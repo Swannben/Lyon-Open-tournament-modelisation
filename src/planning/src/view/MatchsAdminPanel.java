@@ -1331,7 +1331,7 @@ public class MatchsAdminPanel extends javax.swing.JPanel {
         tournoi_panelLayout.setVerticalGroup(
             tournoi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tournoi_panelLayout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2)
                 .addGap(76, 76, 76))
             .addGroup(tournoi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tournoi_panelLayout.createSequentialGroup()
