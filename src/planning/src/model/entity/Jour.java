@@ -1,118 +1,101 @@
 /***********************************************************************
- * Module:  Court.java
+ * Module:  Date.java
  * Author:  swann
- * Purpose: Defines the Class Court
+ * Purpose: Defines the Class Jour
  ***********************************************************************/
 
-package planning_des_matchs;
+package model.entity;
 
-import database.DatabaseConnection;
+import model.database.DatabaseConnection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 
-public class Court {
-    private int id;
-    private String nom;
-    private boolean estPrincipal;
 
+public class Jour {
+    private java.util.Date date;
+
+    public java.util.List<Creneau> creneaux;
     public java.util.List<Entrainement> entrainements;
     
-    private static List<Court> list = new LinkedList<>();
-
+    public static List<Jour> list = new LinkedList<>();
     
-    public Court(int id, String nom, boolean estPrincipal) {
-        this.id=id;
-        this.nom=nom;
-        this.estPrincipal=estPrincipal;
-    }
-   
 
-    public int getID() {
-       return id;
-    }
-   
-    public String getNom() {
-        return nom;
-    }
-   
-    /** @param newNom */
-    public void setNom(String newNom) {
-        nom = newNom;
-    }
-   
-    public boolean estPrincipal() {
-        return estPrincipal;
+    public java.util.Date getDate() {
+        return date;
     }
 
-    /** @param estPrincipal */
-    public void setPrincipal(boolean estPrincipal) {
-        this.estPrincipal = estPrincipal;
+    /** @param newDate */
+    public void setDate(java.util.Date newDate) {
+        date = newDate;
     }
    
-
-   
+    public Jour(Date date) {
+        this.date =date;
+    }
+    
+    
     /** @pdGenerated default getter */
-    /*public java.util.List<Match> getMatchs() {
-        if (matchs == null)
-            matchs = new java.util.ArrayList<Match>();
-        return matchs;
-    }*/
-
-    /** @pdGenerated default iterator getter */
-    /*public java.util.Iterator getIteratorMatchs() {
-        if (matchs == null)
-            matchs = new java.util.ArrayList<Match>();
-        return matchs.iterator();
-    }*/
-
-    /** @pdGenerated default setter
-      * @param newMatch */
-    /*public void setMatchs(java.util.List<Match> newMatch) {
-        removeAllMatchs();
-        for (java.util.Iterator iter = newMatch.iterator(); iter.hasNext();)
-            addMatch((Match)iter.next());
-    }*/
-
-    /** @pdGenerated default add
-      * @param newMatch */
-    /*public void addMatch(Match newMatch) {
-        if (newMatch == null)
-            return;
-        if (this.matchs == null)
-            this.matchs = new java.util.ArrayList<Match>();
-        if (!this.matchs.contains(newMatch)) {
-            this.matchs.add(newMatch);
-            newMatch.setCourt(this);      
-        }
-    }*/
-
-    /** @pdGenerated default remove
-      * @param oldMatch */
-    /*public void removeMatch(Match oldMatch) {
-        if (oldMatch == null)
-            return;
-        if (this.matchs != null) {
-            if (this.matchs.contains(oldMatch)) {
-                this.matchs.remove(oldMatch);
-                oldMatch.setCourt((Court)null);
-            }
-        }
-    }*/
-
-    /** @pdGenerated default removeAll */
-    /*public void removeAllMatchs() {
-        if (matchs != null) {
-            Match oldMatch;
-            for (java.util.Iterator iter = getIteratorMatchs(); iter.hasNext();) {
-                oldMatch = (Match)iter.next();
-                iter.remove();
-                oldMatch.setCourt((Court)null);
-            }
-        }
-    }*/
+    public java.util.List<Creneau> getCreneaux() {
+        if (creneaux == null)
+            creneaux = new ArrayList<Creneau>();
+        return creneaux;
+    }
     
+    /** @pdGenerated default iterator getter */
+    public java.util.Iterator getIteratorCreneaux() {
+        if (creneaux == null)
+            creneaux = new java.util.ArrayList<Creneau>();
+        return creneaux.iterator();
+    }
+    
+    /** @pdGenerated default setter
+      * @param newCreneaux */
+    public void setCreneaux(java.util.ArrayList<Creneau> newCreneaux) {
+        removeAllCreneaux();
+        for (java.util.Iterator iter = newCreneaux.iterator(); iter.hasNext();)
+            addCreneau((Creneau)iter.next());
+    }
+    
+    /** @pdGenerated default add
+      * @param newCreneau */
+    public void addCreneau(Creneau newCreneau) {
+        if (newCreneau == null)
+            return;
+        if (this.creneaux == null)
+            this.creneaux = new java.util.ArrayList<Creneau>();
+        if (!this.creneaux.contains(newCreneau)) {
+            this.creneaux.add(newCreneau);
+            newCreneau.setJour(this);      
+        }
+    }
+    
+    /** @pdGenerated default remove
+      * @param oldCreneau */
+    public void removeCreneau(Creneau oldCreneau) {
+        if (oldCreneau == null)
+            return;
+        if (this.creneaux != null) {
+            if (this.creneaux.contains(oldCreneau)) {
+                this.creneaux.remove(oldCreneau);
+                oldCreneau.setJour((Jour)null);
+            }
+        }
+    }
+   
+    /** @pdGenerated default removeAll */
+    public void removeAllCreneaux() {
+        if (creneaux != null) {
+            Creneau oldCreneau;
+            for (java.util.Iterator iter = getIteratorCreneaux(); iter.hasNext();) {
+                oldCreneau = (Creneau)iter.next();
+                iter.remove();
+                oldCreneau.setJour((Jour)null);
+            }
+        }
+    }
+   
     /** @pdGenerated default getter */
     public java.util.List<Entrainement> getEntrainements() {
         if (entrainements == null)
@@ -144,7 +127,7 @@ public class Court {
             this.entrainements = new java.util.ArrayList<Entrainement>();
         if (!this.entrainements.contains(newEntrainement)) {
             this.entrainements.add(newEntrainement);
-            newEntrainement.setCourt(this);      
+            newEntrainement.setJour(this);      
         }
     }
 
@@ -153,11 +136,12 @@ public class Court {
     public void removeEntrainement(Entrainement oldEntrainement) {
         if (oldEntrainement == null)
             return;
-        if (this.entrainements != null)
+        if (this.entrainements != null) {
             if (this.entrainements.contains(oldEntrainement)) {
                 this.entrainements.remove(oldEntrainement);
-                oldEntrainement.setCourt((Court)null);
+                oldEntrainement.setJour((Jour)null);
             }
+        }
     }
 
     /** @pdGenerated default removeAll */
@@ -167,40 +151,37 @@ public class Court {
             for (java.util.Iterator iter = getIteratorEntrainements(); iter.hasNext();) {
                 oldEntrainement = (Entrainement)iter.next();
                 iter.remove();
-                oldEntrainement.setCourt((Court)null);
+                oldEntrainement.setJour((Jour)null);
             }
         }
     }
 
     
-    
-    public static List getListFromDatabase() {
+    public static List<Jour> getListFromDatabase() {
         // Delete list
         if (list != null) {
-            Court court;
+            Jour jour;
             for (java.util.Iterator iter = list.iterator(); iter.hasNext();) {
-                court = (Court)iter.next();
+                jour = (Jour)iter.next();
                 iter.remove();
             }
         }
         
         // New list
-        List<Court> newList = new LinkedList<>();
+        List<Jour> newList = new LinkedList<>();
         
         DatabaseConnection connection = DatabaseConnection.get();
         
         try {
             Statement statement = connection.getStatement();
-            ResultSet result = statement.executeQuery("select * from court");
+            ResultSet result = statement.executeQuery("select distinct jour from creneau");
 
             while (result.next()) {
-                Court court = new Court(
-                    result.getInt("idcourt"), 
-                    result.getString("nom"), 
-                    result.getBoolean("estprincipal")
+                Jour jour = new Jour(
+                        result.getDate("jour")
                 );
 
-                newList.add(court);
+                newList.add(jour);
             }
             
             result.close();
@@ -210,17 +191,17 @@ public class Court {
         }
         
         list = newList;
-        return newList;
-    }
-    
-    public static List getList() {
         return list;
     }
     
-    public static Court get(int id) {
-        for (Court row : list) {
-            if (row.id == id) {
-                return row;
+    public static List<Jour> getList() {
+        return list;
+    }
+    
+    public static Jour get(Date date) {
+        for (Jour jour : list) {
+            if (jour.date == date) {
+                return jour;
             }
         }
         return null;

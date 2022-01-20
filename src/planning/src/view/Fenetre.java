@@ -1,8 +1,8 @@
-package vue;
+package view;
 
 import controller.Main;
-import database.UserConnection;
-import database.ConnectedUser;
+import model.database.UserConnection;
+import model.database.ConnectedUser;
 
 
 public class Fenetre extends javax.swing.JFrame {

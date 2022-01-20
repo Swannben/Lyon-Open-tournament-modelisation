@@ -1,4 +1,4 @@
-package database;
+package model.database;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
